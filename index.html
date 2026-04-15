@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Hosana Muniz | Nutricionista</title>        <a href="https://www.instagram.com/hosanamuniz" target="_blank">@hosanamuniz</a>
+<title>Hosana Muniz | Nutricionista</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"/>
@@ -33,7 +33,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
 .mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:1.25rem}
 .mobile-menu a{text-decoration:none;color:var(--texto);font-size:1rem;font-weight:500}
 .mobile-menu.open{display:block}
-.hero{min-height:calc(100vh - 64px);display:grid;grid-template-columns:1fr 1fr}
+.hero{min-height:calc(100vh - 64px);display:grid;grid-template-columns:1fr 0.72fr}
 .hero-content{display:flex;flex-direction:column;justify-content:center;padding:4rem 3rem 4rem 4rem;max-width:640px;margin-left:auto}
 .hero-badge{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.72rem;font-weight:700;color:var(--oliva);background:var(--oliva-lt);padding:0.35rem 0.85rem;border-radius:20px;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1.75rem;width:fit-content}
 .hero-badge::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--oliva)}
@@ -52,8 +52,8 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
 .sobre-info p{font-size:0.8rem;color:var(--texto);line-height:1.65;opacity:0.85;margin-bottom:0.875rem}
 .sobre-tags{display:flex;flex-wrap:wrap;gap:0.4rem}
 .sobre-tags span{font-size:0.7rem;font-weight:600;color:var(--oliva);background:var(--oliva-lt);padding:0.2rem 0.6rem;border-radius:4px;letter-spacing:0.02em}
-.hero-image{position:relative;overflow:hidden}
-.hero-image img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-image{position:relative;overflow:hidden;max-height:520px;align-self:center}
+.hero-image img{width:100%;height:100%;max-height:520px;object-fit:cover;object-position:center;display:block}
 .servicos{background:#fff;padding:5rem 2rem}
 .section-container{max-width:1200px;margin:0 auto}
 .section-header{text-align:center;margin-bottom:3rem}
@@ -112,7 +112,8 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
   .nav-links,.nav-cta{display:none}
   .hamburger{display:flex}
   .hero{grid-template-columns:1fr;min-height:auto}
-  .hero-image{height:280px;order:-1}
+  .hero-image{height:260px;max-height:260px;order:-1;align-self:auto}
+  .hero-image img{max-height:260px}
   .hero-content{padding:2.5rem 1.5rem;max-width:100%;margin:0}
   .cards-grid{grid-template-columns:1fr 1fr}
   .guia-card{grid-template-columns:1fr;gap:1.5rem;padding:2rem}
@@ -171,15 +172,19 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
         <span class="sobre-titulo">Nutricionista em formação</span>
         <p>Natural de Santos, apaixonada por nutrição por necessidade própria. Com mais de 7 anos na gestão de clínicas, hoje atua com foco em transformação real: energia, saúde intestinal, pele e equilíbrio metabólico. Formada em Nutrição, pós-graduanda em Endocrinologia e Metabolologia, com certificação internacional em Psiquiatria Nutricional pelo INCCOR.</p>
         <div class="sobre-tags">
-          <span>Endocrinologia</span>
-          <span>Psiquiatria Nutricional</span>
-          <span>Saúde Intestinal</span>
+          <span>Mais energia no dia a dia</span>
+          <span>Melhor relação com a alimentação</span>
+          <span>Acompanhamento próximo e contínuo</span>
         </div>
+        <a href="https://www.instagram.com/hosanamuniz" target="_blank" style="display:inline-flex;align-items:center;gap:0.35rem;margin-top:0.75rem;font-size:0.8rem;font-weight:600;color:var(--oliva);text-decoration:none;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          @hosanamuniz
+        </a>
       </div>
     </div>
   </div>
   <div class="hero-image">
-    <img src="hosana.jpg" alt="Hosana Muniz Nutricionista"/>
+    <img src="bowl.jpg" alt="Bowl saudável"/>
   </div>
 </section>
 <section class="servicos" id="servicos">
@@ -188,25 +193,22 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
       <span class="section-tag">O que ofereço</span>
       <h2>Serviços</h2>
     </div>
-    <div class="cards-grid">
+      <div class="cards-grid">
       <div class="card">
         <h3>Consulta inicial</h3>
-        <p>Avaliação completa do seu histórico, hábitos alimentares e objetivos de saúde para um ponto de partida claro e personalizado.</p>
+        <p>Avaliação completa do seu histórico, hábitos e objetivos para um plano alimentar claro e personalizado desde o início.</p>
       </div>
       <div class="card">
         <h3>Plano alimentar</h3>
-        <p>Cardápio individualizado, prático e adaptado à sua rotina, preferências e necessidades nutricionais.</p>
+        <p>Plano alimentar individualizado, prático e adaptado à sua rotina, preferências e necessidades nutricionais.</p>
       </div>
       <div class="card">
-       <h3>Acompanhamento</h3>
-<p>Acompanhamento para melhorar a alimentação de forma prática e adaptada à rotina.</p>
-<p>Realizado de forma assíncrona, com suporte para orientações, ajustes e dúvidas ao longo da semana.</p>
-<p>Inclui apoio em situações do dia a dia, como férias, festas e mudanças de rotina.</p>
-<p>Foco em autonomia e construção de hábitos consistentes.</p>
-</div>
+        <h3>Acompanhamento</h3>
+        <p>Acompanhamento contínuo, com suporte assíncrono para ajustes, orientações e dúvidas ao longo da semana.</p>
+      </div>
       <div class="card">
         <h3>Orientação online</h3>
-        <p>Consultas via telemedicina com toda a qualidade e personalização do atendimento presencial.</p>
+        <p>Atendimento online com a mesma qualidade do presencial, com foco em praticidade, personalização e resultados.</p>
       </div>
     </div>
   </div>
@@ -216,10 +218,12 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
     <div class="guia-card">
       <div>
         <span class="guia-badge">Em breve</span>
-        <h2>Guia Alimentar Familiar</h2>
-        <p>Um material prático e acessível para famílias construírem hábitos alimentares mais saudáveis no dia a dia, sem complicação e sem restrições desnecessárias.</p>
+        <h2>Família Saudável</h2>
+        <p>Acredito no impacto do ambiente nos hábitos alimentares. Por isso, estou criando o "Família Saudável".</p>
+        <p style="margin-top:0.75rem;font-size:0.9rem;color:rgba(255,255,255,0.75);line-height:1.7;max-width:480px;">Acompanhamento prático para famílias que desejam melhorar a alimentação no dia a dia, com orientações aplicáveis para um ambiente mais saudável, sem restrições desnecessárias.</p>
+        <p style="margin-top:0.75rem;font-size:0.9rem;color:rgba(255,255,255,0.75);line-height:1.7;max-width:480px;">Uma proposta de suporte contínuo para ajudar na organização da rotina alimentar da casa, promovendo hábitos mais saudáveis de forma realista e sustentável.</p>
       </div>
-      <a href="#lista-espera" class="btn-dourado">Quero ser avisado quando lançar</a>
+      <a href="#lista-espera" class="btn-dourado">Quero ser avisado quando abrir</a>
     </div>
   </div>
 </section>
