@@ -19,8 +19,6 @@
 }
 html{scroll-behavior:smooth}
 body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:var(--creme);line-height:1.6;overflow-x:hidden}
-
-/* NAVBAR */
 .navbar{position:sticky;top:0;z-index:1000;background:var(--creme);border-bottom:1px solid var(--oliva-lt);padding:0 2rem}
 .nav-container{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
 .nav-logo{font-weight:700;font-size:1rem;color:var(--oliva);text-decoration:none;letter-spacing:-0.02em}
@@ -35,8 +33,6 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
 .mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:1.25rem}
 .mobile-menu a{text-decoration:none;color:var(--texto);font-size:1rem;font-weight:500}
 .mobile-menu.open{display:block}
-
-/* HERO */
 .hero{min-height:calc(100vh - 64px);display:grid;grid-template-columns:1fr 1fr}
 .hero-content{display:flex;flex-direction:column;justify-content:center;padding:4rem 3rem 4rem 4rem;max-width:640px;margin-left:auto}
 .hero-badge{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.72rem;font-weight:700;color:var(--oliva);background:var(--oliva-lt);padding:0.35rem 0.85rem;border-radius:20px;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1.75rem;width:fit-content}
@@ -58,8 +54,6 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
 .sobre-tags span{font-size:0.7rem;font-weight:600;color:var(--oliva);background:var(--oliva-lt);padding:0.2rem 0.6rem;border-radius:4px;letter-spacing:0.02em}
 .hero-image{position:relative;overflow:hidden}
 .hero-image img{width:100%;height:100%;object-fit:cover;display:block}
-
-/* SERVICOS */
 .servicos{background:#fff;padding:5rem 2rem}
 .section-container{max-width:1200px;margin:0 auto}
 .section-header{text-align:center;margin-bottom:3rem}
@@ -69,9 +63,9 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
 .card{border:1px solid var(--oliva-lt);border-top:3px solid var(--dourado);border-radius:12px;padding:1.75rem 1.5rem;background:#fff;transition:border-color 0.2s,border-top-color 0.2s}
 .card:hover{border-color:var(--oliva-md);border-top-color:var(--dourado)}
 .card h3{font-size:0.95rem;font-weight:700;color:var(--texto);margin-bottom:0.625rem;letter-spacing:-0.01em}
-.card p{font-size:0.825rem;color:var(--oliva-md);line-height:1.65}
-
-/* GUIA */
+.card p{font-size:0.825rem;color:var(--oliva-md);line-height:1.65;margin-bottom:0.5rem}
+.card a{font-size:0.825rem;color:var(--oliva);font-weight:600;text-decoration:none}
+.card a:hover{text-decoration:underline}
 .guia{padding:5rem 2rem;background:var(--creme)}
 .guia-card{background:var(--oliva);border-radius:12px;padding:3.5rem;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center}
 .guia-badge{display:inline-block;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--dourado);border:1px solid var(--dourado);padding:0.3rem 0.75rem;border-radius:4px;margin-bottom:1.25rem}
@@ -79,16 +73,12 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
 .guia-card p{font-size:0.9rem;color:rgba(255,255,255,0.75);line-height:1.7;max-width:480px}
 .btn-dourado{background:var(--dourado);color:#fff;border:none;padding:0.75rem 1.5rem;border-radius:8px;font-family:inherit;font-size:0.875rem;font-weight:600;cursor:pointer;text-decoration:none;white-space:nowrap;display:inline-block;transition:background 0.2s}
 .btn-dourado:hover{background:#c49558}
-
-/* LISTA DE ESPERA */
 .lista-espera{padding:5rem 2rem;background:var(--creme)}
 .waitlist-form{max-width:480px;margin:0 auto;display:flex;flex-direction:column;gap:0.875rem}
 .waitlist-form input{width:100%;padding:0.75rem 1rem;border:1px solid var(--oliva-lt);border-radius:8px;font-family:inherit;font-size:0.9rem;background:#fff;color:var(--texto);outline:none;transition:border-color 0.2s}
 .waitlist-form input:focus{border-color:var(--oliva-md)}
 .waitlist-form .btn-primary{width:100%;padding:0.875rem;text-align:center}
 .success-msg{display:none;text-align:center;color:var(--oliva);font-size:0.9rem;font-weight:600;padding:1rem;background:var(--oliva-lt);border-radius:8px;max-width:480px;margin:0 auto}
-
-/* BLOG */
 .blog{padding:5rem 2rem;background:#fff}
 .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 .blog-card{border:1px solid var(--oliva-lt);border-radius:12px;overflow:hidden;background:#fff;transition:border-color 0.2s}
@@ -98,8 +88,6 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
 .blog-tag{display:inline-block;font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--oliva);background:var(--oliva-lt);padding:0.2rem 0.6rem;border-radius:4px;margin-bottom:0.75rem}
 .blog-card h3{font-size:0.95rem;font-weight:700;color:var(--texto);line-height:1.4;margin-bottom:0.5rem}
 .blog-em-breve{font-size:0.78rem;color:var(--oliva-md);font-weight:500}
-
-/* CONTATO */
 .contato{padding:5rem 2rem;background:var(--creme)}
 .contato-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:1200px;margin:0 auto}
 .contato-info .section-tag{text-align:left;display:block;margin-bottom:0.75rem}
@@ -114,18 +102,12 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
 .contato-form input,.contato-form textarea{width:100%;padding:0.75rem 1rem;border:1px solid var(--oliva-lt);border-radius:8px;font-family:inherit;font-size:0.875rem;background:#fff;color:var(--texto);outline:none;resize:none;transition:border-color 0.2s}
 .contato-form input:focus,.contato-form textarea:focus{border-color:var(--oliva-md)}
 .contato-form textarea{height:120px}
-
-/* FOOTER */
 .footer{background:var(--oliva);padding:2.5rem 2rem;text-align:center}
 .footer p{color:rgba(255,255,255,0.6);font-size:0.8rem;line-height:1.8}
 .footer strong{color:rgba(255,255,255,0.9)}
-
-/* WHATSAPP FLOAT */
 .whatsapp-float{position:fixed;bottom:1.75rem;right:1.75rem;z-index:999;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.15);text-decoration:none;transition:transform 0.2s}
 .whatsapp-float:hover{transform:scale(1.08)}
 .whatsapp-float svg{width:26px;height:26px;fill:#fff}
-
-/* RESPONSIVE */
 @media(max-width:768px){
   .nav-links,.nav-cta{display:none}
   .hamburger{display:flex}
@@ -146,14 +128,12 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
 </style>
 </head>
 <body>
-
-<!-- NAVBAR -->
 <nav class="navbar" id="navbar">
   <div class="nav-container">
     <a href="#home" class="nav-logo">Hosana Muniz</a>
     <ul class="nav-links">
       <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#servicos">Servicos</a></li>
+      <li><a href="#servicos">Servi&ccedil;os</a></li>
       <li><a href="#guia">Guia Familiar</a></li>
       <li><a href="#blog">Blog</a></li>
       <li><a href="#contato">Contato</a></li>
@@ -164,28 +144,24 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
     </button>
   </div>
 </nav>
-
-<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <ul>
     <li><a href="#sobre" onclick="closeMobile()">Sobre</a></li>
-    <li><a href="#servicos" onclick="closeMobile()">Servicos</a></li>
+    <li><a href="#servicos" onclick="closeMobile()">Servi&ccedil;os</a></li>
     <li><a href="#guia" onclick="closeMobile()">Guia Familiar</a></li>
     <li><a href="#blog" onclick="closeMobile()">Blog</a></li>
     <li><a href="#contato" onclick="closeMobile()">Contato</a></li>
     <li><a href="#lista-espera" class="nav-cta" onclick="closeMobile()">Lista de espera</a></li>
   </ul>
 </div>
-
-<!-- HERO + SOBRE -->
 <section class="hero" id="home">
   <div class="hero-content">
     <span class="hero-badge">Nutricionista &middot; Santos/SP</span>
-    <h1>Cuide da sua saude com uma nutricao personalizada e individualizada</h1>
-    <p class="hero-subtitle">Uma nutricao pratica e real, para voce construir uma relacao mais saudavel com a sua alimentacao.</p>
+    <h1>Cuide da sua sa&uacute;de com uma nutri&ccedil;&atilde;o personalizada e individualizada</h1>
+    <p class="hero-subtitle">Uma nutri&ccedil;&atilde;o pr&aacute;tica e real, para voc&ecirc; construir uma rela&ccedil;&atilde;o mais saud&aacute;vel com a sua alimenta&ccedil;&atilde;o.</p>
     <div class="hero-buttons">
       <a href="#lista-espera" class="btn-primary">Entrar na lista de espera</a>
-      <a href="#servicos" class="btn-outline">Conhecer os servicos</a>
+      <a href="#servicos" class="btn-outline">Conhecer os servi&ccedil;os</a>
     </div>
     <div class="hero-divider"></div>
     <div class="sobre-inline" id="sobre">
@@ -193,63 +169,61 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
       <div class="sobre-info">
         <h3>Hosana Muniz</h3>
         <span class="sobre-titulo">Nutricionista &middot; CRN-3</span>
-        <p>Natural de Santos, apaixonada por nutricao por necessidade propria. Com mais de 7 anos na gestao de clinicas, hoje atua com foco em transformacao real: energia, saude intestinal, pele e equilibrio metabolico. Formada em Nutricao, pos-graduanda em Endocrinologia e Metabolologia, com certificacao internacional em Psiquiatria Nutricional pelo INCCOR.</p>
+        <p>Natural de Santos, apaixonada por nutri&ccedil;&atilde;o por necessidade pr&oacute;pria. Com mais de 7 anos na gest&atilde;o de cl&iacute;nicas, hoje atua com foco em transforma&ccedil;&atilde;o real: energia, sa&uacute;de intestinal, pele e equil&iacute;brio metab&oacute;lico. Formada em Nutri&ccedil;&atilde;o, p&oacute;s-graduanda em Endocrinologia e Metabolologia, com certifica&ccedil;&atilde;o internacional em Psiquiatria Nutricional pelo INCCOR.</p>
         <div class="sobre-tags">
           <span>Endocrinologia</span>
           <span>Psiquiatria Nutricional</span>
-          <span>Saude Intestinal</span>
+          <span>Sa&uacute;de Intestinal</span>
         </div>
       </div>
     </div>
   </div>
   <div class="hero-image">
-    <img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=1200&auto=format&fit=crop" alt="Textura natural"/>
+    <img src="hosana.jpg" alt="Hosana Muniz Nutricionista"/>
   </div>
 </section>
-
-<!-- SERVICOS -->
 <section class="servicos" id="servicos">
   <div class="section-container">
     <div class="section-header">
-      <span class="section-tag">O que ofeco</span>
-      <h2>Servicos</h2>
+      <span class="section-tag">O que ofe&ccedil;o</span>
+      <h2>Servi&ccedil;os</h2>
     </div>
     <div class="cards-grid">
       <div class="card">
         <h3>Consulta inicial</h3>
-        <p>Avaliacao completa do seu historico, habitos alimentares e objetivos de saude para um ponto de partida claro e personalizado.</p>
+        <p>Avalia&ccedil;&atilde;o completa do seu hist&oacute;rico, h&aacute;bitos alimentares e objetivos de sa&uacute;de para um ponto de partida claro e personalizado.</p>
       </div>
       <div class="card">
         <h3>Plano alimentar</h3>
-        <p>Cardapio individualizado, pratico e adaptado a sua rotina, preferencias e necessidades nutricionais.</p>
+        <p>Card&aacute;pio individualizado, pr&aacute;tico e adaptado &agrave; sua rotina, prefer&ecirc;ncias e necessidades nutricionais.</p>
       </div>
       <div class="card">
         <h3>Acompanhamento</h3>
-        <p>Retornos periodicos para ajuste do plano, acompanhamento de evolucao e suporte continuo na sua jornada.</p>
+        <p><strong>Ambiente IMPORTA!</strong></p>
+        <p>Acompanhamento pensado para fam&iacute;lias que desejam melhorar a alimenta&ccedil;&atilde;o de forma conjunta.</p>
+        <p>Mais do que focar em pacientes isolados, nessa modalidade a minha proposta &eacute; atuar no ambiente alimentar de toda a fam&iacute;lia, reconhecendo que as escolhas do dia a dia s&atilde;o diretamente influenciadas pelo contexto em que vivemos.</p>
+        <br/>
+        <a href="https://www.instagram.com/hosanamuniz" target="_blank">@hosanamuniz</a>
       </div>
       <div class="card">
-        <h3>Orientacao online</h3>
-        <p>Consultas via telemedicina com toda a qualidade e personalizacao do atendimento presencial.</p>
+        <h3>Orienta&ccedil;&atilde;o online</h3>
+        <p>Consultas via telemedicina com toda a qualidade e personaliza&ccedil;&atilde;o do atendimento presencial.</p>
       </div>
     </div>
   </div>
 </section>
-
-<!-- GUIA -->
 <section class="guia" id="guia">
   <div class="section-container">
     <div class="guia-card">
       <div>
-        <span class="guia-badge">Sem consulta necessaria</span>
+        <span class="guia-badge">Em breve</span>
         <h2>Guia Alimentar Familiar</h2>
-        <p>Um material pratico e acessivel para familias construirem habitos alimentares mais saudaveis no dia a dia, sem complicacao e sem restricoes desnecessarias.</p>
+        <p>Um material pr&aacute;tico e acess&iacute;vel para fam&iacute;lias constru&iacute;rem h&aacute;bitos alimentares mais saud&aacute;veis no dia a dia, sem complica&ccedil;&atilde;o e sem restri&ccedil;&otilde;es desnecess&aacute;rias.</p>
       </div>
-      <a href="#lista-espera" class="btn-dourado">Quero ser avisado quando lancar</a>
+      <a href="#lista-espera" class="btn-dourado">Quero ser avisado quando lan&ccedil;ar</a>
     </div>
   </div>
 </section>
-
-<!-- LISTA DE ESPERA -->
 <section class="lista-espera" id="lista-espera">
   <div class="section-container">
     <div class="section-header">
@@ -261,22 +235,20 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
       <input type="email" placeholder="Seu melhor e-mail" required/>
       <button type="submit" class="btn-primary">Quero entrar na lista</button>
     </form>
-    <div class="success-msg" id="successMsg">Incrivel! Voce esta na lista. Te avisaremos em breve.</div>
+    <div class="success-msg" id="successMsg">Incr&iacute;vel! Voc&ecirc; est&aacute; na lista. Te avisaremos em breve.</div>
   </div>
 </section>
-
-<!-- BLOG -->
 <section class="blog" id="blog">
   <div class="section-container">
     <div class="section-header">
-      <span class="section-tag">Conteudo</span>
+      <span class="section-tag">Conte&uacute;do</span>
       <h2>Blog</h2>
     </div>
     <div class="blog-grid">
       <div class="blog-card">
         <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&auto=format&fit=crop" alt="Artigo 1"/>
         <div class="blog-card-body">
-          <span class="blog-tag">Saude intestinal</span>
+          <span class="blog-tag">Sa&uacute;de intestinal</span>
           <h3>Como a microbiota intestinal influencia sua energia e humor</h3>
           <p class="blog-em-breve">Em breve</p>
         </div>
@@ -285,29 +257,27 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
         <img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=600&auto=format&fit=crop" alt="Artigo 2"/>
         <div class="blog-card-body">
           <span class="blog-tag">Metabolismo</span>
-          <h3>Equilibrio metabolico: o que e e por que importa para o seu peso</h3>
+          <h3>Equil&iacute;brio metab&oacute;lico: o que &eacute; e por que importa para o seu peso</h3>
           <p class="blog-em-breve">Em breve</p>
         </div>
       </div>
       <div class="blog-card">
         <img src="https://images.unsplash.com/photo-1543362906-acfc16c67564?w=600&auto=format&fit=crop" alt="Artigo 3"/>
         <div class="blog-card-body">
-          <span class="blog-tag">Nutricao pratica</span>
-          <h3>5 habitos alimentares que voce pode comecar hoje sem dieta</h3>
+          <span class="blog-tag">Nutri&ccedil;&atilde;o pr&aacute;tica</span>
+          <h3>5 h&aacute;bitos alimentares que voc&ecirc; pode come&ccedil;ar hoje sem dieta</h3>
           <p class="blog-em-breve">Em breve</p>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- CONTATO -->
 <section class="contato" id="contato">
   <div class="contato-grid">
     <div class="contato-info">
       <span class="section-tag">Fale comigo</span>
-      <h2>Vamos conversar sobre a sua saude</h2>
-      <p>Estou aqui para tirar suas duvidas e entender como posso te ajudar.</p>
+      <h2>Vamos conversar sobre a sua sa&uacute;de</h2>
+      <p>Estou aqui para tirar suas d&uacute;vidas e entender como posso te ajudar.</p>
       <div class="contato-item">
         <div class="contato-icon">&#9993;</div>
         <div class="contato-item-text">
@@ -334,30 +304,23 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
     </form>
   </div>
 </section>
-
-<!-- FOOTER -->
 <footer class="footer">
   <p><strong>Hosana Muniz</strong> &mdash; Nutricionista | Santos/SP<br/>
   contato@hosana.com.br &nbsp;&middot;&nbsp; (13) 99114-9157</p>
 </footer>
-
-<!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/5513991149157" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
 </a>
-
 <script>
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
 function closeMobile() { mobileMenu.classList.remove('open'); }
-
 function submitWaitlist(e) {
   e.preventDefault();
   document.getElementById('waitlistForm').style.display = 'none';
   document.getElementById('successMsg').style.display = 'block';
 }
-
 function submitContato(e) {
   e.preventDefault();
   const nome = document.getElementById('cf-nome').value;
