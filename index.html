@@ -75,7 +75,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
 .btn-dourado{background:var(--dourado);color:#fff;border:none;padding:1.6rem 3.5rem;border-radius:14px;font-family:inherit;font-size:1.35rem;font-weight:700;cursor:pointer;text-decoration:none;white-space:nowrap;display:inline-block;transition:all 0.2s;box-shadow:0 10px 0 #a07e44,0 14px 28px rgba(0,0,0,0.3);letter-spacing:0.01em}
 .btn-dourado:hover{background:#e0b779;transform:translateY(-3px);box-shadow:0 11px 0 #a07e44,0 16px 30px rgba(0,0,0,0.3)}
 .btn-dourado:active{transform:translateY(4px);box-shadow:0 4px 0 #a07e44,0 6px 12px rgba(0,0,0,0.2)}
-.lista-espera{padding:5rem 2rem;background:var(--creme)}
+.lista-espera{padding:5rem 2rem;background:var(--creme);display:none}
 .waitlist-form{max-width:480px;margin:0 auto;display:flex;flex-direction:column;gap:0.875rem}
 .waitlist-form input{width:100%;padding:0.75rem 1rem;border:1px solid var(--oliva-lt);border-radius:8px;font-family:inherit;font-size:0.9rem;background:#fff;color:var(--texto);outline:none;transition:border-color 0.2s}
 .waitlist-form input:focus{border-color:var(--oliva-md)}
@@ -153,7 +153,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
       <li class="nav-blog"><a href="#blog">Blog</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
-    <a href="#lista-espera" class="nav-cta">Lista de espera</a>
+    <a href="#" class="nav-cta" onclick="openListaModal(event)">Lista de espera</a>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -166,7 +166,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
     <li><a href="#guia" onclick="closeMobile()">Guia Familiar</a></li>
     <li class="nav-blog"><a href="#blog" onclick="closeMobile()">Blog</a></li>
     <li><a href="#contato" onclick="closeMobile()">Contato</a></li>
-    <li><a href="#lista-espera" class="nav-cta" onclick="closeMobile()">Lista de espera</a></li>
+    <li><a href="#" class="nav-cta" onclick="closeMobile();openListaModal(event)">Lista de espera</a></li>
   </ul>
 </div>
 <section class="hero" id="home">
@@ -175,7 +175,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
     <h1>Cuide da sua saúde com uma nutrição personalizada e individualizada</h1>
     <p class="hero-subtitle">Uma nutrição prática e real, para você construir uma relação mais saudável com a sua alimentação.</p>
     <div class="hero-buttons">
-      <a href="#lista-espera" class="btn-primary">Entrar na lista de espera</a>
+      <a href="#" class="btn-primary" onclick="openListaModal(event)">Entrar na lista de espera</a>
       <a href="#servicos" class="btn-outline">Conhecer os serviços</a>
     </div>
     <div class="hero-divider"></div>
@@ -325,6 +325,19 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
   <p><strong>Hosana Muniz</strong> — Nutricionista em formação<br/>
   contato@hosana.com.br · (13) 99114-9157</p>
 </footer>
+<div class="modal-overlay" id="listaModal" onclick="closeListaModal(event)">
+  <div class="modal" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeListaModal()" aria-label="Fechar">&times;</button>
+    <h3>Entre na lista de espera</h3>
+    <p>Deixe seus dados e te avisaremos quando as próximas vagas abrirem.</p>
+    <form id="waitlistForm" onsubmit="submitWaitlist(event)">
+      <input type="text" id="lst-nome" placeholder="Seu nome completo" required/>
+      <input type="email" id="lst-email" placeholder="Seu melhor e-mail" required/>
+      <button type="submit" class="btn-primary">Quero entrar na lista</button>
+    </form>
+    <div class="modal-success" id="successMsg">Incrível! Você está na lista. Te avisaremos em breve.</div>
+  </div>
+</div>
 <div class="modal-overlay" id="familiaModal" onclick="closeFamiliaModal(event)">
   <div class="modal" onclick="event.stopPropagation()">
     <button class="modal-close" onclick="closeFamiliaModal()" aria-label="Fechar">&times;</button>
@@ -347,17 +360,24 @@ const mobileMenu = document.getElementById('mobileMenu');
 hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
 function closeMobile() { mobileMenu.classList.remove('open'); }
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx6lSurW9Z6bOZUg8eSTOxR_APpHurbcOpC_Nl-jCJBFeLW1PKEoXRsTvWtcigZbeqB/exec';
+function openListaModal(e) {
+  if (e) e.preventDefault();
+  document.getElementById('listaModal').classList.add('open');
+}
+function closeListaModal(e) {
+  if (e && e.target.id !== 'listaModal' && !e.target.classList.contains('modal-close')) return;
+  document.getElementById('listaModal').classList.remove('open');
+}
 function submitWaitlist(e) {
   e.preventDefault();
-  const form = document.getElementById('waitlistForm');
-  const nome = form.querySelector('input[type="text"]').value;
-  const email = form.querySelector('input[type="email"]').value;
+  const nome = document.getElementById('lst-nome').value;
+  const email = document.getElementById('lst-email').value;
   fetch(APPS_SCRIPT_URL, {
     method: 'POST',
     mode: 'no-cors',
     body: JSON.stringify({ nome: nome, email: email, lista: 'Lista de Espera' })
   });
-  form.style.display = 'none';
+  document.getElementById('waitlistForm').style.display = 'none';
   document.getElementById('successMsg').style.display = 'block';
 }
 function openFamiliaModal(e) {
