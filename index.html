@@ -33,8 +33,8 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
 .mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:1.25rem}
 .mobile-menu a{text-decoration:none;color:var(--texto);font-size:1rem;font-weight:500}
 .mobile-menu.open{display:block}
-.hero{min-height:calc(100vh - 64px);display:grid;grid-template-columns:1fr 0.72fr}
-.hero-content{display:flex;flex-direction:column;justify-content:center;padding:4rem 3rem 4rem 4rem;max-width:640px;margin-left:auto}
+.hero{min-height:calc(100vh - 64px);display:grid;grid-template-columns:1fr 0.85fr;gap:2rem;align-items:center;padding:3rem 2rem;max-width:1200px;margin:0 auto}
+.hero-content{display:flex;flex-direction:column;justify-content:center;padding:0 1rem;max-width:640px}
 .hero-badge{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.72rem;font-weight:700;color:var(--oliva);background:var(--oliva-lt);padding:0.35rem 0.85rem;border-radius:20px;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1.75rem;width:fit-content}
 .hero-badge::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--oliva)}
 .hero h1{font-size:clamp(1.9rem,3vw,2.6rem);font-weight:700;line-height:1.15;letter-spacing:-0.03em;color:var(--texto);margin-bottom:1.25rem}
@@ -45,17 +45,19 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
 .btn-primary:active{transform:translateY(0);box-shadow:0 3px 8px rgba(74,82,64,0.25)}
 .btn-outline{background:transparent;color:var(--oliva);border:1px solid var(--oliva);padding:0.75rem 1.5rem;border-radius:8px;font-family:inherit;font-size:0.875rem;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.2s;box-shadow:0 4px 10px rgba(74,82,64,0.12)}
 .btn-outline:hover{background:var(--oliva);color:#fff;transform:translateY(-2px);box-shadow:0 8px 18px rgba(74,82,64,0.28)}
-.hero-divider{width:100%;height:1px;background:var(--oliva-lt);margin-bottom:2rem}
-.sobre-inline{display:flex;gap:1.25rem;align-items:flex-start}
-.sobre-foto{width:56px;height:56px;border-radius:50%;object-fit:cover;border:2px solid var(--oliva-lt);flex-shrink:0}
-.sobre-info h3{font-size:0.875rem;font-weight:700;color:var(--texto);margin-bottom:0.1rem}
-.sobre-titulo{font-size:0.75rem;color:var(--oliva-md);font-weight:500;margin-bottom:0.75rem;display:block}
-.sobre-info p{font-size:0.8rem;color:var(--texto);line-height:1.65;opacity:0.85;margin-bottom:0.875rem}
-.sobre-tags{display:flex;flex-wrap:wrap;gap:0.4rem}
-.sobre-tags span{font-size:0.7rem;font-weight:600;color:var(--oliva);background:var(--oliva-lt);padding:0.2rem 0.6rem;border-radius:4px;letter-spacing:0.02em}
-.hero-image{position:relative;overflow:hidden;max-height:520px;align-self:center}
-.hero-image img{width:100%;height:100%;max-height:520px;object-fit:cover;object-position:center;display:block}
-.servicos{background:#fff;padding:5rem 2rem}
+.hero-sobre{display:flex;justify-content:center;align-items:center}
+.sobre-card{background:#fff;border:1px solid var(--oliva-lt);border-top:3px solid var(--dourado);border-radius:16px;padding:2rem;max-width:420px;width:100%;box-shadow:0 12px 32px rgba(74,82,64,0.12),0 4px 8px rgba(0,0,0,0.06);text-align:center}
+.sobre-foto-grande{width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid var(--oliva-lt);margin:0 auto 1rem;display:block}
+.sobre-card h3{font-size:1.1rem;font-weight:700;color:var(--texto);margin-bottom:0.2rem}
+.sobre-titulo{font-size:0.78rem;color:var(--oliva-md);font-weight:500;margin-bottom:1rem;display:block}
+.sobre-card p{font-size:0.82rem;color:var(--texto);line-height:1.65;opacity:0.85;margin-bottom:1rem;text-align:left}
+.sobre-tags{display:flex;flex-wrap:wrap;gap:0.4rem;justify-content:center;margin-bottom:1rem}
+.sobre-tags span{font-size:0.7rem;font-weight:600;color:var(--oliva);background:var(--oliva-lt);padding:0.25rem 0.65rem;border-radius:4px;letter-spacing:0.02em}
+.sobre-insta{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.85rem;font-weight:600;color:var(--oliva);text-decoration:none}
+.sobre-insta:hover{text-decoration:underline}
+.servicos{background:#fff;padding:5rem 2rem;position:relative}
+.servicos::before{content:'';position:absolute;top:-1px;left:0;right:0;height:60px;background:linear-gradient(to bottom,var(--creme) 0%,#fff 100%);pointer-events:none}
+.servicos::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:60px;background:linear-gradient(to bottom,#fff 0%,var(--creme) 100%);pointer-events:none}
 .section-container{max-width:1200px;margin:0 auto}
 .section-header{text-align:center;margin-bottom:3rem}
 .section-tag{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--oliva-md);display:block;margin-bottom:0.75rem}
@@ -91,7 +93,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
 .blog-tag{display:inline-block;font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--oliva);background:var(--oliva-lt);padding:0.2rem 0.6rem;border-radius:4px;margin-bottom:0.75rem}
 .blog-card h3{font-size:0.95rem;font-weight:700;color:var(--texto);line-height:1.4;margin-bottom:0.5rem}
 .blog-em-breve{font-size:0.78rem;color:var(--oliva-md);font-weight:500}
-.contato{padding:5rem 2rem;background:var(--creme)}
+.contato{padding:5rem 2rem;background:var(--creme);position:relative}
 .contato-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:1200px;margin:0 auto}
 .contato-info .section-tag{text-align:left;display:block;margin-bottom:0.75rem}
 .contato-info h2{font-size:clamp(1.4rem,2.5vw,1.85rem);font-weight:700;letter-spacing:-0.02em;color:var(--texto);margin-bottom:0.75rem}
@@ -125,10 +127,9 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
 @media(max-width:768px){
   .nav-links,.nav-cta{display:none}
   .hamburger{display:flex}
-  .hero{grid-template-columns:1fr;min-height:auto}
-  .hero-image{height:260px;max-height:260px;order:-1;align-self:auto}
-  .hero-image img{max-height:260px}
-  .hero-content{padding:2.5rem 1.5rem;max-width:100%;margin:0}
+  .hero{grid-template-columns:1fr;min-height:auto;padding:2rem 1.5rem;gap:2rem}
+  .hero-content{padding:0;max-width:100%;margin:0}
+  .sobre-card{max-width:100%}
   .cards-grid{grid-template-columns:1fr 1fr}
   .guia-card{grid-template-columns:1fr;gap:1.5rem;padding:2rem}
   .blog-grid{grid-template-columns:1fr}
@@ -178,27 +179,23 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
       <a href="#" class="btn-primary" onclick="openListaModal(event)">Entrar na lista de espera</a>
       <a href="#servicos" class="btn-outline">Conhecer os serviços</a>
     </div>
-    <div class="hero-divider"></div>
-    <div class="sobre-inline" id="sobre">
-      <img src="hosana.jpg" alt="Hosana Muniz" class="sobre-foto" onerror="this.src='https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=120&h=120&fit=crop&crop=face'"/>
-      <div class="sobre-info">
-        <h3>Hosana Muniz</h3>
-        <span class="sobre-titulo">Nutricionista em formação</span>
-        <p>Natural de Santos, apaixonada por nutrição por necessidade própria. Com mais de 7 anos na gestão de clínicas, hoje atua com foco em transformação real: energia, saúde intestinal, pele e equilíbrio metabólico. Formada em Nutrição, pós-graduanda em Endocrinologia e Metabolologia, com certificação internacional em Psiquiatria Nutricional pelo INCCOR.</p>
-        <div class="sobre-tags">
-          <span>Mais energia no dia a dia</span>
-          <span>Melhor relação com a alimentação</span>
-          <span>Acompanhamento próximo e contínuo</span>
-        </div>
-        <a href="https://www.instagram.com/hosanamuniz" target="_blank" style="display:inline-flex;align-items:center;gap:0.35rem;margin-top:0.75rem;font-size:0.8rem;font-weight:600;color:var(--oliva);text-decoration:none;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          @hosanamuniz
-        </a>
-      </div>
-    </div>
   </div>
-  <div class="hero-image">
-    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&auto=format&fit=crop" alt="Bowl saudável" onerror="this.src='https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&auto=format&fit=crop'"/>
+  <div class="hero-sobre" id="sobre">
+    <div class="sobre-card">
+      <img src="hosana.jpg" alt="Hosana Muniz" class="sobre-foto-grande" onerror="this.src='https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=240&h=240&fit=crop&crop=face'"/>
+      <h3>Hosana Muniz</h3>
+      <span class="sobre-titulo">Nutricionista em formação</span>
+      <p>Natural de Santos, apaixonada por nutrição por necessidade própria. Com mais de 7 anos na gestão de clínicas, hoje atua com foco em transformação real: energia, saúde intestinal, pele e equilíbrio metabólico. Formada em Nutrição, pós-graduanda em Endocrinologia e Metabolologia, com certificação internacional em Psiquiatria Nutricional pelo INCCOR.</p>
+      <div class="sobre-tags">
+        <span>Mais energia no dia a dia</span>
+        <span>Melhor relação com a alimentação</span>
+        <span>Acompanhamento próximo e contínuo</span>
+      </div>
+      <a href="https://www.instagram.com/hosanamuniz" target="_blank" class="sobre-insta">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        @hosanamuniz
+      </a>
+    </div>
   </div>
 </section>
 <section class="servicos" id="servicos">
