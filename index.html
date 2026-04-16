@@ -72,9 +72,9 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
 .guia-badge{display:inline-block;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--dourado);border:1px solid var(--dourado);padding:0.3rem 0.75rem;border-radius:4px;margin-bottom:1.25rem}
 .guia-card h2{font-size:clamp(1.5rem,2.5vw,2rem);font-weight:700;color:#fff;letter-spacing:-0.02em;margin-bottom:1rem;line-height:1.2}
 .guia-card p{font-size:0.9rem;color:rgba(255,255,255,0.75);line-height:1.7;max-width:480px}
-.btn-dourado{background:var(--dourado);color:#fff;border:none;padding:1.6rem 3.5rem;border-radius:14px;font-family:inherit;font-size:1.35rem;font-weight:700;cursor:pointer;text-decoration:none;white-space:nowrap;display:inline-block;transition:all 0.2s;box-shadow:0 10px 0 #a07e44,0 14px 28px rgba(0,0,0,0.3);letter-spacing:0.01em}
-.btn-dourado:hover{background:#e0b779;transform:translateY(-3px);box-shadow:0 11px 0 #a07e44,0 16px 30px rgba(0,0,0,0.3)}
-.btn-dourado:active{transform:translateY(4px);box-shadow:0 4px 0 #a07e44,0 6px 12px rgba(0,0,0,0.2)}
+.btn-dourado{background:var(--dourado);color:#fff;border:none;padding:0.95rem 1.85rem;border-radius:10px;font-family:inherit;font-size:0.95rem;font-weight:700;cursor:pointer;text-decoration:none;white-space:nowrap;display:inline-block;transition:all 0.2s;box-shadow:0 6px 0 #a07e44,0 9px 18px rgba(0,0,0,0.22);letter-spacing:0.01em}
+.btn-dourado:hover{background:#e0b779;transform:translateY(-2px);box-shadow:0 8px 0 #a07e44,0 12px 22px rgba(0,0,0,0.28)}
+.btn-dourado:active{transform:translateY(3px);box-shadow:0 3px 0 #a07e44,0 5px 10px rgba(0,0,0,0.18)}
 .lista-espera{padding:5rem 2rem;background:var(--creme);display:none}
 .waitlist-form{max-width:480px;margin:0 auto;display:flex;flex-direction:column;gap:0.875rem}
 .waitlist-form input{width:100%;padding:0.75rem 1rem;border:1px solid var(--oliva-lt);border-radius:8px;font-family:inherit;font-size:0.9rem;background:#fff;color:var(--texto);outline:none;transition:border-color 0.2s}
@@ -227,20 +227,6 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
     </div>
   </div>
 </section>
-<section class="guia" id="guia">
-  <div class="section-container">
-    <div class="guia-card">
-      <div>
-        <span class="guia-badge">Em breve</span>
-        <h2>Família Saudável</h2>
-        <p>Acredito no impacto do ambiente nos hábitos alimentares. Por isso, estou criando o "Família Saudável".</p>
-        <p style="margin-top:0.75rem;font-size:0.9rem;color:rgba(255,255,255,0.75);line-height:1.7;max-width:480px;">Acompanhamento prático para famílias que desejam melhorar a alimentação no dia a dia, com orientações aplicáveis para um ambiente mais saudável, sem restrições desnecessárias.</p>
-        <p style="margin-top:0.75rem;font-size:0.9rem;color:rgba(255,255,255,0.75);line-height:1.7;max-width:480px;">Uma proposta de suporte contínuo para ajudar na organização da rotina alimentar da casa, promovendo hábitos mais saudáveis de forma realista e sustentável.</p>
-      </div>
-      <a href="#" class="btn-dourado" onclick="openFamiliaModal(event)">Quero ser avisado quando abrir</a>
-    </div>
-  </div>
-</section>
 <section class="lista-espera" id="lista-espera">
   <div class="section-container">
     <div class="section-header">
@@ -319,6 +305,20 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
       <textarea id="cf-msg" placeholder="Sua mensagem" required></textarea>
       <button type="submit" class="btn-primary">Enviar mensagem pelo WhatsApp</button>
     </form>
+  </div>
+</section>
+<section class="guia" id="guia">
+  <div class="section-container">
+    <div class="guia-card">
+      <div>
+        <span class="guia-badge">Em breve</span>
+        <h2>Família Saudável</h2>
+        <p>Acredito no impacto do ambiente nos hábitos alimentares. Por isso, estou criando o "Família Saudável".</p>
+        <p style="margin-top:0.75rem;font-size:0.9rem;color:rgba(255,255,255,0.75);line-height:1.7;max-width:480px;">Acompanhamento prático para famílias que desejam melhorar a alimentação no dia a dia, com orientações aplicáveis para um ambiente mais saudável, sem restrições desnecessárias.</p>
+        <p style="margin-top:0.75rem;font-size:0.9rem;color:rgba(255,255,255,0.75);line-height:1.7;max-width:480px;">Uma proposta de suporte contínuo para ajudar na organização da rotina alimentar da casa, promovendo hábitos mais saudáveis de forma realista e sustentável.</p>
+      </div>
+      <a href="#" class="btn-dourado" onclick="openFamiliaModal(event)">Quero ser avisado quando abrir</a>
+    </div>
   </div>
 </section>
 <footer class="footer">
