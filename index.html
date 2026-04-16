@@ -314,7 +314,7 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
         <p style="margin-top:0.75rem;font-size:0.9rem;color:rgba(255,255,255,0.75);line-height:1.7;max-width:480px;">Acompanhamento prático para famílias que desejam melhorar a alimentação no dia a dia, com orientações aplicáveis para um ambiente mais saudável, sem restrições desnecessárias.</p>
         <p style="margin-top:0.75rem;font-size:0.9rem;color:rgba(255,255,255,0.75);line-height:1.7;max-width:480px;">Uma proposta de suporte contínuo para ajudar na organização da rotina alimentar da casa, promovendo hábitos mais saudáveis de forma realista e sustentável.</p>
       </div>
-      <a href="https://wa.me/5513991149157?text=Ol%C3%A1%2C%20Hosana!%20Tenho%20interesse%20no%20programa%20Fam%C3%ADlia%20Saud%C3%A1vel.%20Pode%20me%20contar%20mais%3F" target="_blank" class="btn-dourado">Quero ser avisado quando abrir</a>
+      <a href="#" class="btn-dourado" onclick="openFamiliaModal(event)">Quero ser avisado quando abrir</a>
     </div>
   </div>
 </section>
@@ -330,6 +330,7 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
     <form id="waitlistForm" onsubmit="submitWaitlist(event)">
       <input type="text" id="lst-nome" placeholder="Seu nome completo" required/>
       <input type="email" id="lst-email" placeholder="Seu melhor e-mail" required/>
+      <input type="tel" id="lst-tel" placeholder="Seu telefone com DDD" required/>
       <button type="submit" class="btn-primary">Quero entrar na lista</button>
     </form>
     <div class="modal-success" id="successMsg">Incrível! Você está na lista. Te avisaremos em breve.</div>
@@ -343,6 +344,7 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
     <form id="familiaForm" onsubmit="submitFamilia(event)">
       <input type="text" id="fam-nome" placeholder="Seu nome completo" required/>
       <input type="email" id="fam-email" placeholder="Seu melhor e-mail" required/>
+      <input type="tel" id="fam-tel" placeholder="Seu telefone com DDD" required/>
       <button type="submit" class="btn-primary">Quero ser avisado</button>
     </form>
     <div class="modal-success" id="familiaSuccess">Pronto! Te avisaremos assim que abrirmos.</div>
@@ -369,10 +371,11 @@ function submitWaitlist(e) {
   e.preventDefault();
   const nome = document.getElementById('lst-nome').value;
   const email = document.getElementById('lst-email').value;
+  const tel = document.getElementById('lst-tel').value;
   fetch(APPS_SCRIPT_URL, {
     method: 'POST',
     mode: 'no-cors',
-    body: JSON.stringify({ nome: nome, email: email, lista: 'Lista de Espera' })
+    body: JSON.stringify({ nome: nome, email: email, telefone: tel, lista: 'Lista de Espera' })
   });
   document.getElementById('waitlistForm').style.display = 'none';
   document.getElementById('successMsg').style.display = 'block';
@@ -389,10 +392,11 @@ function submitFamilia(e) {
   e.preventDefault();
   const nome = document.getElementById('fam-nome').value;
   const email = document.getElementById('fam-email').value;
+  const tel = document.getElementById('fam-tel').value;
   fetch(APPS_SCRIPT_URL, {
     method: 'POST',
     mode: 'no-cors',
-    body: JSON.stringify({ nome: nome, email: email, lista: 'Família Saudável' })
+    body: JSON.stringify({ nome: nome, email: email, telefone: tel, lista: 'Família Saudável' })
   });
   document.getElementById('familiaForm').style.display = 'none';
   document.getElementById('familiaSuccess').style.display = 'block';
