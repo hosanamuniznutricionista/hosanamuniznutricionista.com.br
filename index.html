@@ -15,6 +15,8 @@
   --oliva-lt:#D4DCCA;
   --creme:#F7F5EF;
   --dourado:#D4A96A;
+  --rose:#A84762;
+  --rose-lt:#F2DDE2;
   --texto:#2C2C28;
 }
 html{scroll-behavior:smooth}
@@ -35,8 +37,8 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
 .mobile-menu.open{display:block}
 .hero{min-height:calc(100vh - 64px);display:grid;grid-template-columns:1fr 0.85fr;gap:2rem;align-items:center;padding:3rem 2rem;max-width:1200px;margin:0 auto}
 .hero-content{display:flex;flex-direction:column;justify-content:center;padding:0 1rem;max-width:640px}
-.hero-badge{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.72rem;font-weight:700;color:var(--oliva);background:var(--oliva-lt);padding:0.35rem 0.85rem;border-radius:20px;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1.75rem;width:fit-content}
-.hero-badge::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--oliva)}
+.hero-badge{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.72rem;font-weight:700;color:var(--rose);background:var(--rose-lt);padding:0.35rem 0.85rem;border-radius:20px;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1.75rem;width:fit-content}
+.hero-badge::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--rose)}
 .hero h1{font-size:clamp(1.9rem,3vw,2.6rem);font-weight:700;line-height:1.15;letter-spacing:-0.03em;color:var(--texto);margin-bottom:1.25rem}
 .hero-subtitle{font-size:1rem;color:var(--oliva-md);font-weight:400;line-height:1.7;margin-bottom:2rem;max-width:420px}
 .hero-buttons{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem}
@@ -64,7 +66,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
 .section-header h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:700;letter-spacing:-0.02em;color:var(--texto)}
 .cards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
 .card{border:1px solid var(--oliva-lt);border-top:3px solid var(--dourado);border-radius:12px;padding:1.75rem 1.5rem;background:#fff;transition:all 0.3s ease;box-shadow:0 4px 12px rgba(74,82,64,0.08),0 2px 4px rgba(0,0,0,0.04)}
-.card-icon{width:44px;height:44px;border-radius:10px;background:var(--oliva-lt);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;color:var(--oliva)}
+.card-icon{width:44px;height:44px;border-radius:10px;background:var(--rose-lt);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;color:var(--rose)}
 .card-icon svg{width:22px;height:22px}
 .card:hover{border-color:var(--oliva-md);border-top-color:var(--dourado);transform:translateY(-6px);box-shadow:0 16px 32px rgba(74,82,64,0.18),0 6px 12px rgba(0,0,0,0.08)}
 .card h3{font-size:0.95rem;font-weight:700;color:var(--texto);margin-bottom:0.625rem;letter-spacing:-0.01em}
@@ -101,7 +103,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
 .contato-info h2{font-size:clamp(1.4rem,2.5vw,1.85rem);font-weight:700;letter-spacing:-0.02em;color:var(--texto);margin-bottom:0.75rem}
 .contato-info > p{font-size:0.9rem;color:var(--oliva-md);line-height:1.7;margin-bottom:2rem}
 .contato-item{display:flex;align-items:flex-start;gap:0.875rem;margin-bottom:1.25rem}
-.contato-icon{width:36px;height:36px;border-radius:8px;background:var(--oliva-lt);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--oliva)}
+.contato-icon{width:36px;height:36px;border-radius:8px;background:var(--rose-lt);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--rose)}
 .contato-icon svg{width:18px;height:18px}
 .contato-item-text small{display:block;font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--oliva-md);margin-bottom:0.2rem}
 .contato-item-text a,.contato-item-text span{font-size:0.9rem;color:var(--texto);text-decoration:none;font-weight:500}
@@ -153,7 +155,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
     <ul class="nav-links">
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#servicos">Serviços</a></li>
-      <li><a href="#guia">Guia Familiar</a></li>
+      <li class="nav-blog"><a href="#guia">Guia Familiar</a></li>
       <li class="nav-blog"><a href="#blog">Blog</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
@@ -167,7 +169,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
   <ul>
     <li><a href="#sobre" onclick="closeMobile()">Sobre</a></li>
     <li><a href="#servicos" onclick="closeMobile()">Serviços</a></li>
-    <li><a href="#guia" onclick="closeMobile()">Guia Familiar</a></li>
+    <li class="nav-blog"><a href="#guia" onclick="closeMobile()">Guia Familiar</a></li>
     <li class="nav-blog"><a href="#blog" onclick="closeMobile()">Blog</a></li>
     <li><a href="#contato" onclick="closeMobile()">Contato</a></li>
     <li><a href="#" class="nav-cta" onclick="closeMobile();openListaModal(event)">Lista de espera</a></li>
@@ -232,12 +234,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
       <span class="section-tag">Vagas limitadas</span>
       <h2>Entre na lista de espera</h2>
     </div>
-    <form class="waitlist-form" id="waitlistForm" onsubmit="submitWaitlist(event)">
-      <input type="text" placeholder="Seu nome completo" required/>
-      <input type="email" placeholder="Seu melhor e-mail" required/>
-      <button type="submit" class="btn-primary">Quero entrar na lista</button>
-    </form>
-    <div class="success-msg" id="successMsg">Incrível! Você está na lista. Te avisaremos em breve.</div>
+    <div class="success-msg">Formulário movido para popup.</div>
   </div>
 </section>
 <section class="blog" id="blog">
