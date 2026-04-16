@@ -321,7 +321,15 @@ hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
 function closeMobile() { mobileMenu.classList.remove('open'); }
 function submitWaitlist(e) {
   e.preventDefault();
-  document.getElementById('waitlistForm').style.display = 'none';
+  const form = document.getElementById('waitlistForm');
+  const nome = form.querySelector('input[type="text"]').value;
+  const email = form.querySelector('input[type="email"]').value;
+  fetch('https://script.google.com/macros/s/AKfycbx6lSurW9Z6bOZUg8eSTOxR_APpHurbcOpC_Nl-jCJBFeLW1PKEoXRsTvWtcigZbeqB/exec', {
+    method: 'POST',
+    mode: 'no-cors',
+    body: JSON.stringify({ nome: nome, email: email })
+  });
+  form.style.display = 'none';
   document.getElementById('successMsg').style.display = 'block';
 }
 function submitContato(e) {
