@@ -81,7 +81,8 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
 .waitlist-form input:focus{border-color:var(--oliva-md)}
 .waitlist-form .btn-primary{width:100%;padding:0.875rem;text-align:center}
 .success-msg{display:none;text-align:center;color:var(--oliva);font-size:0.9rem;font-weight:600;padding:1rem;background:var(--oliva-lt);border-radius:8px;max-width:480px;margin:0 auto}
-.blog{padding:5rem 2rem;background:#fff}
+.blog{padding:5rem 2rem;background:#fff;display:none}
+.nav-blog{display:none}
 .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 .blog-card{border:1px solid var(--oliva-lt);border-radius:12px;overflow:hidden;background:#fff;transition:all 0.3s ease;box-shadow:0 4px 12px rgba(74,82,64,0.08),0 2px 4px rgba(0,0,0,0.04)}
 .blog-card:hover{border-color:var(--oliva-md);transform:translateY(-6px);box-shadow:0 16px 32px rgba(74,82,64,0.18),0 6px 12px rgba(0,0,0,0.08)}
@@ -149,7 +150,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#servicos">Serviços</a></li>
       <li><a href="#guia">Guia Familiar</a></li>
-      <li><a href="#blog">Blog</a></li>
+      <li class="nav-blog"><a href="#blog">Blog</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
     <a href="#lista-espera" class="nav-cta">Lista de espera</a>
@@ -163,7 +164,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);background:va
     <li><a href="#sobre" onclick="closeMobile()">Sobre</a></li>
     <li><a href="#servicos" onclick="closeMobile()">Serviços</a></li>
     <li><a href="#guia" onclick="closeMobile()">Guia Familiar</a></li>
-    <li><a href="#blog" onclick="closeMobile()">Blog</a></li>
+    <li class="nav-blog"><a href="#blog" onclick="closeMobile()">Blog</a></li>
     <li><a href="#contato" onclick="closeMobile()">Contato</a></li>
     <li><a href="#lista-espera" class="nav-cta" onclick="closeMobile()">Lista de espera</a></li>
   </ul>
