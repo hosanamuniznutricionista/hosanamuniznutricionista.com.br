@@ -4,10 +4,10 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Hosana Muniz | Nutricionista</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234A5240'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Raleway,sans-serif' font-weight='700' font-size='14' fill='%23F7F5EF'%3EHM%3C/text%3E%3C/svg%3E"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%234A5240'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='serif' font-weight='400' font-size='18' fill='%23D4A96A' letter-spacing='-1'%3EHM%3C/text%3E%3C/svg%3E"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400&family=Cormorant+Garamond:wght@300;400;500&family=Italiana&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -24,7 +24,14 @@ html{scroll-behavior:smooth}
 body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme);line-height:1.6;overflow-x:hidden}
 .navbar{position:sticky;top:0;z-index:1000;background:var(--creme);border-bottom:1px solid var(--oliva-lt);padding:0 2rem}
 .nav-container{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
-.nav-logo{font-family:'Bodoni Moda',serif;font-weight:500;font-size:1.15rem;color:var(--oliva);text-decoration:none;letter-spacing:0.12em;text-transform:uppercase}
+.nav-logo{display:flex;align-items:center;gap:0.7rem;text-decoration:none;color:var(--oliva)}
+.nav-logo .mono{font-family:'Italiana',serif;font-size:1.9rem;color:var(--dourado);line-height:1;letter-spacing:-0.08em;position:relative;padding:0 0.9rem}
+.nav-logo .mono::before,.nav-logo .mono::after{content:'';position:absolute;top:50%;width:0.45rem;height:1px;background:var(--dourado)}
+.nav-logo .mono::before{left:0}
+.nav-logo .mono::after{right:0}
+.nav-logo .txt{display:flex;flex-direction:column;line-height:1.1}
+.nav-logo .nome{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:0.95rem;letter-spacing:0.22em;color:var(--oliva);text-transform:uppercase}
+.nav-logo .sub{font-family:'Raleway',sans-serif;font-weight:300;font-size:0.56rem;letter-spacing:0.38em;color:var(--oliva-md);text-transform:uppercase;margin-top:2px}
 .nav-links{display:flex;gap:2rem;list-style:none}
 .nav-links a{text-decoration:none;color:var(--texto);font-size:0.875rem;font-weight:500;transition:color 0.2s}
 .nav-links a:hover{color:var(--oliva)}
@@ -146,13 +153,19 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
 @media(max-width:480px){
   .cards-grid{grid-template-columns:1fr}
   .hero-buttons{flex-direction:column}
+  .nav-logo .mono{font-size:1.6rem;padding:0 0.65rem}
+  .nav-logo .nome{font-size:0.82rem;letter-spacing:0.18em}
+  .nav-logo .sub{font-size:0.5rem;letter-spacing:0.32em}
 }
 </style>
 </head>
 <body>
 <nav class="navbar" id="navbar">
   <div class="nav-container">
-    <a href="#home" class="nav-logo">Hosana Muniz</a>
+    <a href="#home" class="nav-logo" aria-label="Hosana Muniz · Nutricionista">
+      <span class="mono">HM</span>
+      <span class="txt"><span class="nome">Hosana Muniz</span><span class="sub">nutricionista</span></span>
+    </a>
     <ul class="nav-links">
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#servicos">Serviços</a></li>
@@ -413,3 +426,4 @@ function submitContato(e) {
 </script>
 </body>
 </html>
+
