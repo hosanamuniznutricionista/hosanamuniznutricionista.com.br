@@ -294,6 +294,19 @@
     width: 20px;
     height: 20px;
   }
+  .link-icon.nutra-icon {
+    background: #fff;
+    padding: 0;
+    border: 1px solid var(--oliva-lt);
+  }
+  .link-icon.nutra-icon svg {
+    width: 30px;
+    height: 30px;
+  }
+  .link-card:hover .link-icon.nutra-icon {
+    background: var(--oliva-lt);
+    border-color: var(--oliva-md);
+  }
   .link-content { flex: 1; min-width: 0; }
   .link-title {
     font-family: 'Raleway', sans-serif;
@@ -403,7 +416,7 @@
   </div>
 
   <h1>Hosana Muniz</h1>
-  <div class="role">Cuidado nutricional personalizado</div>
+  <div class="role">Atendimentos online e presenciais</div>
 
   <div class="divider">
     <span class="line"></span>
@@ -436,11 +449,14 @@
 
     <a class="link-card" href="https://plataformanutra.com.br" target="_blank" rel="noopener" data-track="nutra">
       <div class="link-row">
-        <div class="link-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="18" height="18" rx="4"/>
-            <path d="M8 12h8"/>
-            <path d="M12 8v8"/>
+        <div class="link-icon nutra-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="22" stroke="#4A5240" stroke-width="1.5" fill="none"/>
+            <path d="M16 32 C16 20 24 14 24 14 C24 14 32 20 32 32" stroke="#4A5240" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+            <path d="M20 32 C20 24 24 19 24 19 C24 19 28 24 28 32" fill="#D4DCCA" opacity="0.6"/>
+            <line x1="24" y1="14" x2="24" y2="34" stroke="#4A5240" stroke-width="1.2" stroke-linecap="round"/>
+            <path d="M24 22 C21 20 18.5 21.5 18.5 21.5" stroke="#7A8C6E" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+            <path d="M24 26 C27 24 29.5 25.5 29.5 25.5" stroke="#7A8C6E" stroke-width="1.2" stroke-linecap="round" fill="none"/>
           </svg>
         </div>
         <div class="link-content">
