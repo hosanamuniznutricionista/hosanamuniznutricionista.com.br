@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Hosana Muniz · Links</title>
+<meta name="description" content="Hosana Muniz — links para a plataforma NUTRA e lista de espera de consultas.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%234A5240'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='serif' font-weight='400' font-size='18' fill='%23D4A96A' letter-spacing='-1'%3EHM%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600&family=Cormorant+Garamond:wght@300;400;500&family=Italiana&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --oliva: #4A5240;
+    --oliva-md: #7A8C6E;
+    --oliva-lt: #D4DCCA;
+    --creme: #F7F5EF;
+    --creme-soft: #EFEADF;
+    --dourado: #D4A96A;
+    --dourado-soft: #E8D3A8;
+    --rose: #A84762;
+    --rose-lt: #F2DDE2;
+    --texto: #2C2C28;
+  }
+  html, body { height: 100%; }
+  body {
+    font-family: 'Raleway', sans-serif;
+    color: var(--texto);
+    background: var(--creme);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    min-height: 100vh;
+  }
+
+  /* subtle gradient background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at top, rgba(212, 169, 106, 0.10) 0%, transparent 55%),
+      radial-gradient(ellipse at bottom, rgba(122, 140, 110, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: 420px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  /* AVATAR */
+  .avatar-wrap {
+    position: relative;
+    width: 128px;
+    height: 128px;
+    margin: 0 auto 26px;
+    opacity: 0;
+    transform: scale(0.92);
+    animation: rise 0.9s cubic-bezier(.2,.9,.3,1) 0.05s forwards;
+  }
+  .avatar-ring {
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 1px solid var(--dourado);
+    opacity: 0.55;
+    animation: breathe 4s ease-in-out infinite;
+  }
+  .avatar-ring.inner {
+    inset: -4px;
+    border-color: var(--dourado-soft);
+    animation-delay: 2s;
+    opacity: 0.4;
+  }
+  .avatar {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    box-shadow:
+      0 12px 28px rgba(74, 82, 64, 0.18),
+      0 4px 10px rgba(0, 0, 0, 0.06),
+      inset 0 0 0 3px var(--creme);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* NAME BLOCK */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--oliva-md);
+    padding: 0.3rem 0.85rem;
+    background: rgba(122, 140, 110, 0.10);
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: rise 0.75s cubic-bezier(.2,.9,.3,1) 0.25s forwards;
+  }
+  .badge::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--dourado);
+  }
+
+  h1 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--texto);
+    letter-spacing: 0.015em;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    animation: rise 0.75s cubic-bezier(.2,.9,.3,1) 0.4s forwards;
+  }
+
+  .role {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--oliva-md);
+    margin-bottom: 2.25rem;
+    opacity: 0;
+    animation: rise 0.75s cubic-bezier(.2,.9,.3,1) 0.55s forwards;
+  }
+
+  /* DIVIDER */
+  .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: rise 0.75s cubic-bezier(.2,.9,.3,1) 0.7s forwards;
+  }
+  .divider .line {
+    width: 40px;
+    height: 1px;
+    background: var(--dourado);
+    opacity: 0.6;
+  }
+  .divider .dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--dourado);
+  }
+
+  /* BUTTONS */
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .link-card {
+    display: block;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid var(--oliva-lt);
+    border-radius: 14px;
+    padding: 1.15rem 1.25rem;
+    text-align: left;
+    box-shadow:
+      0 4px 14px rgba(74, 82, 64, 0.06),
+      0 1px 3px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s cubic-bezier(.2,.9,.3,1),
+                box-shadow 0.3s ease,
+                border-color 0.3s ease,
+                background 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(14px);
+    animation: rise-btn 0.75s cubic-bezier(.2,.9,.3,1) forwards;
+  }
+  .link-card:nth-of-type(1) { animation-delay: 0.85s; }
+  .link-card:nth-of-type(2) { animation-delay: 1s; }
+
+  /* destaque (primário) */
+  .link-card.primary {
+    background: var(--oliva);
+    border-color: var(--oliva);
+    box-shadow:
+      0 10px 24px rgba(74, 82, 64, 0.28),
+      0 3px 8px rgba(0, 0, 0, 0.08);
+    padding: 1.35rem 1.4rem;
+  }
+  .link-card.primary .link-title { color: #fff; }
+  .link-card.primary .link-sub { color: var(--dourado-soft); }
+  .link-card.primary .link-icon {
+    background: rgba(247, 245, 239, 0.12);
+    color: var(--creme);
+  }
+  .link-card.primary:hover .link-icon {
+    background: var(--dourado);
+    color: var(--oliva);
+  }
+  .link-card.primary .link-arrow { color: var(--dourado-soft); }
+  .link-card.primary:hover .link-arrow { color: var(--dourado); }
+  .link-card.primary::before { background: var(--dourado); width: 4px; }
+  .link-card.primary .badge-destaque {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--dourado);
+    padding: 0.2rem 0.55rem;
+    background: rgba(212, 169, 106, 0.18);
+    border-radius: 12px;
+  }
+
+  .link-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--dourado);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.4s cubic-bezier(.2,.9,.3,1);
+  }
+
+  .link-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--oliva-md);
+    box-shadow:
+      0 14px 30px rgba(74, 82, 64, 0.15),
+      0 4px 10px rgba(0, 0, 0, 0.06);
+  }
+  .link-card.primary:hover {
+    border-color: var(--oliva);
+    background: #3d4435;
+    box-shadow:
+      0 18px 36px rgba(74, 82, 64, 0.38),
+      0 6px 12px rgba(0, 0, 0, 0.12);
+  }
+  .link-card:hover::before { transform: scaleY(1); }
+
+  .link-card:active {
+    transform: translateY(-1px);
+  }
+
+  .link-row {
+    display: flex;
+    align-items: center;
+    gap: 0.95rem;
+  }
+  .link-icon {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: var(--creme-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--oliva);
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  .link-card:hover .link-icon {
+    background: var(--oliva);
+    color: var(--creme);
+  }
+  .link-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  .link-content { flex: 1; min-width: 0; }
+  .link-title {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--texto);
+    letter-spacing: 0.01em;
+    margin-bottom: 2px;
+  }
+  .link-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    color: var(--oliva-md);
+    font-style: italic;
+    letter-spacing: 0.02em;
+  }
+  .link-arrow {
+    flex-shrink: 0;
+    color: var(--oliva-md);
+    transition: transform 0.3s cubic-bezier(.2,.9,.3,1), color 0.3s ease;
+  }
+  .link-card:hover .link-arrow {
+    transform: translate(3px, -3px);
+    color: var(--oliva);
+  }
+  .link-arrow svg { width: 16px; height: 16px; }
+
+  /* FOOTER */
+  footer {
+    margin-top: 2.5rem;
+    text-align: center;
+    opacity: 0;
+    animation: rise 0.75s cubic-bezier(.2,.9,.3,1) 1.2s forwards;
+  }
+  .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Italiana', serif;
+    font-size: 1.2rem;
+    color: var(--dourado);
+    letter-spacing: -0.06em;
+    margin-bottom: 0.25rem;
+    position: relative;
+    padding: 0 0.7rem;
+  }
+  .footer-logo::before, .footer-logo::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 0.4rem;
+    height: 1px;
+    background: var(--dourado);
+  }
+  .footer-logo::before { left: 0; }
+  .footer-logo::after { right: 0; }
+  .footer-tag {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.6rem;
+    color: var(--oliva-md);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+  }
+
+  /* ANIMATIONS */
+  @keyframes rise {
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  @keyframes rise-btn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes breathe {
+    0%, 100% { transform: scale(1); opacity: 0.55; }
+    50% { transform: scale(1.06); opacity: 0.25; }
+  }
+
+  /* REDUCED MOTION */
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+    .avatar-wrap, .badge, h1, .role, .divider, .link-card, footer {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    body { padding: 32px 20px; }
+    h1 { font-size: 1.75rem; }
+    .avatar-wrap, .avatar { width: 112px; height: 112px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="avatar-wrap">
+    <div class="avatar-ring"></div>
+    <div class="avatar-ring inner"></div>
+    <img class="avatar" src="hosana.jpg" alt="Hosana Muniz">
+  </div>
+
+  <h1>Hosana Muniz</h1>
+  <div class="role">Cuidado nutricional personalizado</div>
+
+  <div class="divider">
+    <span class="line"></span>
+    <span class="dot"></span>
+    <span class="line"></span>
+  </div>
+
+  <div class="links">
+
+    <a class="link-card primary" href="/#waitlist" data-track="waitlist">
+      <div class="link-row">
+        <div class="link-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 8v4l2.5 2.5"/>
+            <circle cx="12" cy="12" r="9"/>
+          </svg>
+        </div>
+        <div class="link-content">
+          <div class="link-title">Lista de espera</div>
+          <div class="link-sub">Consultas nutricionais</div>
+        </div>
+        <div class="link-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17L17 7"/>
+            <path d="M8 7h9v9"/>
+          </svg>
+        </div>
+      </div>
+    </a>
+
+    <a class="link-card" href="https://plataformanutra.com.br" target="_blank" rel="noopener" data-track="nutra">
+      <div class="link-row">
+        <div class="link-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="4"/>
+            <path d="M8 12h8"/>
+            <path d="M12 8v8"/>
+          </svg>
+        </div>
+        <div class="link-content">
+          <div class="link-title">Plataforma NUTRA</div>
+          <div class="link-sub">Para nutricionistas</div>
+        </div>
+        <div class="link-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17L17 7"/>
+            <path d="M8 7h9v9"/>
+          </svg>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <footer>
+    <div class="footer-logo">HM</div>
+    <div class="footer-tag">Hosana Muniz</div>
+  </footer>
+
+</div>
+
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
