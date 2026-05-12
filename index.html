@@ -7,17 +7,18 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%234A5240'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='serif' font-weight='400' font-size='18' fill='%23D4A96A' letter-spacing='-1'%3EHM%3C/text%3E%3C/svg%3E"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400&family=Cormorant+Garamond:wght@300;400;500&family=Italiana&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Cormorant+Garamond:wght@300;400;500&family=Italiana&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --oliva:#4A5240;
   --oliva-md:#7A8C6E;
-  --oliva-lt:#D4DCCA;
-  --creme:#F7F5EF;
-  --dourado:#D4A96A;
-  --rose:#A84762;
-  --rose-lt:#F2DDE2;
+  --oliva-lt:#E2E8DA;
+  --oliva-bg:#EFF1EA;
+  --creme:#FBFAF6;
+  --creme-soft:#F4F2EC;
+  --dourado:#C9A66A;
+  --dourado-lt:#F0E4CE;
   --texto:#2C2C28;
 }
 html{scroll-behavior:smooth}
@@ -43,11 +44,16 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
 .mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:1.25rem}
 .mobile-menu a{text-decoration:none;color:var(--texto);font-size:1rem;font-weight:500}
 .mobile-menu.open{display:block}
-.hero{min-height:calc(100vh - 64px);display:grid;grid-template-columns:1fr 0.85fr;gap:2rem;align-items:center;padding:3rem 2rem;max-width:1200px;margin:0 auto}
+.hero{min-height:calc(100vh - 64px);display:grid;grid-template-columns:1fr 0.85fr;gap:2rem;align-items:center;padding:3rem 2rem;max-width:1200px;margin:0 auto;position:relative;overflow:hidden}
+.hero-decor{position:absolute;pointer-events:none;opacity:0.5;z-index:0}
+.hero-decor svg{display:block}
+.hero-decor-tl{top:-20px;left:-40px;width:180px;color:var(--oliva-lt)}
+.hero-decor-br{bottom:-30px;right:-40px;width:220px;color:var(--dourado-lt);opacity:0.45}
+.hero-content,.hero-sobre{position:relative;z-index:1}
 .hero-content{display:flex;flex-direction:column;justify-content:center;padding:0 1rem;max-width:640px}
-.hero-badge{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.72rem;font-weight:700;color:var(--rose);background:var(--rose-lt);padding:0.35rem 0.85rem;border-radius:20px;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1.75rem;width:fit-content}
-.hero-badge::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--rose)}
-.hero h1{font-family:'Bodoni Moda',serif;font-size:clamp(1.9rem,3vw,2.6rem);font-weight:500;line-height:1.15;letter-spacing:0.02em;color:var(--texto);margin-bottom:1.25rem}
+.hero-badge{display:inline-flex;align-items:center;gap:0.45rem;font-size:0.7rem;font-weight:600;color:var(--oliva);background:var(--oliva-bg);padding:0.4rem 0.95rem;border-radius:999px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:1.75rem;width:fit-content;border:1px solid var(--oliva-lt)}
+.hero-badge::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--dourado)}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(2.1rem,3.2vw,2.9rem);font-weight:400;font-variation-settings:"SOFT" 100,"opsz" 144;line-height:1.1;letter-spacing:-0.015em;color:var(--texto);margin-bottom:1.25rem}
 .hero-subtitle{font-size:1rem;color:var(--oliva-md);font-weight:400;line-height:1.7;margin-bottom:2rem;max-width:420px}
 .hero-buttons{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem}
 .btn-primary{background:var(--oliva);color:#fff;border:none;padding:0.75rem 1.5rem;border-radius:8px;font-family:inherit;font-size:0.875rem;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.2s;box-shadow:0 6px 14px rgba(74,82,64,0.3),0 2px 4px rgba(0,0,0,0.08)}
@@ -57,8 +63,8 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
 .btn-outline:hover{background:var(--oliva);color:#fff;transform:translateY(-2px);box-shadow:0 8px 18px rgba(74,82,64,0.28)}
 .hero-sobre{display:flex;justify-content:center;align-items:center}
 .sobre-card{background:#fff;border:1px solid var(--oliva-lt);border-top:3px solid var(--dourado);border-radius:16px;padding:2rem;max-width:420px;width:100%;box-shadow:0 12px 32px rgba(74,82,64,0.12),0 4px 8px rgba(0,0,0,0.06);text-align:center}
-.sobre-foto-grande{width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid var(--oliva-lt);margin:0 auto 1rem;display:block}
-.sobre-card h3{font-family:'Bodoni Moda',serif;font-size:1.25rem;font-weight:500;color:var(--texto);margin-bottom:0.2rem;letter-spacing:0.08em}
+.sobre-foto-grande{width:160px;height:160px;border-radius:50%;object-fit:cover;border:4px solid #fff;outline:1px solid var(--oliva-lt);margin:0 auto 1.25rem;display:block;box-shadow:0 8px 24px rgba(74,82,64,0.18)}
+.sobre-card h3{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:400;font-variation-settings:"opsz" 144;color:var(--texto);margin-bottom:0.2rem;letter-spacing:-0.01em}
 .sobre-titulo{font-size:0.78rem;color:var(--oliva-md);font-weight:500;margin-bottom:1rem;display:block}
 .sobre-card p{font-size:0.82rem;color:var(--texto);line-height:1.65;opacity:0.85;margin-bottom:1rem;text-align:left}
 .sobre-tags{display:flex;flex-wrap:wrap;gap:0.4rem;justify-content:center;margin-bottom:1rem}
@@ -68,13 +74,27 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
 .servicos{background:#fff;padding:5rem 2rem;position:relative}
 .servicos::before{content:'';position:absolute;top:-1px;left:0;right:0;height:60px;background:linear-gradient(to bottom,var(--creme) 0%,#fff 100%);pointer-events:none}
 .servicos::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:60px;background:linear-gradient(to bottom,#fff 0%,var(--creme) 100%);pointer-events:none}
+.galeria{padding:3rem 2rem;background:var(--creme)}
+.galeria-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr;grid-template-rows:200px 200px;gap:0.75rem}
+.galeria-item{position:relative;overflow:hidden;border-radius:14px;background:var(--oliva-bg)}
+.galeria-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease}
+.galeria-item:hover img{transform:scale(1.05)}
+.galeria-item-1{grid-row:1 / 3}
+.galeria-quote{display:flex;flex-direction:column;justify-content:center;padding:1.75rem;background:var(--oliva);color:#fff;border-radius:14px}
+.galeria-quote span{font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--dourado);margin-bottom:0.75rem}
+.galeria-quote p{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:400;line-height:1.4;letter-spacing:-0.01em}
+@media(max-width:768px){
+  .galeria-grid{grid-template-columns:1fr 1fr;grid-template-rows:160px 160px 160px;gap:0.6rem}
+  .galeria-item-1{grid-row:1 / 2;grid-column:1 / 3}
+  .galeria-quote{grid-column:1 / 3}
+}
 .section-container{max-width:1200px;margin:0 auto}
 .section-header{text-align:center;margin-bottom:3rem}
 .section-tag{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--oliva-md);display:block;margin-bottom:0.75rem}
-.section-header h2{font-family:'Bodoni Moda',serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:500;letter-spacing:0.02em;color:var(--texto)}
+.section-header h2{font-family:'Fraunces',serif;font-size:clamp(1.7rem,3vw,2.25rem);font-weight:400;font-variation-settings:"opsz" 144;letter-spacing:-0.015em;color:var(--texto)}
 .cards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
 .card{border:1px solid var(--oliva-lt);border-top:3px solid var(--dourado);border-radius:12px;padding:1.75rem 1.5rem;background:#fff;transition:all 0.3s ease;box-shadow:0 4px 12px rgba(74,82,64,0.08),0 2px 4px rgba(0,0,0,0.04)}
-.card-icon{width:44px;height:44px;border-radius:10px;background:var(--rose-lt);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;color:var(--rose)}
+.card-icon{width:46px;height:46px;border-radius:12px;background:var(--oliva-bg);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;color:var(--oliva);border:1px solid var(--oliva-lt)}
 .card-icon svg{width:22px;height:22px}
 .card:hover{border-color:var(--oliva-md);border-top-color:var(--dourado);transform:translateY(-6px);box-shadow:0 16px 32px rgba(74,82,64,0.18),0 6px 12px rgba(0,0,0,0.08)}
 .card h3{font-size:0.95rem;font-weight:700;color:var(--texto);margin-bottom:0.625rem;letter-spacing:-0.01em}
@@ -84,7 +104,7 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
 .guia{padding:5rem 2rem;background:var(--creme)}
 .guia-card{background:var(--oliva);border-radius:12px;padding:3.5rem;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;box-shadow:0 12px 32px rgba(74,82,64,0.25),0 4px 8px rgba(0,0,0,0.08)}
 .guia-badge{display:inline-block;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--dourado);border:1px solid var(--dourado);padding:0.3rem 0.75rem;border-radius:4px;margin-bottom:1.25rem}
-.guia-card h2{font-family:'Bodoni Moda',serif;font-size:clamp(1.5rem,2.5vw,2rem);font-weight:500;color:#fff;letter-spacing:0.02em;margin-bottom:1rem;line-height:1.2}
+.guia-card h2{font-family:'Fraunces',serif;font-size:clamp(1.6rem,2.6vw,2.15rem);font-weight:400;font-variation-settings:"opsz" 144;color:#fff;letter-spacing:-0.015em;margin-bottom:1rem;line-height:1.2}
 .guia-card p{font-size:0.9rem;color:rgba(255,255,255,0.75);line-height:1.7;max-width:480px}
 .btn-dourado{background:var(--dourado);color:#fff;border:none;padding:0.95rem 1.85rem;border-radius:10px;font-family:inherit;font-size:0.95rem;font-weight:700;cursor:pointer;text-decoration:none;white-space:nowrap;display:inline-block;transition:all 0.2s;box-shadow:0 6px 0 #a07e44,0 9px 18px rgba(0,0,0,0.22);letter-spacing:0.01em}
 .btn-dourado:hover{background:#e0b779;transform:translateY(-2px);box-shadow:0 8px 0 #a07e44,0 12px 22px rgba(0,0,0,0.28)}
@@ -108,10 +128,10 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
 .contato{padding:5rem 2rem;background:var(--creme);position:relative}
 .contato-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:1200px;margin:0 auto}
 .contato-info .section-tag{text-align:left;display:block;margin-bottom:0.75rem}
-.contato-info h2{font-family:'Bodoni Moda',serif;font-size:clamp(1.4rem,2.5vw,1.85rem);font-weight:500;letter-spacing:0.02em;color:var(--texto);margin-bottom:0.75rem}
+.contato-info h2{font-family:'Fraunces',serif;font-size:clamp(1.55rem,2.5vw,2rem);font-weight:400;font-variation-settings:"opsz" 144;letter-spacing:-0.015em;color:var(--texto);margin-bottom:0.75rem}
 .contato-info > p{font-size:0.9rem;color:var(--oliva-md);line-height:1.7;margin-bottom:2rem}
 .contato-item{display:flex;align-items:flex-start;gap:0.875rem;margin-bottom:1.25rem}
-.contato-icon{width:36px;height:36px;border-radius:8px;background:var(--rose-lt);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--rose)}
+.contato-icon{width:38px;height:38px;border-radius:10px;background:var(--oliva-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--oliva);border:1px solid var(--oliva-lt)}
 .contato-icon svg{width:18px;height:18px}
 .contato-item-text small{display:block;font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--oliva-md);margin-bottom:0.2rem}
 .contato-item-text a,.contato-item-text span{font-size:0.9rem;color:var(--texto);text-decoration:none;font-weight:500}
@@ -130,7 +150,7 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
 .modal-overlay.open{display:flex}
 .modal{background:var(--creme);border-radius:12px;max-width:480px;width:100%;padding:2.5rem;position:relative}
 .modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--oliva-md);line-height:1;padding:0.25rem 0.5rem}
-.modal h3{font-family:'Bodoni Moda',serif;font-size:1.25rem;font-weight:500;color:var(--texto);margin-bottom:0.5rem;letter-spacing:0.02em}
+.modal h3{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:400;font-variation-settings:"opsz" 144;color:var(--texto);margin-bottom:0.5rem;letter-spacing:-0.01em}
 .modal p{font-size:0.875rem;color:var(--oliva-md);margin-bottom:1.5rem;line-height:1.6}
 .modal form{display:flex;flex-direction:column;gap:0.875rem}
 .modal input{width:100%;padding:0.75rem 1rem;border:1px solid var(--oliva-lt);border-radius:8px;font-family:inherit;font-size:0.9rem;background:#fff;color:var(--texto);outline:none;transition:border-color 0.2s}
@@ -142,6 +162,8 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
   .hamburger{display:flex}
   .hero{grid-template-columns:1fr;min-height:auto;padding:2rem 1.5rem;gap:2rem}
   .hero-content{padding:0;max-width:100%;margin:0}
+  .hero-decor-tl{width:120px;opacity:0.3}
+  .hero-decor-br{width:140px;opacity:0.3}
   .sobre-card{max-width:100%}
   .cards-grid{grid-template-columns:1fr 1fr}
   .guia-card{grid-template-columns:1fr;gap:1.5rem;padding:2rem}
@@ -173,7 +195,7 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
       <li class="nav-blog"><a href="#blog">Blog</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
-    <a href="#" class="nav-cta" onclick="openListaModal(event)">Lista de espera</a>
+    <a href="#" class="nav-cta" onclick="openListaModal(event)">Agende sua consulta</a>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -186,16 +208,32 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
     <li class="nav-blog"><a href="#guia" onclick="closeMobile()">Guia Familiar</a></li>
     <li class="nav-blog"><a href="#blog" onclick="closeMobile()">Blog</a></li>
     <li><a href="#contato" onclick="closeMobile()">Contato</a></li>
-    <li><a href="#" class="nav-cta" onclick="closeMobile();openListaModal(event)">Lista de espera</a></li>
+    <li><a href="#" class="nav-cta" onclick="closeMobile();openListaModal(event)">Agende sua consulta</a></li>
   </ul>
 </div>
 <section class="hero" id="home">
+  <div class="hero-decor hero-decor-tl" aria-hidden="true">
+    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M30 170 C 30 90, 90 30, 170 30" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      <ellipse cx="55" cy="135" rx="10" ry="22" transform="rotate(45 55 135)" fill="currentColor"/>
+      <ellipse cx="80" cy="105" rx="10" ry="22" transform="rotate(45 80 105)" fill="currentColor"/>
+      <ellipse cx="110" cy="80" rx="10" ry="22" transform="rotate(45 110 80)" fill="currentColor"/>
+      <ellipse cx="140" cy="55" rx="10" ry="22" transform="rotate(45 140 55)" fill="currentColor"/>
+    </svg>
+  </div>
+  <div class="hero-decor hero-decor-br" aria-hidden="true">
+    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" r="90" stroke="currentColor" stroke-width="1.2" fill="none"/>
+      <circle cx="100" cy="100" r="60" stroke="currentColor" stroke-width="1.2" fill="none"/>
+      <circle cx="100" cy="100" r="30" stroke="currentColor" stroke-width="1.2" fill="none"/>
+    </svg>
+  </div>
   <div class="hero-content">
     <span class="hero-badge">Nutricionista Clínica · CRN-3 95279</span>
     <h1>Cuide da sua saúde com uma nutrição personalizada e individualizada</h1>
     <p class="hero-subtitle">Uma nutrição prática e real, para você construir uma relação mais saudável com a sua alimentação.</p>
     <div class="hero-buttons">
-      <a href="#" class="btn-primary" onclick="openListaModal(event)">Entrar na lista de espera</a>
+      <a href="#" class="btn-primary" onclick="openListaModal(event)">Agendar consulta</a>
       <a href="#servicos" class="btn-outline">Conhecer os serviços</a>
     </div>
   </div>
@@ -242,11 +280,28 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
     </div>
   </div>
 </section>
+<section class="galeria" aria-label="Imagens">
+  <div class="galeria-grid">
+    <div class="galeria-item galeria-item-1">
+      <img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=900&auto=format&fit=crop" alt="Pratos coloridos com frutas e vegetais"/>
+    </div>
+    <div class="galeria-item">
+      <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&auto=format&fit=crop" alt="Frutas frescas"/>
+    </div>
+    <div class="galeria-item">
+      <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&auto=format&fit=crop" alt="Salada fresca"/>
+    </div>
+    <div class="galeria-quote">
+      <span>Como atendo</span>
+      <p>Sem dietas restritivas. Nutrição prática, individualizada e que cabe na sua rotina.</p>
+    </div>
+  </div>
+</section>
 <section class="lista-espera" id="lista-espera">
   <div class="section-container">
     <div class="section-header">
-      <span class="section-tag">Vagas limitadas</span>
-      <h2>Entre na lista de espera</h2>
+      <span class="section-tag">Atendimento personalizado</span>
+      <h2>Agende sua consulta</h2>
     </div>
     <div class="success-msg">Formulário movido para popup.</div>
   </div>
@@ -338,15 +393,15 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
 <div class="modal-overlay" id="listaModal" onclick="closeListaModal(event)">
   <div class="modal" onclick="event.stopPropagation()">
     <button class="modal-close" onclick="closeListaModal()" aria-label="Fechar">&times;</button>
-    <h3>Entre na lista de espera</h3>
-    <p>Deixe seus dados e te avisaremos quando as próximas vagas abrirem.</p>
+    <h3>Agende sua consulta</h3>
+    <p>Deixe seus dados e entrarei em contato para marcar o melhor horário.</p>
     <form id="waitlistForm" onsubmit="submitWaitlist(event)">
       <input type="text" id="lst-nome" placeholder="Seu nome completo" required/>
       <input type="email" id="lst-email" placeholder="Seu melhor e-mail" required/>
       <input type="tel" id="lst-tel" placeholder="Seu telefone com DDD" required/>
-      <button type="submit" class="btn-primary">Quero entrar na lista</button>
+      <button type="submit" class="btn-primary">Quero agendar</button>
     </form>
-    <div class="modal-success" id="successMsg">Incrível! Você está na lista. Te avisaremos em breve.</div>
+    <div class="modal-success" id="successMsg">Recebi seus dados! Entrarei em contato em breve para agendarmos.</div>
   </div>
 </div>
 <div class="modal-overlay" id="familiaModal" onclick="closeFamiliaModal(event)">
@@ -388,7 +443,7 @@ function submitWaitlist(e) {
   fetch(APPS_SCRIPT_URL, {
     method: 'POST',
     mode: 'no-cors',
-    body: JSON.stringify({ nome: nome, email: email, telefone: tel, lista: 'Lista de Espera' })
+    body: JSON.stringify({ nome: nome, email: email, telefone: tel, lista: 'Agendamento' })
   });
   document.getElementById('waitlistForm').style.display = 'none';
   document.getElementById('successMsg').style.display = 'block';
