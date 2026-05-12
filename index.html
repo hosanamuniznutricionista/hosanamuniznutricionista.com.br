@@ -7,7 +7,7 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%234A5240'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='serif' font-weight='400' font-size='18' fill='%23D4A96A' letter-spacing='-1'%3EHM%3C/text%3E%3C/svg%3E"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Cormorant+Garamond:wght@300;400;500&family=Italiana&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@400;500;600;700&family=Italiana&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -51,7 +51,7 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
 .hero-decor-br{bottom:-30px;right:-40px;width:220px;color:var(--dourado-lt);opacity:0.45}
 .hero-content,.hero-sobre{position:relative;z-index:1}
 .hero-content{display:flex;flex-direction:column;justify-content:center;padding:0 1rem;max-width:640px}
-.hero-badge{display:inline-flex;align-items:center;gap:0.45rem;font-size:0.7rem;font-weight:600;color:var(--oliva);background:var(--oliva-bg);padding:0.4rem 0.95rem;border-radius:999px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:1.75rem;width:fit-content;border:1px solid var(--oliva-lt)}
+.hero-badge{display:inline-flex;align-items:center;gap:0.45rem;font-family:'Inter',sans-serif;font-size:0.72rem;font-weight:600;color:var(--oliva);background:var(--oliva-bg);padding:0.4rem 0.95rem;border-radius:999px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:1.75rem;width:fit-content;border:1px solid var(--oliva-lt);font-feature-settings:"tnum" 1,"lnum" 1;font-variant-numeric:tabular-nums lining-nums}
 .hero-badge::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--dourado)}
 .hero h1{font-family:'Fraunces',serif;font-size:clamp(2.1rem,3.2vw,2.9rem);font-weight:400;font-variation-settings:"SOFT" 100,"opsz" 144;line-height:1.1;letter-spacing:-0.015em;color:var(--texto);margin-bottom:1.25rem}
 .hero-subtitle{font-size:1rem;color:var(--oliva-md);font-weight:400;line-height:1.7;margin-bottom:2rem;max-width:420px}
@@ -65,7 +65,7 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
 .sobre-card{background:#fff;border:1px solid var(--oliva-lt);border-top:3px solid var(--dourado);border-radius:16px;padding:2rem;max-width:420px;width:100%;box-shadow:0 12px 32px rgba(74,82,64,0.12),0 4px 8px rgba(0,0,0,0.06);text-align:center}
 .sobre-foto-grande{width:160px;height:160px;border-radius:50%;object-fit:cover;border:4px solid #fff;outline:1px solid var(--oliva-lt);margin:0 auto 1.25rem;display:block;box-shadow:0 8px 24px rgba(74,82,64,0.18)}
 .sobre-card h3{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:400;font-variation-settings:"opsz" 144;color:var(--texto);margin-bottom:0.2rem;letter-spacing:-0.01em}
-.sobre-titulo{font-size:0.78rem;color:var(--oliva-md);font-weight:500;margin-bottom:1rem;display:block}
+.sobre-titulo{font-family:'Inter',sans-serif;font-size:0.78rem;color:var(--oliva-md);font-weight:500;margin-bottom:1rem;display:block;font-feature-settings:"tnum" 1,"lnum" 1;font-variant-numeric:tabular-nums lining-nums;letter-spacing:0.01em}
 .sobre-card p{font-size:0.82rem;color:var(--texto);line-height:1.65;opacity:0.85;margin-bottom:1rem;text-align:left}
 .sobre-tags{display:flex;flex-wrap:wrap;gap:0.4rem;justify-content:center;margin-bottom:1rem}
 .sobre-tags span{font-size:0.7rem;font-weight:600;color:var(--oliva);background:var(--oliva-lt);padding:0.25rem 0.65rem;border-radius:4px;letter-spacing:0.02em}
@@ -141,7 +141,7 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
 .contato-form input:focus,.contato-form textarea:focus{border-color:var(--oliva-md)}
 .contato-form textarea{height:120px}
 .footer{background:var(--oliva);padding:2.5rem 2rem;text-align:center}
-.footer p{color:rgba(255,255,255,0.6);font-size:0.8rem;line-height:1.8}
+.footer p{color:rgba(255,255,255,0.6);font-size:0.8rem;line-height:1.8;font-feature-settings:"tnum" 1,"lnum" 1;font-variant-numeric:tabular-nums lining-nums}
 .footer strong{color:rgba(255,255,255,0.9)}
 .whatsapp-float{position:fixed;bottom:1.75rem;right:1.75rem;z-index:999;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.15);text-decoration:none;transition:transform 0.2s}
 .whatsapp-float:hover{transform:scale(1.08)}
