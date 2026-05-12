@@ -401,7 +401,7 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
       <input type="tel" id="lst-tel" placeholder="Seu telefone com DDD" required/>
       <button type="submit" class="btn-primary">Quero agendar</button>
     </form>
-    <div class="modal-success" id="successMsg">Recebi seus dados! Entrarei em contato em breve para agendarmos.</div>
+    <div class="modal-success" id="successMsg">Te levei pro WhatsApp! Se não abriu, me chama em (13) 99114-9157.</div>
   </div>
 </div>
 <div class="modal-overlay" id="familiaModal" onclick="closeFamiliaModal(event)">
@@ -445,6 +445,8 @@ function submitWaitlist(e) {
     mode: 'no-cors',
     body: JSON.stringify({ nome: nome, email: email, telefone: tel, lista: 'Agendamento' })
   });
+  const texto = 'Olá, eu vim atraves do site e gostaria de agendar consulta com a Hosana.\n\nMeu nome: ' + nome + '\nE-mail: ' + email + '\nTelefone: ' + tel;
+  window.open('https://wa.me/5513991149157?text=' + encodeURIComponent(texto), '_blank');
   document.getElementById('waitlistForm').style.display = 'none';
   document.getElementById('successMsg').style.display = 'block';
 }
