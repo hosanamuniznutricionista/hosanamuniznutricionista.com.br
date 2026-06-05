@@ -447,59 +447,7 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
     <div class="receitas-grid">
       <button class="receita-card" type="button" onclick="openReceita(0)">
         <div class="receita-img receita-img-1" aria-hidden="true">
-          <!-- Pra trocar por foto: substituir o <svg class="prato"> abaixo por <img class="receita-foto" src="receita-mingau.jpg" alt=""> -->
-          <svg class="prato" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="bowlMingau" cx="50%" cy="40%"><stop offset="0%" stop-color="#FFF7E8"/><stop offset="100%" stop-color="#E8D9B5"/></radialGradient>
-              <radialGradient id="aveiaG" cx="50%" cy="50%"><stop offset="0%" stop-color="#E5D2A2"/><stop offset="100%" stop-color="#C9A66A"/></radialGradient>
-            </defs>
-            <!-- Sombra do bowl -->
-            <ellipse cx="100" cy="170" rx="78" ry="10" fill="#000" opacity="0.08"/>
-            <!-- Bowl externo -->
-            <circle cx="100" cy="100" r="80" fill="#F8EFD8"/>
-            <circle cx="100" cy="100" r="78" fill="none" stroke="#D4BD8C" stroke-width="0.8"/>
-            <!-- Mingau dentro -->
-            <circle cx="100" cy="100" r="64" fill="url(#aveiaG)"/>
-            <!-- Textura aveia -->
-            <g fill="#A88A52" opacity="0.5">
-              <ellipse cx="78" cy="78" rx="2.5" ry="1.5" transform="rotate(20 78 78)"/>
-              <ellipse cx="92" cy="70" rx="2" ry="1.2" transform="rotate(40 92 70)"/>
-              <ellipse cx="108" cy="75" rx="2.5" ry="1.5" transform="rotate(-10 108 75)"/>
-              <ellipse cx="118" cy="85" rx="2" ry="1.2"/>
-              <ellipse cx="122" cy="100" rx="2.5" ry="1.5" transform="rotate(30 122 100)"/>
-              <ellipse cx="115" cy="118" rx="2" ry="1.2" transform="rotate(-15 115 118)"/>
-              <ellipse cx="98" cy="125" rx="2.5" ry="1.5"/>
-              <ellipse cx="82" cy="120" rx="2" ry="1.2" transform="rotate(50 82 120)"/>
-              <ellipse cx="72" cy="105" rx="2.5" ry="1.5" transform="rotate(-30 72 105)"/>
-              <ellipse cx="75" cy="92" rx="2" ry="1.2"/>
-              <ellipse cx="95" cy="92" rx="2.5" ry="1.5"/>
-              <ellipse cx="105" cy="108" rx="2" ry="1.2" transform="rotate(40 105 108)"/>
-            </g>
-            <!-- Banana (rodelas) -->
-            <g>
-              <ellipse cx="100" cy="85" rx="10" ry="9" fill="#FFE8A0"/>
-              <ellipse cx="100" cy="85" rx="10" ry="9" fill="none" stroke="#E8C870" stroke-width="0.8"/>
-              <circle cx="97" cy="84" r="0.8" fill="#8B6B2E"/>
-              <circle cx="103" cy="86" r="0.8" fill="#8B6B2E"/>
-              <ellipse cx="118" cy="105" rx="9" ry="8" fill="#FFE8A0"/>
-              <ellipse cx="118" cy="105" rx="9" ry="8" fill="none" stroke="#E8C870" stroke-width="0.8"/>
-              <circle cx="116" cy="104" r="0.7" fill="#8B6B2E"/>
-              <circle cx="120" cy="106" r="0.7" fill="#8B6B2E"/>
-              <ellipse cx="82" cy="110" rx="9" ry="8" fill="#FFE8A0"/>
-              <ellipse cx="82" cy="110" rx="9" ry="8" fill="none" stroke="#E8C870" stroke-width="0.8"/>
-              <circle cx="80" cy="109" r="0.7" fill="#8B6B2E"/>
-              <circle cx="84" cy="111" r="0.7" fill="#8B6B2E"/>
-            </g>
-            <!-- Canela em pó -->
-            <g fill="#8B4513" opacity="0.55">
-              <circle cx="90" cy="100" r="0.6"/><circle cx="93" cy="98" r="0.5"/><circle cx="96" cy="103" r="0.7"/>
-              <circle cx="100" cy="105" r="0.5"/><circle cx="105" cy="100" r="0.6"/><circle cx="110" cy="98" r="0.5"/>
-              <circle cx="108" cy="115" r="0.6"/><circle cx="95" cy="115" r="0.5"/><circle cx="113" cy="92" r="0.6"/>
-              <circle cx="87" cy="95" r="0.5"/><circle cx="102" cy="92" r="0.5"/>
-            </g>
-            <!-- Highlight superior do bowl -->
-            <ellipse cx="80" cy="55" rx="15" ry="3" fill="#FFF" opacity="0.4"/>
-          </svg>
+          <img class="receita-foto" src="receita-mingau.jpg" alt="Mingau de aveia com banana e canela">
         </div>
         <div class="receita-body">
           <div class="receita-tags">
@@ -512,51 +460,7 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
       </button>
       <button class="receita-card" type="button" onclick="openReceita(1)">
         <div class="receita-img receita-img-2" aria-hidden="true">
-          <svg class="prato" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <!-- Sombra do bowl -->
-            <ellipse cx="100" cy="170" rx="80" ry="10" fill="#000" opacity="0.08"/>
-            <!-- Bowl branco -->
-            <circle cx="100" cy="100" r="82" fill="#FBFAF6"/>
-            <circle cx="100" cy="100" r="80" fill="none" stroke="#D4D9CC" stroke-width="0.8"/>
-            <!-- Base/quinoa dentro -->
-            <circle cx="100" cy="100" r="66" fill="#F0EAD2"/>
-            <!-- Salmão (rosa/laranja) -->
-            <g>
-              <path d="M 65 95 Q 60 85 70 80 Q 85 78 95 85 Q 100 92 90 100 Q 78 105 65 95 Z" fill="#E89968"/>
-              <path d="M 67 92 Q 70 85 80 86 Q 88 88 88 95 Q 82 100 70 98 Z" fill="#F0B080" opacity="0.7"/>
-              <path d="M 68 90 L 72 88 M 75 87 L 80 86 M 76 93 L 82 92" stroke="#C97848" stroke-width="0.5" fill="none"/>
-            </g>
-            <!-- Abacate em fatias -->
-            <g>
-              <ellipse cx="130" cy="85" rx="14" ry="6" fill="#7A9558" transform="rotate(-30 130 85)"/>
-              <ellipse cx="130" cy="85" rx="12" ry="4.5" fill="#9DB874" transform="rotate(-30 130 85)"/>
-              <ellipse cx="138" cy="100" rx="14" ry="6" fill="#7A9558" transform="rotate(-15 138 100)"/>
-              <ellipse cx="138" cy="100" rx="12" ry="4.5" fill="#9DB874" transform="rotate(-15 138 100)"/>
-            </g>
-            <!-- Folhas verdes (rúcula/espinafre) -->
-            <g fill="#5A7042">
-              <path d="M 75 125 Q 80 115 90 120 Q 85 130 75 125 Z"/>
-              <path d="M 95 130 Q 100 120 110 125 Q 105 135 95 130 Z"/>
-              <path d="M 115 130 Q 120 122 128 128 Q 125 138 115 130 Z"/>
-              <path d="M 60 110 Q 65 102 73 108 Q 70 118 60 110 Z" opacity="0.85"/>
-            </g>
-            <g fill="#7A9558" opacity="0.7">
-              <path d="M 78 122 Q 82 117 87 119 Q 85 124 78 122 Z"/>
-              <path d="M 100 127 Q 104 122 108 124 Q 106 130 100 127 Z"/>
-            </g>
-            <!-- Tomatinhos cereja -->
-            <circle cx="105" cy="115" r="5" fill="#D85948"/>
-            <circle cx="103.5" cy="113.5" r="1.5" fill="#FFFFFF" opacity="0.5"/>
-            <circle cx="125" cy="120" r="4.5" fill="#D85948"/>
-            <circle cx="124" cy="119" r="1.2" fill="#FFFFFF" opacity="0.5"/>
-            <!-- Sementes -->
-            <g fill="#3D2F1F">
-              <circle cx="105" cy="100" r="0.8"/><circle cx="110" cy="103" r="0.7"/>
-              <circle cx="98" cy="118" r="0.8"/><circle cx="120" cy="110" r="0.7"/>
-            </g>
-            <!-- Highlight bowl -->
-            <ellipse cx="80" cy="55" rx="18" ry="3" fill="#FFF" opacity="0.5"/>
-          </svg>
+          <img class="receita-foto" src="receita-bowl.jpg" alt="Bowl anti-inflamatorio metabolico">
         </div>
         <div class="receita-body">
           <div class="receita-tags">
@@ -569,61 +473,7 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
       </button>
       <button class="receita-card" type="button" onclick="openReceita(2)">
         <div class="receita-img receita-img-3" aria-hidden="true">
-          <svg class="prato" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <!-- Tábua de madeira ao fundo -->
-            <rect x="20" y="40" width="160" height="130" rx="8" fill="#D4B896" opacity="0.6"/>
-            <g stroke="#B89968" stroke-width="0.5" opacity="0.4">
-              <line x1="40" y1="50" x2="40" y2="160"/>
-              <line x1="80" y1="50" x2="80" y2="160"/>
-              <line x1="120" y1="50" x2="120" y2="160"/>
-              <line x1="160" y1="50" x2="160" y2="160"/>
-            </g>
-            <!-- Sombra dos cookies -->
-            <ellipse cx="75" cy="115" rx="32" ry="5" fill="#000" opacity="0.12"/>
-            <ellipse cx="135" cy="120" rx="30" ry="5" fill="#000" opacity="0.1"/>
-            <!-- Cookie 1 (maior) -->
-            <circle cx="75" cy="100" r="32" fill="#C49060"/>
-            <circle cx="75" cy="100" r="30" fill="#D4A574"/>
-            <!-- Textura cookie 1 -->
-            <g fill="#8B5E2F">
-              <ellipse cx="68" cy="92" rx="3" ry="2" transform="rotate(20 68 92)"/>
-              <ellipse cx="82" cy="88" rx="2.5" ry="1.8"/>
-              <ellipse cx="85" cy="105" rx="3.5" ry="2.2" transform="rotate(-15 85 105)"/>
-              <ellipse cx="65" cy="108" rx="3" ry="2" transform="rotate(40 65 108)"/>
-              <circle cx="75" cy="98" r="1.2"/>
-              <ellipse cx="72" cy="115" rx="2.8" ry="1.8" transform="rotate(10 72 115)"/>
-              <ellipse cx="88" cy="98" rx="2" ry="1.5"/>
-            </g>
-            <!-- Sementes/chia em cima cookie 1 -->
-            <g fill="#3D3025">
-              <circle cx="70" cy="95" r="0.8"/><circle cx="78" cy="93" r="0.8"/><circle cx="80" cy="102" r="0.8"/>
-              <circle cx="72" cy="108" r="0.8"/><circle cx="83" cy="110" r="0.8"/><circle cx="66" cy="102" r="0.8"/>
-            </g>
-            <!-- Cookie 2 (menor, atrás) -->
-            <circle cx="135" cy="105" r="29" fill="#C49060"/>
-            <circle cx="135" cy="105" r="27" fill="#D4A574"/>
-            <g fill="#8B5E2F">
-              <ellipse cx="130" cy="98" rx="3" ry="2" transform="rotate(-20 130 98)"/>
-              <ellipse cx="142" cy="100" rx="2.5" ry="1.8"/>
-              <ellipse cx="138" cy="115" rx="3" ry="2" transform="rotate(30 138 115)"/>
-              <ellipse cx="128" cy="112" rx="2.5" ry="1.8" transform="rotate(-30 128 112)"/>
-              <circle cx="135" cy="105" r="1.2"/>
-            </g>
-            <g fill="#3D3025">
-              <circle cx="132" cy="100" r="0.8"/><circle cx="140" cy="105" r="0.8"/><circle cx="135" cy="115" r="0.8"/>
-              <circle cx="128" cy="108" r="0.8"/>
-            </g>
-            <!-- Castanhas espalhadas -->
-            <g>
-              <ellipse cx="50" cy="155" rx="6" ry="4" fill="#B07A3C" transform="rotate(30 50 155)"/>
-              <ellipse cx="50" cy="155" rx="5" ry="3" fill="#C99A5C" transform="rotate(30 50 155)" opacity="0.7"/>
-              <ellipse cx="105" cy="150" rx="5" ry="3.5" fill="#A06B2F" transform="rotate(-20 105 150)"/>
-              <ellipse cx="160" cy="145" rx="6" ry="4" fill="#B07A3C" transform="rotate(60 160 145)"/>
-              <ellipse cx="160" cy="145" rx="5" ry="3" fill="#C99A5C" transform="rotate(60 160 145)" opacity="0.7"/>
-              <ellipse cx="115" cy="55" rx="5.5" ry="3.5" fill="#A06B2F" transform="rotate(45 115 55)"/>
-              <ellipse cx="35" cy="75" rx="5" ry="3.5" fill="#B07A3C" transform="rotate(-30 35 75)"/>
-            </g>
-          </svg>
+          <img class="receita-foto" src="receita-snack.jpg" alt="Snackzinho pre-treino sem pico glicemico">
         </div>
         <div class="receita-body">
           <div class="receita-tags">
@@ -636,53 +486,7 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
       </button>
       <button class="receita-card" type="button" onclick="openReceita(3)">
         <div class="receita-img receita-img-4" aria-hidden="true">
-          <svg class="prato" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="sopaG" cx="50%" cy="40%"><stop offset="0%" stop-color="#FFB855"/><stop offset="100%" stop-color="#D88838"/></radialGradient>
-            </defs>
-            <!-- Sombra tigela -->
-            <ellipse cx="100" cy="170" rx="80" ry="10" fill="#000" opacity="0.1"/>
-            <!-- Tigela externa -->
-            <circle cx="100" cy="100" r="82" fill="#F4EDE0"/>
-            <circle cx="100" cy="100" r="80" fill="none" stroke="#C9BC9F" stroke-width="0.8"/>
-            <!-- Sopa laranja -->
-            <circle cx="100" cy="100" r="66" fill="url(#sopaG)"/>
-            <!-- Vapor (linhas suaves) -->
-            <g stroke="#FFF" stroke-width="2" fill="none" opacity="0.4" stroke-linecap="round">
-              <path d="M 80 70 Q 78 60 82 50 Q 86 40 82 30"/>
-              <path d="M 100 65 Q 102 55 98 45 Q 94 35 98 25"/>
-              <path d="M 120 70 Q 118 60 122 50 Q 126 40 122 30"/>
-            </g>
-            <!-- Pedaços de abobrinha -->
-            <g>
-              <rect x="70" y="95" width="14" height="10" rx="2" fill="#9DB874" transform="rotate(20 77 100)"/>
-              <rect x="72" y="97" width="10" height="6" rx="1" fill="#B5C98B" transform="rotate(20 77 100)" opacity="0.7"/>
-              <rect x="115" y="105" width="14" height="10" rx="2" fill="#9DB874" transform="rotate(-15 122 110)"/>
-              <rect x="117" y="107" width="10" height="6" rx="1" fill="#B5C98B" transform="rotate(-15 122 110)" opacity="0.7"/>
-            </g>
-            <!-- Pedaços de cenoura -->
-            <g>
-              <circle cx="100" cy="80" r="6" fill="#E68A4A"/>
-              <circle cx="100" cy="80" r="4.5" fill="#F0A570" opacity="0.7"/>
-              <circle cx="125" cy="90" r="5.5" fill="#E68A4A"/>
-              <circle cx="125" cy="90" r="4" fill="#F0A570" opacity="0.7"/>
-            </g>
-            <!-- Folhinhas de coentro/salsinha -->
-            <g fill="#5A7042">
-              <path d="M 85 115 Q 88 110 92 113 Q 90 117 85 115 Z"/>
-              <path d="M 110 120 Q 113 115 117 118 Q 115 122 110 120 Z"/>
-              <path d="M 95 130 Q 98 125 102 128 Q 100 132 95 130 Z"/>
-              <path d="M 78 88 Q 80 84 84 86 Q 82 90 78 88 Z"/>
-            </g>
-            <!-- Pequenos pedaços de grão -->
-            <g fill="#F0E0BC">
-              <circle cx="92" cy="105" r="1.5"/><circle cx="115" cy="98" r="1.5"/>
-              <circle cx="88" cy="122" r="1.5"/><circle cx="120" cy="125" r="1.5"/>
-              <circle cx="105" cy="115" r="1.5"/>
-            </g>
-            <!-- Highlight superior -->
-            <ellipse cx="80" cy="60" rx="18" ry="3" fill="#FFF" opacity="0.5"/>
-          </svg>
+          <img class="receita-foto" src="receita-sopa.jpg" alt="Sopa intestino-cerebro">
         </div>
         <div class="receita-body">
           <div class="receita-tags">
@@ -695,55 +499,7 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
       </button>
       <button class="receita-card" type="button" onclick="openReceita(4)">
         <div class="receita-img receita-img-5" aria-hidden="true">
-          <svg class="prato" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <!-- Plate de mármore claro ao fundo -->
-            <circle cx="100" cy="100" r="85" fill="#F0E8DC"/>
-            <g stroke="#D8C8B0" stroke-width="0.5" opacity="0.5" fill="none">
-              <path d="M 30 80 Q 60 70 90 85 Q 120 95 150 80 Q 170 75 175 65"/>
-              <path d="M 25 120 Q 55 115 80 125 Q 110 135 140 130 Q 165 128 170 115"/>
-            </g>
-            <!-- Sombras das trufas -->
-            <ellipse cx="75" cy="125" rx="22" ry="3" fill="#000" opacity="0.15"/>
-            <ellipse cx="130" cy="105" rx="20" ry="3" fill="#000" opacity="0.15"/>
-            <ellipse cx="115" cy="145" rx="18" ry="3" fill="#000" opacity="0.12"/>
-            <!-- Trufa 1 (maior) -->
-            <circle cx="75" cy="110" r="22" fill="#3D2618"/>
-            <circle cx="75" cy="110" r="21" fill="#4A2E1C"/>
-            <!-- Textura cacau em pó na trufa 1 -->
-            <g fill="#5C3B2A" opacity="0.6">
-              <circle cx="68" cy="100" r="1.2"/><circle cx="78" cy="98" r="1"/><circle cx="82" cy="106" r="1.3"/>
-              <circle cx="70" cy="115" r="1"/><circle cx="80" cy="117" r="1.2"/><circle cx="72" cy="108" r="0.8"/>
-              <circle cx="85" cy="112" r="1"/><circle cx="75" cy="105" r="0.8"/>
-            </g>
-            <!-- Highlight trufa 1 -->
-            <ellipse cx="68" cy="100" rx="6" ry="3" fill="#FFF" opacity="0.15"/>
-            <!-- Trufa 2 -->
-            <circle cx="130" cy="92" r="20" fill="#3D2618"/>
-            <circle cx="130" cy="92" r="19" fill="#4A2E1C"/>
-            <g fill="#5C3B2A" opacity="0.6">
-              <circle cx="125" cy="84" r="1"/><circle cx="132" cy="86" r="1.2"/><circle cx="138" cy="92" r="1"/>
-              <circle cx="128" cy="98" r="1.2"/><circle cx="135" cy="100" r="1"/><circle cx="125" cy="95" r="0.8"/>
-            </g>
-            <ellipse cx="124" cy="85" rx="5" ry="2.5" fill="#FFF" opacity="0.15"/>
-            <!-- Trufa 3 -->
-            <circle cx="115" cy="135" r="18" fill="#3D2618"/>
-            <circle cx="115" cy="135" r="17" fill="#4A2E1C"/>
-            <g fill="#5C3B2A" opacity="0.6">
-              <circle cx="110" cy="128" r="1"/><circle cx="118" cy="130" r="1.2"/><circle cx="122" cy="138" r="1"/>
-              <circle cx="112" cy="142" r="1.2"/><circle cx="118" cy="140" r="0.8"/>
-            </g>
-            <ellipse cx="110" cy="128" rx="4.5" ry="2" fill="#FFF" opacity="0.15"/>
-            <!-- Pó de cacau espalhado no prato -->
-            <g fill="#5C3B2A" opacity="0.3">
-              <circle cx="50" cy="80" r="0.6"/><circle cx="55" cy="90" r="0.5"/><circle cx="48" cy="105" r="0.5"/>
-              <circle cx="155" cy="70" r="0.5"/><circle cx="160" cy="85" r="0.6"/><circle cx="158" cy="125" r="0.5"/>
-              <circle cx="60" cy="150" r="0.6"/><circle cx="148" cy="155" r="0.5"/>
-            </g>
-            <!-- Castanha decorativa (do lado) -->
-            <ellipse cx="155" cy="130" rx="7" ry="5" fill="#A06B3C" transform="rotate(40 155 130)"/>
-            <ellipse cx="155" cy="130" rx="6" ry="4" fill="#B07F4C" transform="rotate(40 155 130)" opacity="0.7"/>
-            <ellipse cx="45" cy="135" rx="6" ry="4" fill="#A06B3C" transform="rotate(-30 45 135)"/>
-          </svg>
+          <img class="receita-foto" src="receita-trufa.jpg" alt="Docinho para TPM e humor">
         </div>
         <div class="receita-body">
           <div class="receita-tags">
