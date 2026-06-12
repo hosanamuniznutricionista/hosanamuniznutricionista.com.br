@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consultoria Nutricional Online · Hosana Muniz</title>
+<meta name="description" content="Plano alimentar personalizado elaborado por Hosana Muniz, nutricionista CRN-3 95279. Você responde uma anamnese completa e recebe seu plano em PDF em até 48 horas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Italiana&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --oliva:#4A5240; --oliva-md:#7A8C6E; --oliva-cl:#D4DCCA;
+    --creme:#F7F5EF; --dourado:#D4A96A; --rose:#A84762; --rose-cl:#F2DDE2;
+    --texto:#2C2C28; --cinza:#857F76; --linha:#E6E2D7;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--creme);color:var(--texto);font-family:'Raleway',sans-serif;line-height:1.6;font-weight:400;}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--linha);padding:14px 20px;display:flex;align-items:center;}
+  .nav-logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--oliva);}
+  .nav-logo .mono{font-family:'Italiana',serif;font-size:1.7rem;color:var(--dourado);line-height:1;letter-spacing:-.08em;position:relative;padding:0 .8rem;}
+  .nav-logo .mono::before,.nav-logo .mono::after{content:'';position:absolute;top:50%;width:.4rem;height:1px;background:var(--dourado);}
+  .nav-logo .mono::before{left:0;} .nav-logo .mono::after{right:0;}
+  .nav-logo .txt{display:flex;flex-direction:column;line-height:1.1;}
+  .nav-logo .nome{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:.9rem;letter-spacing:.22em;color:var(--oliva);text-transform:uppercase;}
+  .nav-logo .sub{font-family:'Raleway',sans-serif;font-weight:300;font-size:.52rem;letter-spacing:.38em;color:var(--oliva-md);text-transform:uppercase;margin-top:2px;}
+
+  /* STEPS */
+  .steps{margin-left:auto;display:flex;gap:6px;}
+  .steps span{font-size:10px;font-weight:600;border:1px solid var(--linha);background:#fff;color:var(--cinza);padding:5px 10px;border-radius:999px;white-space:nowrap;}
+  .steps span.on{background:var(--oliva);color:#fff;border-color:var(--oliva);}
+
+  /* LAYOUT */
+  .wrap{max-width:540px;margin:0 auto;padding:28px 16px 80px;}
+  .screen{display:none;animation:fade .25s ease;}
+  .screen.active{display:block;}
+  @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+
+  /* CARDS */
+  .card{background:#fff;border:1px solid var(--linha);border-radius:18px;padding:26px;margin-bottom:16px;}
+  .eyebrow{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--dourado);}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:2rem;line-height:1.18;margin:10px 0 12px;color:var(--texto);}
+  h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.65rem;margin:0 0 10px;color:var(--texto);}
+  p.lead{color:var(--cinza);font-size:14px;margin:0 0 18px;}
+
+  /* HOW */
+  .how{display:flex;flex-direction:column;gap:10px;margin:16px 0;}
+  .how .it{display:flex;gap:12px;align-items:flex-start;background:var(--creme);border:1px solid var(--linha);border-radius:12px;padding:13px;}
+  .how .n{width:26px;height:26px;border-radius:50%;background:var(--oliva);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .how b{font-size:13.5px;font-weight:600;display:block;}
+  .how span{font-size:12px;color:var(--cinza);}
+
+  /* PRICE */
+  .price-box{display:flex;align-items:baseline;gap:10px;background:var(--oliva-cl);border-radius:13px;padding:15px 18px;margin:16px 0;}
+  .price-box .v{font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:var(--oliva);}
+  .price-box small{font-size:12px;color:var(--oliva-md);font-weight:500;}
+
+  /* BUTTONS */
+  .btn{display:block;width:100%;text-align:center;padding:15px;font-size:14.5px;font-weight:700;font-family:inherit;background:var(--oliva);color:#fff;border:none;border-radius:13px;cursor:pointer;letter-spacing:.3px;text-decoration:none;}
+  .btn:hover{background:#3b4234;}
+  .btn.sec{background:#fff;color:var(--oliva);border:1.5px solid var(--oliva);}
+  .btn.rose{background:var(--rose);}
+  .btn.rose:hover{filter:brightness(.93);}
+  .back-btn{display:inline-block;margin-top:14px;font-size:13px;color:var(--cinza);background:none;border:none;cursor:pointer;font-family:inherit;}
+
+  /* FORM */
+  .q{font-size:14px;font-weight:600;margin:0 0 10px;}
+  .opts{display:flex;gap:10px;margin-bottom:16px;}
+  .opts button{flex:1;padding:12px;font-size:13.5px;font-weight:600;font-family:inherit;border:1.5px solid var(--linha);background:#fff;border-radius:11px;cursor:pointer;color:var(--texto);transition:all .15s;}
+  .opts button.sim.on{background:var(--rose);color:#fff;border-color:var(--rose);}
+  .opts button.nao.on{background:var(--oliva);color:#fff;border-color:var(--oliva);}
+  label.field{display:block;margin-bottom:14px;}
+  label.field span{display:block;font-size:12px;font-weight:600;margin-bottom:5px;color:var(--texto);}
+  input,select,textarea{width:100%;border:1px solid var(--linha);border-radius:10px;padding:11px 12px;font-family:inherit;font-size:14px;background:var(--creme);outline:none;color:var(--texto);}
+  input:focus,select:focus,textarea:focus{border-color:var(--dourado);background:#fff;}
+  textarea{resize:vertical;min-height:80px;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .consent{display:flex;gap:10px;align-items:flex-start;font-size:12px;color:var(--cinza);background:var(--creme);border:1px dashed var(--linha);border-radius:12px;padding:13px;margin:8px 0 16px;}
+  .consent input[type=checkbox]{width:17px;height:17px;margin-top:1px;accent-color:var(--oliva);flex-shrink:0;}
+
+  /* BADGES */
+  .tag{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;color:var(--oliva);background:var(--oliva-cl);border-radius:999px;padding:3px 10px;margin-bottom:12px;letter-spacing:.5px;text-transform:uppercase;}
+  .aviso{background:var(--rose-cl);border:1px solid #E7C3CD;border-radius:12px;padding:13px;font-size:12.5px;color:var(--rose);margin:14px 0;line-height:1.55;}
+  .ok-badge{width:54px;height:54px;border-radius:50%;background:var(--oliva-cl);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:24px;}
+  .center{text-align:center;}
+
+  /* RESTRICOES */
+  .lista-restricoes{font-size:13px;background:var(--creme);border:1px solid var(--linha);border-radius:12px;padding:14px 16px;margin-bottom:14px;line-height:2;}
+
+  /* PDF PREVIEW */
+  .pdf{background:#fff;border:1px solid var(--linha);border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(74,82,64,.09);}
+  .pdf-head{background:var(--oliva);color:var(--creme);padding:18px 20px;text-align:center;}
+  .pdf-head h3{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.4rem;margin:0;}
+  .pdf-head small{opacity:.8;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;}
+  .pdf-body{padding:18px 20px;}
+  .pdf-disc{background:var(--oliva-cl);border-radius:9px;padding:12px;font-size:11.5px;color:var(--oliva);margin-bottom:14px;line-height:1.6;}
+  .meal{border-top:1px solid var(--linha);padding:11px 0;}
+  .meal h4{margin:0 0 5px;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1rem;color:var(--oliva);}
+  .meal ul{margin:0;padding-left:18px;font-size:12.5px;}
+  .pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;}
+  .pills span{font-size:11.5px;background:var(--creme);border:1px solid var(--linha);border-radius:999px;padding:4px 9px;}
+  .pdf-foot{border-top:1px solid var(--linha);padding:12px 20px;font-size:10px;color:var(--cinza);background:var(--creme);line-height:1.5;}
+
+  /* PAGAMENTO */
+  .stripe-box{background:var(--creme);border:1px solid var(--linha);border-radius:13px;padding:18px;margin:16px 0;text-align:center;}
+  .stripe-box .lock{font-size:22px;margin-bottom:8px;}
+  .stripe-box p{font-size:12.5px;color:var(--cinza);margin-top:8px;}
+
+  .foot-note{text-align:center;font-size:11px;color:var(--cinza);margin-top:20px;letter-spacing:.5px;}
+
+  @media(max-width:480px){
+    h1{font-size:1.7rem;} h2{font-size:1.4rem;}
+    .nav-logo .mono{font-size:1.4rem;}
+    .nav-logo .nome{font-size:.78rem;}
+    .grid2{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://hosanamuniznutricionista.com.br" class="nav-logo">
+    <span class="mono">HM</span>
+    <span class="txt">
+      <span class="nome">Hosana Muniz</span>
+      <span class="sub">nutricionista</span>
+    </span>
+  </a>
+  <div class="steps" id="steps">
+    <span data-s="0" class="on">Proposta</span>
+    <span data-s="1">Triagem</span>
+    <span data-s="2">Pagamento</span>
+    <span data-s="3">Anamnese</span>
+    <span data-s="4">Confirmação</span>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <!-- 0 VENDA -->
+  <section class="screen active" data-screen="0">
+    <div class="card">
+      <span class="eyebrow">Consultoria nutricional online</span>
+      <h1>Seu plano alimentar montado por mim, sem sair de casa</h1>
+      <p class="lead">Você responde um formulário completo sobre sua rotina e saúde. Eu analiso tudo pessoalmente e monto um plano feito pra você, do jeito certo.</p>
+      <div class="how">
+        <div class="it"><div class="n">1</div><div><b>Você responde a anamnese</b><span>Sua rotina, objetivos, restrições e saúde.</span></div></div>
+        <div class="it"><div class="n">2</div><div><b>Eu monto o seu plano</b><span>Avalio cada caso pessoalmente. Não é robô.</span></div></div>
+        <div class="it"><div class="n">3</div><div><b>Você recebe no e-mail</b><span>Plano alimentar completo em PDF em até 72 horas.</span></div></div>
+      </div>
+      <div class="price-box">
+        <span class="v">R$ 97</span>
+        <small>pagamento único · plano completo em PDF</small>
+      </div>
+      <button class="btn" onclick="go(1)">Quero meu plano</button>
+      <p class="foot-note">Hosana Muniz · Nutricionista · CRN-3 95279</p>
+    </div>
+  </section>
+
+  <!-- 1 TRIAGEM -->
+  <section class="screen" data-screen="1">
+    <div class="card">
+      <span class="tag">Triagem de segurança · Código de Ética CFN 856/2026</span>
+      <h2>Antes de começar</h2>
+      <p class="lead">Preciso de algumas informações para garantir que esse formato de atendimento é o mais adequado para você.</p>
+      <label class="consent">
+        <input type="checkbox" id="consentCheck" onchange="atualizarTriagem()">
+        <span>Li e aceito os <b>Termos de Uso</b> e a <b>Política de Privacidade (LGPD)</b>. Concordo que meus dados de saúde sejam tratados pela nutricionista exclusivamente para esta avaliação.</span>
+      </label>
+      <p class="q">Você se encaixa em alguma dessas situações?</p>
+      <div class="lista-restricoes">
+        Gestante ou amamentando<br>
+        Menor de 18 anos<br>
+        Doença crônica (diabetes, doença renal, cardíaca, tireoide)<br>
+        Histórico de transtorno alimentar<br>
+        Cirurgia bariátrica<br>
+        Uso de medicamento contínuo que afete a alimentação<br>
+        Alergia alimentar grave (anafilaxia)
+      </div>
+      <div class="opts">
+        <button class="nao" id="btnNao" onclick="selecionarTriagem(this,'nao')" disabled style="opacity:.45;">Não, nenhuma</button>
+        <button class="sim" id="btnSim" onclick="selecionarTriagem(this,'sim')" disabled style="opacity:.45;">Sim, alguma</button>
+      </div>
+      <button class="btn" id="btnContinuar" onclick="avancarTriagem()" disabled style="opacity:.45;">Continuar</button>
+      <button class="back-btn" onclick="go(0)">Voltar</button>
+    </div>
+  </section>
+
+  <!-- 2 PAGAMENTO -->
+  <section class="screen" data-screen="2">
+    <div class="card">
+      <span class="eyebrow">Pagamento</span>
+      <h2>Garanta sua consultoria</h2>
+      <div class="price-box">
+        <span class="v">R$ 97</span>
+        <small>pagamento único</small>
+      </div>
+      <div class="stripe-box">
+        <div class="lock">🔒</div>
+        <p style="font-weight:600;font-size:14px;color:var(--texto);">Pagamento 100% seguro via Stripe</p>
+        <p>Após o pagamento, você será redirecionada de volta para preencher a anamnese.</p>
+      </div>
+      <label class="consent">
+        <input type="checkbox" id="consentPag" onchange="atualizarBtnPagar()">
+        <span>Li e aceito o <b>Termo de Consentimento</b> e a <b>Política de Privacidade</b>. Entendo que meus dados de saúde serão usados somente para montar meu plano alimentar.</span>
+      </label>
+      <a class="btn" id="btnPagar" href="https://buy.stripe.com/cNiaEX3HI4Uj3z4bIY8ww00" style="opacity:.45;pointer-events:none;" target="_blank">Pagar R$ 97 com segurança</a>
+      <button class="back-btn" onclick="go(1)">Voltar</button>
+      <p class="foot-note" style="margin-top:16px;">Já pagou? <button style="background:none;border:none;color:var(--oliva);cursor:pointer;font-family:inherit;font-size:11px;font-weight:600;" onclick="go(3)">Clique aqui para continuar</button></p>
+    </div>
+  </section>
+
+  <!-- 3 ANAMNESE -->
+  <section class="screen" data-screen="3">
+    <div class="card">
+      <span class="eyebrow">Anamnese</span>
+      <h2>Me conta sobre você</h2>
+      <p class="lead">Não deixe nenhuma informação de fora. Cada detalhe importa para eu montar um plano realmente adequado ao seu corpo, sua rotina e seu objetivo.</p>
+      <form id="formAnamnese" onsubmit="enviarAnamnese(event)">
+        <label class="field"><span>Nome completo</span><input type="text" name="nome" required placeholder="Seu nome completo"></label>
+        <label class="field"><span>E-mail (onde o plano vai chegar)</span><input type="email" name="email" required placeholder="voce@email.com"></label>
+        <div class="grid2">
+          <label class="field"><span>Idade</span><input type="number" name="idade" required placeholder="Ex: 32" min="18" max="90"></label>
+          <label class="field"><span>Sexo biológico</span>
+            <select name="sexo" required>
+              <option value="">Selecione</option>
+              <option>Feminino</option>
+              <option>Masculino</option>
+            </select>
+          </label>
+          <label class="field"><span>Peso atual (kg)</span><input type="number" name="peso" required placeholder="Ex: 68" step="0.1"></label>
+          <label class="field"><span>Altura (cm)</span><input type="number" name="altura" required placeholder="Ex: 165"></label>
+        </div>
+        <label class="field">
+          <span>Principal objetivo</span>
+          <select name="objetivo" required>
+            <option value="">Selecione</option>
+            <option>Emagrecimento</option>
+            <option>Ganho de massa muscular</option>
+            <option>Reeducação alimentar</option>
+            <option>Mais energia e disposição</option>
+            <option>Saúde hormonal / metabólica</option>
+            <option>Outro</option>
+          </select>
+        </label>
+        <label class="field"><span>Como é sua alimentação hoje? Descreva sua rotina de refeições</span><textarea name="rotina" required placeholder="Horários, o que costuma comer, quando bate mais fome, o que evita..."></textarea></label>
+        <label class="field"><span>Tem alguma restrição alimentar, alergia ou alimento que não come?</span><textarea name="restricoes" placeholder="Ex: não como carne vermelha, intolerância à lactose, alergia a amendoim..."></textarea></label>
+        <label class="field"><span>Pratica atividade física? Qual e com que frequência?</span><input type="text" name="atividade" placeholder="Ex: musculação 3x por semana, caminhada diária..."></label>
+        <label class="field"><span>Faz uso de algum medicamento ou suplemento de forma contínua?</span><textarea name="medicamentos" placeholder="Nome e dose se souber. Se não usa, deixe em branco."></textarea></label>
+        <label class="field"><span>Tem algum exame de sangue recente? Se sim, quais alterações foram identificadas?</span><textarea name="exames" placeholder="Ex: TSH alterado, vitamina D baixa, colesterol alto... Se não tem exames recentes, tudo bem."></textarea></label>
+        <label class="field"><span>Algo mais que queira me contar sobre sua saúde ou sua relação com a comida?</span><textarea name="extras" placeholder="Esse espaço é livre. Conte o que achar importante."></textarea></label>
+        <button type="submit" class="btn" id="btnEnviar">Enviar minhas respostas</button>
+      </form>
+      <button class="back-btn" onclick="go(2)">Voltar</button>
+    </div>
+  </section>
+
+  <!-- 4 CONFIRMACAO -->
+  <section class="screen" data-screen="4">
+    <div class="card center">
+      <div class="ok-badge">✓</div>
+      <h2>Recebi suas respostas</h2>
+      <p class="lead" style="margin-bottom:14px;">Agora é comigo. Vou analisar tudo com cuidado e montar o seu plano alimentar pessoalmente. Ele chega no seu e-mail em <b>até 72 horas</b>.</p>
+      <div class="aviso">A demora existe porque sou eu, nutricionista, que analiso e monto o seu plano. Não é automático.</div>
+      <button class="btn sec" style="margin-top:8px;" onclick="go(5)">Ver como chega o plano (exemplo)</button>
+    </div>
+  </section>
+
+  <!-- 5 PDF PREVIEW -->
+  <section class="screen" data-screen="5">
+    <p style="font-size:12px;color:var(--cinza);margin:0 0 12px;">É assim que o plano chega para você:</p>
+    <div class="pdf">
+      <div class="pdf-head">
+        <h3>Seu plano alimentar</h3>
+        <small>Hosana Muniz · Nutricionista · CRN-3 95279</small>
+      </div>
+      <div class="pdf-body">
+        <div class="pdf-disc">Este plano foi elaborado por mim com base nas informações que você me enviou. Ele é um ponto de partida e <b>não substitui um acompanhamento individualizado em consulta</b>, onde podemos ajustar de perto e monitorar sua evolução.</div>
+        <div class="meal"><h4>Café da manhã</h4><ul><li>2 ovos mexidos com azeite</li><li>1 fatia de pão integral</li><li>1 fatia de mamão</li></ul></div>
+        <div class="meal"><h4>Almoço</h4><ul><li>120g de frango grelhado</li><li>4 col. de arroz integral</li><li>1 concha de feijão</li><li>Salada à vontade com azeite</li></ul></div>
+        <div class="meal"><h4>Lanche da tarde</h4><ul><li>1 iogurte natural integral</li><li>1 fruta + 1 col. de pasta de amendoim</li></ul></div>
+        <div class="meal"><h4>Jantar</h4><ul><li>Omelete de 2 ovos com queijo branco</li><li>Salada verde + batata-doce assada</li></ul></div>
+        <div class="meal"><h4>Lista de compras</h4>
+          <div class="pills"><span>Ovos</span><span>Pão integral</span><span>Mamão</span><span>Frango</span><span>Arroz integral</span><span>Feijão</span><span>Folhas</span><span>Tomate</span><span>Azeite</span><span>Iogurte</span><span>Pasta de amendoim</span><span>Batata-doce</span><span>Queijo branco</span></div>
+        </div>
+      </div>
+      <div class="pdf-foot">Material elaborado pela nutricionista responsável, com apoio de ferramenta automatizada (Art. 37, CFN 856/2026). Hosana Muniz · CRN-3 95279 · hosanamuniznutricionista.com.br</div>
+    </div>
+    <button class="btn sec" style="margin-top:16px;" onclick="go(0)">Voltar ao início</button>
+  </section>
+
+  <!-- 6 ENCAMINHAMENTO -->
+  <section class="screen" data-screen="6">
+    <div class="card center">
+      <div class="ok-badge" style="background:var(--rose-cl);">♥</div>
+      <h2>Seu caso merece um olhar mais próximo</h2>
+      <p class="lead" style="margin-bottom:14px;">Pelo que você indicou, o formato mais adequado para você é uma <b>consulta completa</b>, onde conversamos diretamente e montamos tudo com mais cuidado e segurança.</p>
+      <div class="aviso">Isso não é uma negativa. É cuidado. Casos como o seu pedem uma avaliação mais detalhada, e eu prefiro te atender do jeito certo.</div>
+      <a class="btn rose" style="display:block;margin-top:8px;text-decoration:none;" href="https://wa.me/5513991149157?text=Ol%C3%A1%2C%20eu%20preciso%20do%20atendimento%20completo%20nutricional" target="_blank">Quero o atendimento completo</a>
+      <button class="back-btn" onclick="go(1)">Voltar</button>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  var triagemResp = null;
+
+  // detectar ?pago=1 na URL (redirect do Stripe)
+  if(new URLSearchParams(window.location.search).get('pago') === '1') {
+    document.addEventListener('DOMContentLoaded', function(){ go(3); });
+  }
+
+  function go(n) {
+    document.querySelectorAll('.screen').forEach(function(s){
+      s.classList.toggle('active', +s.dataset.screen === n);
+    });
+    document.querySelectorAll('#steps span').forEach(function(b){
+      b.classList.toggle('on', +b.dataset.s === n);
+    });
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+
+  function atualizarTriagem() {
+    var ok = document.getElementById('consentCheck').checked;
+    ['btnNao','btnSim'].forEach(function(id){
+      var b = document.getElementById(id);
+      b.disabled = !ok;
+      b.style.opacity = ok ? 1 : .45;
+    });
+    atualizarBtnContinuar();
+  }
+
+  function selecionarTriagem(btn, val) {
+    if (!document.getElementById('consentCheck').checked) return;
+    triagemResp = val;
+    document.querySelectorAll('[data-screen="1"] .opts button').forEach(function(x){ x.classList.remove('on'); });
+    btn.classList.add('on');
+    atualizarBtnContinuar();
+  }
+
+  function atualizarBtnContinuar() {
+    var ok = document.getElementById('consentCheck').checked && triagemResp;
+    var b = document.getElementById('btnContinuar');
+    b.disabled = !ok;
+    b.style.opacity = ok ? 1 : .45;
+  }
+
+  function avancarTriagem() {
+    triagemResp === 'sim' ? go(6) : go(2);
+  }
+
+  function atualizarBtnPagar() {
+    var ok = document.getElementById('consentPag').checked;
+    var b = document.getElementById('btnPagar');
+    b.style.opacity = ok ? 1 : .45;
+    b.style.pointerEvents = ok ? 'auto' : 'none';
+  }
+
+  function enviarAnamnese(e) {
+    e.preventDefault();
+    var btn = document.getElementById('btnEnviar');
+    btn.textContent = 'Enviando...';
+    btn.disabled = true;
+
+    var form = document.getElementById('formAnamnese');
+    var data = new FormData(form);
+    var body = {};
+    data.forEach(function(v,k){ body[k] = v; });
+
+    // URL do Google Apps Script — substituir antes de publicar
+    var GAS_URL = 'GAS_URL_AQUI';
+
+    fetch(GAS_URL, {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: {'Content-Type':'application/json'}
+    })
+    .then(function(){ go(4); })
+    .catch(function(){
+      // fallback: abre email se GAS falhar
+      var linhas = Object.entries(body).map(function(pair){ return pair[0]+': '+pair[1]; }).join('\n');
+      window.location = 'mailto:contato@hosanamuniznutricionista.com.br?subject=Anamnese+Consultoria+Online&body='+encodeURIComponent(linhas);
+      go(4);
+    });
+  }
+</script>
+</body>
+</html>
