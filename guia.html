@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Por que eu me sinto mal depois de comer? · Guia por Hosana Muniz</title>
+<meta name="description" content="Guia prático para quem sente coceira, inchaço, dor de cabeça ou mal-estar depois de comer e nunca descobriu o motivo. Por Hosana Muniz, nutricionista CRN-3 95279.">
+<meta property="og:title" content="Por que eu me sinto mal depois de comer?">
+<meta property="og:description" content="O guia para quem sente que a comida faz mal e os exames não mostram nada.">
+<meta property="og:image" content="https://hosanamuniznutricionista.com.br/emblema-guias.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --oliva:#4A5240; --oliva-md:#7A8C6E; --oliva-cl:#D4DCCA;
+    --creme:#F7F5EF; --dourado:#D4A96A; --rose:#A84762; --rose-cl:#F2DDE2;
+    --texto:#2C2C28; --cinza:#857F76; --linha:#E6E2D7;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Raleway',sans-serif;color:var(--texto);line-height:1.7;background:var(--creme);font-weight:400;}
+  img{max-width:100%;display:block;}
+
+  /* NAV */
+  nav{background:#fff;border-bottom:1px solid var(--linha);padding:14px 20px;display:flex;align-items:center;justify-content:center;}
+  .nav-logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;}
+  .nav-logo .mono{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:var(--dourado);line-height:1;letter-spacing:-.08em;position:relative;padding:0 .8rem;}
+  .nav-logo .mono::before,.nav-logo .mono::after{content:'';position:absolute;top:50%;width:.4rem;height:1px;background:var(--dourado);}
+  .nav-logo .mono::before{left:0;} .nav-logo .mono::after{right:0;}
+  .nav-logo .txt{display:flex;flex-direction:column;line-height:1.1;}
+  .nav-logo .nome{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:.9rem;letter-spacing:.22em;color:var(--oliva);text-transform:uppercase;}
+  .nav-logo .sub{font-weight:300;font-size:.52rem;letter-spacing:.38em;color:var(--oliva-md);text-transform:uppercase;margin-top:2px;}
+
+  .wrap{max-width:680px;margin:0 auto;padding:0 18px;}
+
+  /* HERO */
+  .hero{text-align:center;padding:48px 18px 32px;}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--dourado);margin-bottom:14px;}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:2.6rem;line-height:1.12;margin-bottom:16px;}
+  .hero p{font-size:1.05rem;color:var(--cinza);max-width:540px;margin:0 auto;}
+  .hero-img{max-width:420px;margin:28px auto 0;border-radius:16px;overflow:hidden;border:1px solid var(--linha);}
+
+  /* SECTIONS */
+  section{padding:14px 0;}
+  .card{background:#fff;border:1px solid var(--linha);border-radius:18px;padding:30px;margin:16px 0;}
+  h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.9rem;margin-bottom:14px;line-height:1.18;}
+  p.body{font-size:1rem;margin-bottom:14px;color:#3a3a35;}
+  strong{color:var(--oliva);font-weight:600;}
+
+  .check{list-style:none;margin:8px 0;}
+  .check li{font-size:1rem;padding:8px 0 8px 30px;position:relative;color:#3a3a35;border-bottom:1px solid var(--linha);}
+  .check li:last-child{border-bottom:none;}
+  .check li::before{content:'✓';position:absolute;left:0;top:8px;color:var(--oliva);font-weight:700;}
+
+  .inside{list-style:none;}
+  .inside li{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--linha);}
+  .inside li:last-child{border-bottom:none;}
+  .inside .n{width:30px;height:30px;border-radius:50%;background:var(--oliva-cl);color:var(--oliva);font-weight:700;font-size:.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .inside b{font-size:1rem;color:var(--texto);display:block;}
+  .inside span{font-size:.9rem;color:var(--cinza);}
+
+  /* PRICE / CTA */
+  .price-card{background:var(--oliva);color:#fff;border-radius:20px;padding:38px 30px;text-align:center;margin:24px 0;}
+  .price-card .selo{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--dourado);margin-bottom:12px;}
+  .price-card h2{color:#fff;margin-bottom:8px;}
+  .price-card .valor{font-family:'Cormorant Garamond',serif;font-size:3.4rem;line-height:1;margin:14px 0 4px;}
+  .price-card .valor small{font-size:1rem;font-family:'Raleway';color:var(--oliva-cl);}
+  .price-card .obs{font-size:.85rem;color:var(--oliva-cl);margin-bottom:22px;}
+  .btn{display:inline-block;background:var(--dourado);color:#3a3122;text-decoration:none;font-weight:700;font-size:1.05rem;padding:16px 40px;border-radius:12px;letter-spacing:.3px;transition:filter .2s;}
+  .btn:hover{filter:brightness(1.06);}
+  .btn-note{font-size:.8rem;color:var(--oliva-cl);margin-top:14px;}
+  .form-guia{display:flex;flex-direction:column;gap:10px;max-width:360px;margin:0 auto;}
+  .form-guia input{width:100%;border:none;border-radius:10px;padding:13px 14px;font-family:inherit;font-size:1rem;background:#fff;color:var(--texto);outline:none;}
+  .form-guia input::placeholder{color:var(--cinza);}
+  .form-guia .btn{border:none;cursor:pointer;font-family:inherit;margin-top:4px;width:100%;}
+
+  .autora{display:flex;gap:18px;align-items:center;}
+  .autora img{width:84px;height:84px;border-radius:50%;object-fit:cover;border:2px solid var(--oliva-cl);flex-shrink:0;}
+  .autora h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.4rem;}
+  .autora .crn{font-size:.8rem;color:var(--dourado);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
+  .autora p{font-size:.92rem;color:var(--cinza);}
+
+  .disclaimer{font-size:.78rem;color:var(--cinza);line-height:1.6;border-top:1px solid var(--linha);padding:24px 0;margin-top:10px;text-align:center;}
+
+  footer{text-align:center;padding:30px 18px 50px;font-size:.8rem;color:var(--cinza);}
+
+  @media(max-width:480px){
+    h1{font-size:2rem;} h2{font-size:1.6rem;}
+    .card{padding:24px;}
+    .autora{flex-direction:column;text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://hosanamuniznutricionista.com.br" class="nav-logo">
+    <span class="mono">HM</span>
+    <span class="txt"><span class="nome">Hosana Muniz</span><span class="sub">nutricionista</span></span>
+  </a>
+</nav>
+
+<div class="hero">
+  <div class="eyebrow">Guia prático · Guias Hosana Muniz</div>
+  <h1>Por que eu me sinto mal depois de comer?</h1>
+  <p>O guia para quem sente coceira, inchaço, dor de cabeça ou mal-estar depois das refeições e nunca descobriu o motivo, mesmo com os exames "normais".</p>
+  <div class="hero-img"><img src="https://images.pexels.com/photos/5938358/pexels-photo-5938358.jpeg?cs=srgb&fm=jpg&w=840" alt="Desconforto depois de comer"></div>
+</div>
+
+<div class="wrap">
+
+  <section>
+    <div class="card">
+      <h2>Você não está inventando</h2>
+      <p class="body">Se você já reparou que se sente mal depois de comer, e ouviu que "é da sua cabeça", que "é ansiedade" ou que "é frescura", eu quero te dizer uma coisa: <strong>o que você sente é real.</strong></p>
+      <p class="body">Existe um tipo de reação à comida que não aparece nos exames comuns de alergia. Ela tem a ver com uma substância chamada histamina, presente em muito mais alimentos do que se imagina. Algumas pessoas têm dificuldade de processá-la, e o resultado são sintomas espalhados pelo corpo que parecem não ter conexão.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <h2>Será que é o seu caso?</h2>
+      <p class="body">Veja se você se reconhece em alguns destes sinais ligados à comida:</p>
+      <ul class="check">
+        <li>Coceira ou vermelhidão na pele depois de comer</li>
+        <li>Dor de cabeça ou enxaqueca sem causa clara</li>
+        <li>Nariz entupido ou escorrendo após refeições</li>
+        <li>Inchaço e estufamento na barriga</li>
+        <li>Coração acelerado ou sensação de calor no rosto</li>
+        <li>Intestino irritado, com cólica ou desconforto</li>
+      </ul>
+      <p class="body" style="margin-top:16px;margin-bottom:0;">Se marcou três ou mais, este guia foi feito pra você.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <h2>O que você vai encontrar</h2>
+      <ul class="inside">
+        <li><span class="n">1</span><div><b>Entenda o que você sente</b><span>Por que o corpo reage e por que os exames comuns não mostram.</span></div></li>
+        <li><span class="n">2</span><div><b>A histamina em português</b><span>O mecanismo explicado de forma simples, com a analogia do copo.</span></div></li>
+        <li><span class="n">3</span><div><b>Tabela de alimentos</b><span>O que costuma ter mais histamina e quais as opções mais tranquilas.</span></div></li>
+        <li><span class="n">4</span><div><b>Página visual de salvar no celular</b><span>Os alimentos que costumam cair bem, num quadro pra levar nas compras.</span></div></li>
+        <li><span class="n">5</span><div><b>Plano de 4 passos</b><span>Um caminho seguro pra observar, testar e reintroduzir, sem dieta maluca.</span></div></li>
+        <li><span class="n">6</span><div><b>Quando procurar ajuda</b><span>Os sinais que pedem avaliação profissional.</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="price-card">
+      <div class="selo">E-book em PDF · entrega imediata</div>
+      <h2>Comece a entender seu corpo hoje</h2>
+      <div class="valor">R$ 27<small> · pagamento único</small></div>
+      <div class="obs">Preencha seus dados e finalize a compra. O guia chega no seu e-mail logo após o pagamento.</div>
+      <form id="formGuia" class="form-guia">
+        <input type="text" name="nome" placeholder="Seu nome completo" required>
+        <input type="email" name="email" placeholder="Seu melhor e-mail" required>
+        <input type="tel" name="telefone" placeholder="Seu WhatsApp com DDD" required>
+        <button type="submit" class="btn" id="btnComprar">Quero meu guia</button>
+      </form>
+      <div class="btn-note">Pagamento seguro via Stripe · Pix ou cartão</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <div class="autora">
+        <img src="https://hosanamuniznutricionista.com.br/hosana.jpg" alt="Hosana Muniz">
+        <div>
+          <div class="crn">Nutricionista · CRN-3 95279</div>
+          <h3>Hosana Muniz</h3>
+          <p>Nutricionista clínica com foco em metabologia e nos casos que costumam passar despercebidos. Atende online, montando planos feitos pra rotina, os sintomas e o corpo de cada pessoa, sem dieta de gaveta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="disclaimer">
+    Este material é de caráter educativo e informativo e não substitui a consulta, o diagnóstico ou o tratamento realizados por profissional de saúde habilitado. As orientações são gerais e não consideram particularidades individuais. Em caso de sintomas persistentes ou intensos, procure avaliação profissional. Material elaborado pela nutricionista responsável, com apoio de ferramenta automatizada (Art. 37, Resolução CFN nº 856/2026). © Hosana Muniz · Nutricionista · CRN-3 95279.
+  </div>
+
+</div>
+
+<footer>
+  Hosana Muniz · Nutricionista · CRN-3 95279 · hosanamuniznutricionista.com.br
+</footer>
+
+<script>
+  // Link do Stripe (Payment Link). Trocar quando a Hosana enviar.
+  var STRIPE_LINK = 'STRIPE_LINK_AQUI';
+
+  document.getElementById('formGuia').addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = document.getElementById('btnComprar');
+    btn.textContent = 'Aguarde...';
+    btn.disabled = true;
+
+    var form = e.target;
+    var body = {
+      token: 'guia-hm-2026',
+      produto: 'Por que me sinto mal depois de comer',
+      nome: form.nome.value,
+      email: form.email.value,
+      telefone: form.telefone.value
+    };
+
+    function irPraStripe(){
+      // leva o email pro Stripe ja preenchido
+      var sep = STRIPE_LINK.indexOf('?') === -1 ? '?' : '&';
+      window.location = STRIPE_LINK + sep + 'prefilled_email=' + encodeURIComponent(body.email);
+    }
+
+    fetch('https://app.plataformanutra.com.br/api/guia-lead', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(body)
+    }).then(irPraStripe).catch(irPraStripe);
+  });
+</script>
+
+</body>
+</html>
