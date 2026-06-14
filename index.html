@@ -333,7 +333,7 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
       <li><a href="#atuacao">Como atuo</a></li>
       <li><a href="#receitas">Receitas</a></li>
       <!-- <li class="nav-blog"><a href="#guia">Guia Familiar</a></li> -->
-      <li class="nav-blog"><a href="#blog">Blog</a></li>
+      <li class="nav-blog"><a href="/blog">Blog</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
     <a href="https://wa.me/5513991149157?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" class="nav-cta">Agende sua consulta</a>
@@ -350,7 +350,7 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
     <li><a href="#atuacao" onclick="closeMobile()">Como atuo</a></li>
     <li><a href="#receitas" onclick="closeMobile()">Receitas</a></li>
     <!-- <li class="nav-blog"><a href="#guia" onclick="closeMobile()">Guia Familiar</a></li> -->
-    <li class="nav-blog"><a href="#blog" onclick="closeMobile()">Blog</a></li>
+    <li class="nav-blog"><a href="/blog" onclick="closeMobile()">Blog</a></li>
     <li><a href="#contato" onclick="closeMobile()">Contato</a></li>
     <li><a href="https://wa.me/5513991149157?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" class="nav-cta" onclick="closeMobile()">Agende sua consulta</a></li>
   </ul>
@@ -541,14 +541,14 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
       <h2>Blog</h2>
     </div>
     <div class="blog-grid">
-      <div class="blog-card">
-        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&auto=format&fit=crop" alt="Artigo 1"/>
+      <a class="blog-card" href="/blog-por-que-me-sinto-mal" style="text-decoration:none;color:inherit;display:block;">
+        <img src="/blog-hero-histamina.jpg" alt="Mulher com desconforto na barriga depois de comer"/>
         <div class="blog-card-body">
-          <span class="blog-tag">Saúde intestinal</span>
-          <h3>Como a microbiota intestinal influencia sua energia e humor</h3>
-          <p class="blog-em-breve">Em breve</p>
+          <span class="blog-tag">Saúde e digestão</span>
+          <h3>Por que eu me sinto mal depois de comer?</h3>
+          <p class="blog-em-breve" style="color:#4A5240;font-weight:600;">Ler o artigo &rarr;</p>
         </div>
-      </div>
+      </a>
       <div class="blog-card">
         <img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=600&auto=format&fit=crop" alt="Artigo 2"/>
         <div class="blog-card-body">
@@ -565,6 +565,9 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
           <p class="blog-em-breve">Em breve</p>
         </div>
       </div>
+    </div>
+    <div style="text-align:center;margin-top:32px;">
+      <a href="/blog" style="display:inline-block;background:#4A5240;color:#fff;text-decoration:none;font-weight:600;font-size:.95rem;padding:13px 32px;border-radius:10px;letter-spacing:.3px;">Ver o blog</a>
     </div>
   </div>
 </section>

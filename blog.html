@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog | Hosana Muniz, Nutricionista</title>
+<meta name="description" content="Conteúdo sobre digestão, metabolismo, hormônios e os sinais do corpo que costumam passar despercebidos. Por Hosana Muniz, nutricionista CRN-3 95279.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --oliva:#4A5240; --oliva-md:#7A8C6E; --oliva-cl:#D4DCCA;
+    --creme:#F7F5EF; --dourado:#D4A96A; --rose:#A84762; --rose-cl:#F2DDE2;
+    --texto:#2C2C28; --cinza:#857F76; --linha:#E6E2D7;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Raleway',sans-serif;color:var(--texto);line-height:1.7;background:var(--creme);}
+  nav{background:#fff;border-bottom:1px solid var(--linha);padding:14px 20px;display:flex;align-items:center;justify-content:center;}
+  .nav-logo{display:flex;flex-direction:column;align-items:center;text-decoration:none;}
+  .nav-logo .nome{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1rem;letter-spacing:.22em;color:var(--oliva);text-transform:uppercase;}
+  .nav-logo .sub{font-weight:300;font-size:.54rem;letter-spacing:.36em;color:var(--oliva-md);text-transform:uppercase;margin-top:2px;}
+
+  .wrap{max-width:960px;margin:0 auto;padding:0 22px;}
+  header.blog-head{text-align:center;padding:54px 0 8px;}
+  header.blog-head .eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--dourado);margin-bottom:14px;}
+  header.blog-head h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:2.8rem;line-height:1.1;margin-bottom:14px;}
+  header.blog-head p{font-size:1.05rem;color:var(--cinza);max-width:540px;margin:0 auto;}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:26px;padding:40px 0 30px;}
+  .card{background:#fff;border:1px solid var(--linha);border-radius:18px;overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;box-shadow:0 18px 44px -28px rgba(74,82,64,.5);transition:transform .18s, box-shadow .18s;}
+  .card.ativo:hover{transform:translateY(-5px);box-shadow:0 28px 54px -26px rgba(74,82,64,.6);}
+  .card .foto{aspect-ratio:16/10;overflow:hidden;background:var(--oliva-cl);}
+  .card .foto img{width:100%;height:100%;object-fit:cover;display:block;}
+  .card .corpo{padding:22px 22px 24px;flex:1;display:flex;flex-direction:column;}
+  .card .tag{font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--dourado);margin-bottom:10px;}
+  .card h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.45rem;line-height:1.22;color:var(--texto);margin-bottom:10px;}
+  .card .resumo{font-size:.92rem;color:var(--cinza);flex:1;}
+  .card .ler{margin-top:16px;font-size:.82rem;font-weight:700;letter-spacing:.5px;color:var(--oliva);display:flex;align-items:center;gap:6px;}
+  .card .em-breve{margin-top:16px;font-size:.78rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--oliva-md);}
+  .card.soon{opacity:.82;}
+  .card.soon .foto{filter:grayscale(.3);}
+
+  footer{text-align:center;font-size:.78rem;color:var(--cinza);padding:30px 20px 46px;border-top:1px solid var(--linha);margin-top:20px;}
+  footer a{color:var(--oliva);text-decoration:none;}
+  @media(max-width:560px){ header.blog-head h1{font-size:2.1rem;} }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <span class="nome">Hosana Muniz</span>
+    <span class="sub">Nutricionista</span>
+  </a>
+</nav>
+
+<div class="wrap">
+  <header class="blog-head">
+    <p class="eyebrow">Conteúdo</p>
+    <h1>Blog</h1>
+    <p>Sobre digestão, metabolismo, hormônios e os sinais do corpo que costumam passar despercebidos. Escrito por mim, pra você entender o seu corpo sem susto.</p>
+  </header>
+
+  <div class="grid">
+
+    <a href="/blog-por-que-me-sinto-mal" class="card ativo">
+      <div class="foto"><img src="blog-hero-histamina.jpg" alt="Mulher com desconforto na barriga depois de comer"></div>
+      <div class="corpo">
+        <span class="tag">Saúde e digestão</span>
+        <h3>Por que eu me sinto mal depois de comer?</h3>
+        <p class="resumo">Se você incha, sente dor de cabeça ou mal-estar depois das refeições e os exames deram normais, talvez a resposta esteja na histamina.</p>
+        <span class="ler">Ler o artigo &rarr;</span>
+      </div>
+    </a>
+
+    <div class="card soon">
+      <div class="foto"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&auto=format&fit=crop" alt="Saúde intestinal"></div>
+      <div class="corpo">
+        <span class="tag">Saúde intestinal</span>
+        <h3>Como a microbiota intestinal influencia sua energia e humor</h3>
+        <p class="resumo">A relação entre o intestino, a disposição e a forma como você se sente ao longo do dia.</p>
+        <span class="em-breve">Em breve</span>
+      </div>
+    </div>
+
+    <div class="card soon">
+      <div class="foto"><img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=600&auto=format&fit=crop" alt="Metabolismo"></div>
+      <div class="corpo">
+        <span class="tag">Metabolismo</span>
+        <h3>Equilíbrio metabólico: o que é e por que importa para o seu peso</h3>
+        <p class="resumo">Por que o metabolismo vai muito além de comer menos, e como ele influencia seus resultados.</p>
+        <span class="em-breve">Em breve</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  Hosana Muniz · Nutricionista · CRN-3 95279 · <a href="/">hosanamuniznutricionista.com.br</a>
+</footer>
+
+</body>
+</html>
