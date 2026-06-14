@@ -156,7 +156,6 @@
       <form id="formGuia" class="form-guia">
         <input type="text" name="nome" placeholder="Seu nome completo" required>
         <input type="email" name="email" placeholder="Seu melhor e-mail" required>
-        <input type="tel" name="telefone" placeholder="Seu WhatsApp com DDD" required>
         <button type="submit" class="btn" id="btnComprar">Quero meu guia</button>
       </form>
       <div class="btn-note">Pagamento seguro via Stripe · Pix ou cartão</div>
@@ -202,7 +201,7 @@
       produto: 'Por que me sinto mal depois de comer',
       nome: form.nome.value,
       email: form.email.value,
-      telefone: form.telefone.value
+      telefone: form.telefone ? form.telefone.value : ''
     };
 
     function irPraStripe(){
