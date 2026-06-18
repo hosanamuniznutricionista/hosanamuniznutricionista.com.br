@@ -155,7 +155,7 @@
     </div>
 
     <p class="disclaimer">
-      Esta calculadora oferece uma <strong>estimativa educativa</strong> de gasto calórico (fórmula de Mifflin-St Jeor). Não é uma prescrição, não substitui avaliação individual e não deve ser usada para tratar nenhuma condição por conta própria. Para um plano adequado a você, procure acompanhamento com nutricionista.
+      Esta calculadora oferece uma <strong>estimativa educativa</strong> de gasto calórico (fórmula de Harris-Benedict revisada). Não é uma prescrição, não substitui avaliação individual e não deve ser usada para tratar nenhuma condição por conta própria. Para um plano adequado a você, procure acompanhamento com nutricionista.
     </p>
   </section>
 </div>
@@ -181,12 +181,16 @@
 
   document.getElementById('btnCalcular').addEventListener('click', function(){
     var idade = num('idade'), peso = num('peso'), altura = num('altura');
+    // Aceita altura em metros (1,56) ou centimetros (156): se vier < 3, converte pra cm.
+    if(altura > 0 && altura < 3) altura = altura * 100;
     var erro = document.getElementById('erro');
     if(idade <= 0 || peso <= 0 || altura <= 0){ erro.style.display = 'block'; return; }
     erro.style.display = 'none';
     var fator = parseFloat(document.getElementById('atividade').value);
-    // Mifflin-St Jeor
-    var tmb = 10*peso + 6.25*altura - 5*idade + (sexo === 'm' ? 5 : -161);
+    // Harris-Benedict revisada (Roza e Shizgal, 1984) — altura em cm
+    var tmb = sexo === 'm'
+      ? 88.362 + 13.397*peso + 4.799*altura - 5.677*idade
+      : 447.593 + 9.247*peso + 3.098*altura - 4.330*idade;
     var get = tmb * fator;
     var ajuste = objetivo === 'emagrecimento' ? 0.80 : (objetivo === 'ganho' ? 1.12 : 1.0);
     var alvo = Math.round(get * ajuste / 10) * 10;
