@@ -136,13 +136,8 @@
       <div class="cta-card">
         <h2>Esse número é só o começo</h2>
         <p>Essa é uma <strong>estimativa geral</strong>, baseada numa fórmula populacional. Ela não considera a sua rotina, suas queixas, seus exames nem os alimentos que combinam com você.</p>
-        <p>Um plano <strong>feito pra você</strong>, do jeito que dá pra seguir de verdade, é o acompanhamento nutricional comigo.</p>
-        <form class="form-lead" id="formLead">
-          <input type="text" id="nome" placeholder="Seu nome" required>
-          <input type="email" id="email" placeholder="Seu melhor e-mail" required>
-          <input type="tel" id="telefone" placeholder="WhatsApp (com DDD)" required>
-          <button class="btn" type="submit" id="btnLead">Quero falar com a Hosana</button>
-        </form>
+        <p>Um plano <strong>feito pra você</strong>, do jeito que dá pra seguir de verdade, é o acompanhamento nutricional comigo. Me chama no WhatsApp que eu te explico como funciona e o valor.</p>
+        <a class="btn" id="btnWhats" href="https://wa.me/5513991149157" target="_blank" rel="noopener" style="max-width:380px;margin:18px auto 0;">Falar com a Hosana no WhatsApp</a>
         <div class="autora">
           <img src="https://hosanamuniznutricionista.com.br/hosana.jpg" alt="Hosana Muniz" onerror="this.style.display='none'">
           <div style="text-align:left">
@@ -204,28 +199,16 @@
     document.getElementById('mGord').textContent = gord;
     var labels = { emagrecimento: 'Para emagrecer com saúde', manutencao: 'Para manter o seu peso', ganho: 'Para ganhar massa muscular' };
     document.getElementById('objLabel').textContent = labels[objetivo];
+
+    // Monta a mensagem pronta do WhatsApp com objetivo + calorias.
+    var objNome = { emagrecimento: 'emagrecer', manutencao: 'manter o peso', ganho: 'ganhar massa' }[objetivo];
+    var msg = 'Oi Hosana! Usei a calculadora no seu site. Meu objetivo é ' + objNome +
+      ' e deu cerca de ' + alvo.toLocaleString('pt-BR') + ' kcal/dia. ' +
+      'Quero saber como funciona o acompanhamento e o valor.';
+    document.getElementById('btnWhats').href = 'https://wa.me/5513991149157?text=' + encodeURIComponent(msg);
+
     document.getElementById('resultado').style.display = 'block';
     document.getElementById('resultado').scrollIntoView({ behavior: 'smooth' });
-  });
-
-  document.getElementById('formLead').addEventListener('submit', function(e){
-    e.preventDefault();
-    var btn = document.getElementById('btnLead');
-    btn.textContent = 'Enviando...'; btn.disabled = true;
-    var objNome = { emagrecimento: 'Emagrecer', manutencao: 'Manter peso', ganho: 'Ganhar massa' }[objetivo];
-    var body = {
-      token: 'calc-hm-2026',
-      produto: 'Calculadora de calorias - objetivo: ' + objNome,
-      nome: document.getElementById('nome').value,
-      email: document.getElementById('email').value,
-      telefone: document.getElementById('telefone').value
-    };
-    function irPraConsultoria(){ window.location = 'consultoria.html'; }
-    fetch('https://app.plataformanutra.com.br/api/guia-lead', {
-      method: 'POST',
-      headers: {'Content-Type':'application/json'},
-      body: JSON.stringify(body)
-    }).then(irPraConsultoria).catch(irPraConsultoria);
   });
 </script>
 
