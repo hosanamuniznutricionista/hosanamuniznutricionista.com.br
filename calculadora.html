@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de calorias · Quanto comer pro seu objetivo · Hosana Muniz</title>
+<meta name="description" content="Descubra em 1 minuto uma estimativa de quantas calorias você precisa por dia para emagrecer, manter ou ganhar massa. Gratuito, por Hosana Muniz, nutricionista CRN-3 95279.">
+<meta property="og:title" content="Quanto você deveria comer por dia?">
+<meta property="og:description" content="Calculadora gratuita de calorias para o seu objetivo. Por Hosana Muniz, nutricionista.">
+<meta property="og:image" content="https://hosanamuniznutricionista.com.br/emblema-guias.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --oliva:#4A5240; --oliva-md:#7A8C6E; --oliva-cl:#D4DCCA;
+    --creme:#F7F5EF; --dourado:#D4A96A; --rose:#A84762; --rose-cl:#F2DDE2;
+    --texto:#2C2C28; --cinza:#857F76; --linha:#E6E2D7;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Raleway',sans-serif;color:var(--texto);line-height:1.7;background:var(--creme);font-weight:400;}
+  img{max-width:100%;display:block;}
+  nav{background:#fff;border-bottom:1px solid var(--linha);padding:14px 20px;display:flex;align-items:center;justify-content:center;}
+  .nav-logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;}
+  .nav-logo .mono{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:var(--dourado);line-height:1;letter-spacing:-.08em;position:relative;padding:0 .8rem;}
+  .nav-logo .mono::before,.nav-logo .mono::after{content:'';position:absolute;top:50%;width:.4rem;height:1px;background:var(--dourado);}
+  .nav-logo .mono::before{left:0;} .nav-logo .mono::after{right:0;}
+  .nav-logo .txt{display:flex;flex-direction:column;line-height:1.1;}
+  .nav-logo .nome{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:.9rem;letter-spacing:.22em;color:var(--oliva);text-transform:uppercase;}
+  .nav-logo .sub{font-weight:300;font-size:.52rem;letter-spacing:.38em;color:var(--oliva-md);text-transform:uppercase;margin-top:2px;}
+  .wrap{max-width:680px;margin:0 auto;padding:0 18px;}
+  .hero{text-align:center;padding:48px 18px 24px;}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--dourado);margin-bottom:14px;}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:2.6rem;line-height:1.12;margin-bottom:16px;}
+  .hero p{font-size:1.05rem;color:var(--cinza);max-width:540px;margin:0 auto;}
+  section{padding:14px 0;}
+  .card{background:#fff;border:1px solid var(--linha);border-radius:18px;padding:30px;margin:16px 0;}
+  h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.9rem;margin-bottom:14px;line-height:1.18;}
+  strong{color:var(--oliva);font-weight:600;}
+  label.fld{display:block;font-size:.78rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--cinza);margin:14px 0 6px;}
+  .seg{display:flex;gap:8px;flex-wrap:wrap;}
+  .seg button{flex:1;min-width:90px;border:1px solid var(--linha);background:#fff;color:var(--texto);font-family:inherit;font-size:.92rem;font-weight:600;padding:12px 10px;border-radius:12px;cursor:pointer;transition:all .15s;}
+  .seg button.on{background:var(--oliva);color:#fff;border-color:var(--oliva);}
+  .row{display:flex;gap:10px;}
+  .row > div{flex:1;}
+  input,select{width:100%;border:1px solid var(--linha);border-radius:10px;padding:13px 14px;font-family:inherit;font-size:1rem;background:#fff;color:var(--texto);outline:none;}
+  input:focus,select:focus{border-color:var(--oliva-md);}
+  .btn{display:inline-block;background:var(--dourado);color:#3a3122;text-decoration:none;font-weight:700;font-size:1.05rem;padding:16px 40px;border-radius:12px;letter-spacing:.3px;transition:filter .2s;border:none;cursor:pointer;font-family:inherit;width:100%;margin-top:18px;}
+  .btn:hover{filter:brightness(1.06);}
+  .erro{color:var(--rose);font-size:.85rem;margin-top:10px;text-align:center;display:none;}
+  /* resultado */
+  #resultado{display:none;}
+  .res-card{background:var(--oliva);color:#fff;border-radius:20px;padding:34px 30px;text-align:center;margin:16px 0;}
+  .res-card .selo{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--dourado);margin-bottom:8px;}
+  .res-card .kcal{font-family:'Cormorant Garamond',serif;font-size:3.6rem;line-height:1;margin:6px 0 2px;}
+  .res-card .kcal small{font-size:1rem;font-family:'Raleway';color:var(--oliva-cl);}
+  .res-card .obj{font-size:.9rem;color:var(--oliva-cl);}
+  .macros{display:flex;gap:10px;margin-top:22px;}
+  .macro{flex:1;background:rgba(255,255,255,.1);border-radius:12px;padding:14px 8px;}
+  .macro .n{font-family:'Cormorant Garamond',serif;font-size:1.6rem;line-height:1;}
+  .macro .l{font-size:.72rem;letter-spacing:1px;text-transform:uppercase;color:var(--oliva-cl);margin-top:4px;}
+  .cta-card{background:#fff;border:2px solid var(--oliva-cl);border-radius:18px;padding:30px;margin:16px 0;text-align:center;}
+  .cta-card p{font-size:1rem;color:#3a3a35;margin-bottom:8px;}
+  .form-lead{display:flex;flex-direction:column;gap:10px;max-width:380px;margin:18px auto 0;}
+  .autora{display:flex;gap:16px;align-items:center;justify-content:center;margin-top:20px;}
+  .autora img{width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid var(--oliva-cl);}
+  .autora .crn{font-size:.72rem;color:var(--dourado);font-weight:700;letter-spacing:1px;text-transform:uppercase;}
+  .autora b{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.1rem;}
+  .disclaimer{font-size:.78rem;color:var(--cinza);line-height:1.6;border-top:1px solid var(--linha);padding:24px 0;margin-top:10px;text-align:center;}
+  footer{text-align:center;padding:30px 18px 50px;font-size:.8rem;color:var(--cinza);}
+  @media(max-width:480px){ h1{font-size:2rem;} h2{font-size:1.6rem;} .card,.cta-card{padding:24px;} .macros{flex-direction:column;} }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://hosanamuniznutricionista.com.br" class="nav-logo">
+    <span class="mono">HM</span>
+    <span class="txt"><span class="nome">Hosana Muniz</span><span class="sub">nutricionista</span></span>
+  </a>
+</nav>
+
+<div class="hero">
+  <div class="eyebrow">Calculadora gratuita</div>
+  <h1>Quanto você deveria comer por dia?</h1>
+  <p>Uma estimativa rápida de quantas calorias seu corpo precisa para o seu objetivo. Leva 1 minuto.</p>
+</div>
+
+<div class="wrap">
+  <section>
+    <div class="card" id="formCard">
+      <label class="fld">Seu objetivo</label>
+      <div class="seg" id="segObjetivo">
+        <button type="button" data-v="emagrecimento" class="on">Emagrecer</button>
+        <button type="button" data-v="manutencao">Manter o peso</button>
+        <button type="button" data-v="ganho">Ganhar massa</button>
+      </div>
+
+      <label class="fld">Sexo</label>
+      <div class="seg" id="segSexo">
+        <button type="button" data-v="f" class="on">Feminino</button>
+        <button type="button" data-v="m">Masculino</button>
+      </div>
+
+      <div class="row">
+        <div><label class="fld">Idade</label><input type="number" id="idade" inputmode="numeric" placeholder="anos"></div>
+        <div><label class="fld">Peso</label><input type="number" id="peso" inputmode="decimal" placeholder="kg"></div>
+        <div><label class="fld">Altura</label><input type="number" id="altura" inputmode="numeric" placeholder="cm"></div>
+      </div>
+
+      <label class="fld">Nível de atividade física</label>
+      <select id="atividade">
+        <option value="1.2">Sedentária (pouco ou nenhum exercício)</option>
+        <option value="1.375">Leve (1 a 3x na semana)</option>
+        <option value="1.55" selected>Moderada (3 a 5x na semana)</option>
+        <option value="1.725">Intensa (6 a 7x na semana)</option>
+        <option value="1.9">Muito intensa (treino pesado, 2x ao dia)</option>
+      </select>
+
+      <button class="btn" id="btnCalcular">Calcular minhas calorias</button>
+      <p class="erro" id="erro">Preencha idade, peso e altura para calcular.</p>
+    </div>
+
+    <div id="resultado">
+      <div class="res-card">
+        <div class="selo">Sua estimativa diária</div>
+        <div class="kcal"><span id="kcalAlvo">0</span> <small>kcal/dia</small></div>
+        <div class="obj" id="objLabel"></div>
+        <div class="macros">
+          <div class="macro"><div class="n"><span id="mProt">0</span>g</div><div class="l">Proteína</div></div>
+          <div class="macro"><div class="n"><span id="mCarb">0</span>g</div><div class="l">Carboidrato</div></div>
+          <div class="macro"><div class="n"><span id="mGord">0</span>g</div><div class="l">Gordura</div></div>
+        </div>
+      </div>
+
+      <div class="cta-card">
+        <h2>Esse número é só o começo</h2>
+        <p>Essa é uma <strong>estimativa geral</strong>, baseada numa fórmula populacional. Ela não considera a sua rotina, suas queixas, seus exames nem os alimentos que combinam com você.</p>
+        <p>Um plano <strong>feito pra você</strong>, do jeito que dá pra seguir de verdade, é o acompanhamento nutricional comigo.</p>
+        <form class="form-lead" id="formLead">
+          <input type="text" id="nome" placeholder="Seu nome" required>
+          <input type="email" id="email" placeholder="Seu melhor e-mail" required>
+          <input type="tel" id="telefone" placeholder="WhatsApp (com DDD)" required>
+          <button class="btn" type="submit" id="btnLead">Quero falar com a Hosana</button>
+        </form>
+        <div class="autora">
+          <img src="https://hosanamuniznutricionista.com.br/hosana.jpg" alt="Hosana Muniz" onerror="this.style.display='none'">
+          <div style="text-align:left">
+            <div class="crn">CRN-3 95279</div>
+            <b>Hosana Muniz</b><br>
+            <span style="font-size:.85rem;color:var(--cinza)">Nutricionista</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="disclaimer">
+      Esta calculadora oferece uma <strong>estimativa educativa</strong> de gasto calórico (fórmula de Mifflin-St Jeor). Não é uma prescrição, não substitui avaliação individual e não deve ser usada para tratar nenhuma condição por conta própria. Para um plano adequado a você, procure acompanhamento com nutricionista.
+    </p>
+  </section>
+</div>
+
+<footer>
+  Hosana Muniz · Nutricionista · CRN-3 95279 · hosanamuniznutricionista.com.br
+</footer>
+
+<script>
+  var objetivo = 'emagrecimento', sexo = 'f';
+  function bindSeg(id, cb){
+    var box = document.getElementById(id);
+    box.addEventListener('click', function(e){
+      var b = e.target.closest('button'); if(!b) return;
+      [].forEach.call(box.querySelectorAll('button'), function(x){ x.classList.remove('on'); });
+      b.classList.add('on'); cb(b.getAttribute('data-v'));
+    });
+  }
+  bindSeg('segObjetivo', function(v){ objetivo = v; });
+  bindSeg('segSexo', function(v){ sexo = v; });
+
+  function num(id){ var n = parseFloat(String(document.getElementById(id).value).replace(',', '.')); return Number.isFinite(n) ? n : 0; }
+
+  document.getElementById('btnCalcular').addEventListener('click', function(){
+    var idade = num('idade'), peso = num('peso'), altura = num('altura');
+    var erro = document.getElementById('erro');
+    if(idade <= 0 || peso <= 0 || altura <= 0){ erro.style.display = 'block'; return; }
+    erro.style.display = 'none';
+    var fator = parseFloat(document.getElementById('atividade').value);
+    // Mifflin-St Jeor
+    var tmb = 10*peso + 6.25*altura - 5*idade + (sexo === 'm' ? 5 : -161);
+    var get = tmb * fator;
+    var ajuste = objetivo === 'emagrecimento' ? 0.80 : (objetivo === 'ganho' ? 1.12 : 1.0);
+    var alvo = Math.round(get * ajuste / 10) * 10;
+    // macros: proteina 1.8 g/kg, gordura 0.9 g/kg, carbo = resto
+    var prot = Math.round(1.8 * peso);
+    var gord = Math.round(0.9 * peso);
+    var carb = Math.max(0, Math.round((alvo - prot*4 - gord*9) / 4));
+    document.getElementById('kcalAlvo').textContent = alvo.toLocaleString('pt-BR');
+    document.getElementById('mProt').textContent = prot;
+    document.getElementById('mCarb').textContent = carb;
+    document.getElementById('mGord').textContent = gord;
+    var labels = { emagrecimento: 'Para emagrecer com saúde', manutencao: 'Para manter o seu peso', ganho: 'Para ganhar massa muscular' };
+    document.getElementById('objLabel').textContent = labels[objetivo];
+    document.getElementById('resultado').style.display = 'block';
+    document.getElementById('resultado').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  document.getElementById('formLead').addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = document.getElementById('btnLead');
+    btn.textContent = 'Enviando...'; btn.disabled = true;
+    var objNome = { emagrecimento: 'Emagrecer', manutencao: 'Manter peso', ganho: 'Ganhar massa' }[objetivo];
+    var body = {
+      token: 'calc-hm-2026',
+      produto: 'Calculadora de calorias - objetivo: ' + objNome,
+      nome: document.getElementById('nome').value,
+      email: document.getElementById('email').value,
+      telefone: document.getElementById('telefone').value
+    };
+    function irPraConsultoria(){ window.location = 'consultoria.html'; }
+    fetch('https://app.plataformanutra.com.br/api/guia-lead', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(body)
+    }).then(irPraConsultoria).catch(irPraConsultoria);
+  });
+</script>
+
+</body>
+</html>
