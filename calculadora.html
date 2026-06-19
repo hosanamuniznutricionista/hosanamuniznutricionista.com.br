@@ -136,8 +136,14 @@
       <div class="cta-card">
         <h2>Esse número é só o começo</h2>
         <p>Essa é uma <strong>estimativa geral</strong>, baseada numa fórmula populacional. Ela não considera a sua rotina, suas queixas, seus exames nem os alimentos que combinam com você.</p>
-        <p>Um plano <strong>feito pra você</strong>, do jeito que dá pra seguir de verdade, é o acompanhamento nutricional comigo. Me chama no WhatsApp que eu te explico como funciona e o valor.</p>
-        <a class="btn" id="btnWhats" href="https://wa.me/5513991149157" target="_blank" rel="noopener" style="max-width:380px;margin:18px auto 0;">Falar com a Hosana no WhatsApp</a>
+        <p>Um plano <strong>feito pra você</strong>, do jeito que dá pra seguir de verdade, é o acompanhamento nutricional comigo. Deixe seu nome e WhatsApp que <strong>eu te chamo</strong> pra te ajudar.</p>
+        <form class="form-lead" id="formLead">
+          <input type="text" id="nome" placeholder="Seu nome" required>
+          <input type="tel" id="telefone" placeholder="Seu WhatsApp (com DDD)" required>
+          <button class="btn" type="submit" id="btnLead" style="margin-top:4px;">Quero que a Hosana me chame</button>
+        </form>
+        <p id="leadOk" style="display:none;color:var(--oliva);font-weight:600;margin-top:14px;">Recebido! A Hosana vai entrar em contato com você em breve.</p>
+        <p style="font-size:.88rem;color:var(--cinza);margin-top:16px;">Prefere falar agora? <a id="btnWhats" href="https://wa.me/5513991149157" target="_blank" rel="noopener" style="color:var(--oliva);font-weight:700;">Chamar no WhatsApp</a></p>
         <div class="autora">
           <img src="https://hosanamuniznutricionista.com.br/hosana.jpg" alt="Hosana Muniz" onerror="this.style.display='none'">
           <div style="text-align:left">
@@ -161,6 +167,7 @@
 
 <script>
   var objetivo = 'emagrecimento', sexo = 'f';
+  var ultimoAlvo = 0, ultimoObjNome = '';
   function bindSeg(id, cb){
     var box = document.getElementById(id);
     box.addEventListener('click', function(e){
@@ -206,9 +213,33 @@
       ' e deu cerca de ' + alvo.toLocaleString('pt-BR') + ' kcal/dia. ' +
       'Quero saber como funciona o acompanhamento e o valor.';
     document.getElementById('btnWhats').href = 'https://wa.me/5513991149157?text=' + encodeURIComponent(msg);
+    ultimoAlvo = alvo; ultimoObjNome = objNome;
 
     document.getElementById('resultado').style.display = 'block';
     document.getElementById('resultado').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // Captura do lead: nome + WhatsApp + objetivo/kcal -> registra pra Hosana (e-mail + lista de leads).
+  document.getElementById('formLead').addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = document.getElementById('btnLead');
+    btn.textContent = 'Enviando...'; btn.disabled = true;
+    var body = {
+      token: 'calc-hm-2026',
+      produto: 'Calculadora de calorias - objetivo: ' + (ultimoObjNome || '-') + ' - ' + (ultimoAlvo ? ultimoAlvo + ' kcal/dia' : 'sem calcular'),
+      nome: document.getElementById('nome').value,
+      email: '',
+      telefone: document.getElementById('telefone').value
+    };
+    function pronto(){
+      document.getElementById('formLead').style.display = 'none';
+      document.getElementById('leadOk').style.display = 'block';
+    }
+    fetch('https://app.plataformanutra.com.br/api/guia-lead', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(body)
+    }).then(pronto).catch(pronto);
   });
 </script>
 
