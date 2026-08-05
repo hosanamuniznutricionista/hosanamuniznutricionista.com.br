@@ -184,6 +184,7 @@
 <footer>
   Hosana Muniz · Nutricionista · CRN-3 95279 · hosanamuniznutricionista.com.br
 </footer>
+<script src="/origem.js"></script>
 
 <script>
   // Link do Stripe (Payment Link). Trocar quando a Hosana enviar.
@@ -204,10 +205,15 @@
       telefone: form.telefone ? form.telefone.value : ''
     };
 
+    // De onde essa pessoa veio (Instagram, busca, anuncio...). Vai no lead e no pagamento.
+    if (window.HMOrigem) body.rastreio = window.HMOrigem.campos();
+
     function irPraStripe(){
-      // leva o email pro Stripe ja preenchido
-      var sep = STRIPE_LINK.indexOf('?') === -1 ? '?' : '&';
-      window.location = STRIPE_LINK + sep + 'prefilled_email=' + encodeURIComponent(body.email);
+      // leva o email pro Stripe ja preenchido e a origem no client_reference_id
+      var url = STRIPE_LINK;
+      if (window.HMOrigem) url = window.HMOrigem.marcarLink(url, 'guia');
+      var sep = url.indexOf('?') === -1 ? '?' : '&';
+      window.location = url + sep + 'prefilled_email=' + encodeURIComponent(body.email);
     }
 
     fetch('https://app.plataformanutra.com.br/api/guia-lead', {

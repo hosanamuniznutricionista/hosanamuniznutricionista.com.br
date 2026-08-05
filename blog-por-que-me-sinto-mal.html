@@ -206,5 +206,20 @@
   Hosana Muniz · Nutricionista · CRN-3 95279 · hosanamuniznutricionista.com.br
 </footer>
 
+<script src="/origem.js"></script>
+<script>
+  // Cola a origem (Instagram, busca, anuncio...) no link de pagamento, pra cada
+  // venda no painel da Stripe mostrar de onde veio. Se algo falhar, o link
+  // continua funcionando normal.
+  (function(){
+    try {
+      if (!window.HMOrigem) return;
+      var links = document.querySelectorAll('a[href*="buy.stripe.com"]');
+      for (var i = 0; i < links.length; i++) {
+        links[i].href = window.HMOrigem.marcarLink(links[i].href, 'guia-artigo');
+      }
+    } catch (e) {}
+  })();
+</script>
 </body>
 </html>

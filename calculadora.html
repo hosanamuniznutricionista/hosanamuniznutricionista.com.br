@@ -164,6 +164,7 @@
 <footer>
   Hosana Muniz · Nutricionista · CRN-3 95279 · hosanamuniznutricionista.com.br
 </footer>
+<script src="/origem.js"></script>
 
 <script>
   var objetivo = 'emagrecimento', sexo = 'f';
@@ -231,6 +232,8 @@
       email: '',
       telefone: document.getElementById('telefone').value
     };
+    // De onde essa pessoa veio (Instagram, busca, anuncio...).
+    if (window.HMOrigem) body.rastreio = window.HMOrigem.campos();
     function pronto(){
       document.getElementById('formLead').style.display = 'none';
       document.getElementById('leadOk').style.display = 'block';
