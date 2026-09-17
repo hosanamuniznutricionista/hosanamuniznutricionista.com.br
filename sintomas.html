@@ -432,7 +432,12 @@ h1{position:relative;z-index:0;font-family:'Fraunces',serif;font-size:clamp(1.85
   /* Mascara simples de telefone, so pra leitura ficar clara. */
   var tel = document.getElementById('telefone');
   tel.addEventListener('input', function(){
-    var d = tel.value.replace(/\D/g, '').slice(0, 11);
+    var bruto = tel.value.replace(/\D/g, '');
+    /* Gente as vezes digita com o 55 do Brasil na frente (WhatsApp mostra assim).
+       Sem isso, o 55 vira DDD por engano e 2 digitos do numero real somem —
+       foi o que aconteceu com a Fabiana em 26/08. */
+    if (bruto.length >= 12 && bruto.slice(0,2) === '55') bruto = bruto.slice(2);
+    var d = bruto.slice(0, 11);
     tel.value = d.length <= 2 ? d
       : d.length <= 6 ? '(' + d.slice(0,2) + ') ' + d.slice(2)
       : d.length <= 10 ? '(' + d.slice(0,2) + ') ' + d.slice(2,6) + '-' + d.slice(6)
