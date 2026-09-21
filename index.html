@@ -316,10 +316,7 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
 .onde-online>*{grid-column:3}
 .onde-tit{grid-row:1;align-self:end;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--oliva-md);text-align:left}
 .onde-fig{grid-row:2;margin:0}
-.onde-fig img,.onde-online-visual{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:12px;box-shadow:0 8px 22px rgba(74,82,64,.12)}
-.onde-online-visual{background:var(--oliva);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.8rem;color:var(--creme)}
-.onde-online-visual svg{width:48px;height:48px;color:var(--dourado)}
-.onde-online-visual strong{font-family:'Fraunces',serif;font-weight:400;font-size:1.3rem;letter-spacing:-.01em}
+.onde-fig img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:12px;box-shadow:0 8px 22px rgba(74,82,64,.12)}
 .onde-fig figcaption{font-size:.78rem;color:var(--oliva-md);margin-top:.55rem;text-align:left}
 .onde-local{grid-row:3;margin-top:1rem;text-align:left}
 .onde-local p{font-size:.95rem;line-height:1.55;color:var(--texto);margin-bottom:.35rem}
@@ -332,8 +329,6 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
 .onde-grupo{display:block;padding:1.75rem 0;border-top:1px solid var(--oliva-lt)}
 .onde-grupo:first-child{border-top:none;padding-top:0}
 .onde-tit{margin-bottom:.85rem}
-.onde-online .onde-fig{display:none}
-.onde-online .onde-local{margin-top:0}
 }
 .contato{padding:5rem 2rem;background:var(--creme);position:relative}
 .contato-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:1200px;margin:0 auto}
@@ -582,7 +577,7 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
       </div>
       <div class="onde-grupo onde-online">
         <div class="onde-tit">Online</div>
-        <figure class="onde-fig"><div class="onde-online-visual" role="img" aria-label="Consulta online por videochamada"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 13 5.2 3.5a.5.5 0 0 0 .8-.4V7.9a.5.5 0 0 0-.8-.4L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg><strong>Consulta online</strong></div><figcaption>Por videochamada</figcaption></figure>
+        <figure class="onde-fig"><img src="/livance-vista.jpg" alt="Espaço de atendimento da Livance, com vista da cidade" loading="lazy" width="900" height="600"/><figcaption>Por videochamada</figcaption></figure>
         <div class="onde-local">
           <p>De qualquer lugar do Brasil,<br/>pelo computador ou pelo celular</p>
           <span>O mesmo cuidado, sem deslocamento</span>
