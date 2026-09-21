@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Hosana Muniz · Links</title>
-<meta name="description" content="Hosana Muniz — links para a plataforma NUTRA e lista de espera de consultas.">
+<meta name="description" content="Hosana Muniz, nutricionista. Agende sua consulta online ou presencial em São Paulo.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%234A5240'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='serif' font-weight='400' font-size='18' fill='%23D4A96A' letter-spacing='-1'%3EHM%3C/text%3E%3C/svg%3E"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -198,6 +198,7 @@
   }
   .link-card:nth-of-type(1) { animation-delay: 0.85s; }
   .link-card:nth-of-type(2) { animation-delay: 1s; }
+  .link-card:nth-of-type(3) { animation-delay: 1.15s; }
 
   /* destaque (primário) */
   .link-card.primary {
@@ -334,12 +335,59 @@
   }
   .link-arrow svg { width: 16px; height: 16px; }
 
+  /* ONDE ATENDO */
+  .onde {
+    margin-top: 1.9rem;
+    padding-top: 1.35rem;
+    border-top: 1px solid var(--oliva-lt);
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    text-align: left;
+    opacity: 0;
+    animation: rise 0.75s cubic-bezier(.2,.9,.3,1) 1.3s forwards;
+  }
+  .onde-tit {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--oliva-md);
+    text-align: center;
+    margin-bottom: 0.15rem;
+  }
+  .onde-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    text-decoration: none;
+    color: var(--texto);
+  }
+  .onde-item svg { width: 18px; height: 18px; flex: none; margin-top: 3px; color: var(--dourado); }
+  .onde-item b {
+    display: block;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+  .onde-item small {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--oliva-md);
+    line-height: 1.3;
+  }
+  a.onde-item:hover b { color: var(--oliva); text-decoration: underline; text-underline-offset: 3px; }
+
   /* FOOTER */
   footer {
     margin-top: 2.5rem;
     text-align: center;
     opacity: 0;
-    animation: rise 0.75s cubic-bezier(.2,.9,.3,1) 1.2s forwards;
+    animation: rise 0.75s cubic-bezier(.2,.9,.3,1) 1.45s forwards;
   }
   .footer-logo {
     display: inline-flex;
@@ -392,7 +440,7 @@
   /* REDUCED MOTION */
   @media (prefers-reduced-motion: reduce) {
     * { animation: none !important; transition: none !important; }
-    .avatar-wrap, .badge, h1, .role, .divider, .link-card, footer {
+    .avatar-wrap, .badge, h1, .role, .divider, .link-card, .onde, footer {
       opacity: 1 !important;
       transform: none !important;
     }
@@ -455,8 +503,8 @@
           </svg>
         </div>
         <div class="link-content">
-          <div class="link-title">Não sabe por onde começar?</div>
-          <div class="link-sub">Marque os sinais que você reconhece</div>
+          <div class="link-title">Por onde começar?</div>
+          <div class="link-sub">Marque os seus sinais</div>
         </div>
         <div class="link-arrow">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -492,6 +540,22 @@
       </div>
     </a>
 
+  </div>
+
+  <div class="onde">
+    <div class="onde-tit">Onde atendo</div>
+    <a class="onde-item" href="https://www.google.com/maps/search/?api=1&amp;query=Livance+Paulista%2C+Av.+Paulista%2C+2064%2C+S%C3%A3o+Paulo" target="_blank" rel="noopener" data-track="mapa-livance">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+      <span><b>Av. Paulista, 2064, 21º andar</b><small>Livance · a 1 minuto do metrô Consolação</small></span>
+    </a>
+    <a class="onde-item" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Doutor+Clemente+Jobim%2C+86%2C+Jardim+da+Gl%C3%B3ria%2C+S%C3%A3o+Paulo" target="_blank" rel="noopener" data-track="mapa-subjetivamente">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+      <span><b>Rua Dr. Clemente Jobim, 86</b><small>Clínica SubjetivaMente · Jardim da Glória</small></span>
+    </a>
+    <div class="onde-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      <span><b>Online</b><small>Por videochamada, de qualquer lugar do Brasil</small></span>
+    </div>
   </div>
 
   <footer>
