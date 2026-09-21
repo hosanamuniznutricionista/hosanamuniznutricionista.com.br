@@ -309,42 +309,31 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
 .blog-em-breve{font-size:0.78rem;color:var(--oliva-md);font-weight:500}
 .onde{padding:5rem 2rem;background:#fff;border-top:1px solid var(--oliva-lt);scroll-margin-top:72px}
 .onde-container{max-width:1100px;margin:0 auto}
-.onde-grade{display:grid;grid-template-columns:repeat(3,1fr) 1px 1fr;column-gap:1.1rem;row-gap:.85rem}
-.onde-grade::before{content:'';grid-column:4;grid-row:1 / 4;background:var(--oliva-lt)}
-.onde-grupo,.onde-grupo .onde-fotos{display:contents}
-.onde-tit{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--oliva-md);text-align:left;align-self:end}
-.onde-fotos figure{margin:0}
-.onde-fotos img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:12px;box-shadow:0 8px 22px rgba(74,82,64,.12)}
-.onde-fotos figcaption{font-size:.78rem;color:var(--oliva-md);margin-top:.55rem;text-align:left}
-.onde-local{text-align:left;margin-top:1rem}
+.onde-grade{display:grid;grid-template-columns:repeat(3,1fr);column-gap:1.75rem;row-gap:.85rem}
+.onde-grupo{display:contents}
+.onde-livance>*{grid-column:1}
+.onde-subjetiva>*{grid-column:2}
+.onde-online>*{grid-column:3}
+.onde-tit{grid-row:1;align-self:end;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--oliva-md);text-align:left}
+.onde-fig{grid-row:2;margin:0}
+.onde-fig img,.onde-online-visual{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:12px;box-shadow:0 8px 22px rgba(74,82,64,.12)}
+.onde-online-visual{background:var(--oliva);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.8rem;color:var(--creme)}
+.onde-online-visual svg{width:48px;height:48px;color:var(--dourado)}
+.onde-online-visual strong{font-family:'Fraunces',serif;font-weight:400;font-size:1.3rem;letter-spacing:-.01em}
+.onde-fig figcaption{font-size:.78rem;color:var(--oliva-md);margin-top:.55rem;text-align:left}
+.onde-local{grid-row:3;margin-top:1rem;text-align:left}
 .onde-local p{font-size:.95rem;line-height:1.55;color:var(--texto);margin-bottom:.35rem}
 .onde-local span{display:block;font-size:.82rem;color:var(--oliva-md);margin-bottom:.7rem}
-.onde-local a,.onde-online a{font-size:.85rem;font-weight:600;color:var(--oliva);text-decoration:none;border-bottom:1px solid var(--dourado);padding-bottom:1px}
-.onde-local a:hover,.onde-online a:hover{color:var(--texto)}
-.onde-livance .onde-tit{grid-column:1 / 4;grid-row:1}
-.onde-livance figure:nth-child(1){grid-column:1;grid-row:2}
-.onde-livance figure:nth-child(2){grid-column:2;grid-row:2}
-.onde-livance figure:nth-child(3){grid-column:3;grid-row:2}
-.onde-livance .onde-local{grid-column:1 / 4;grid-row:3}
-.onde-subjetiva .onde-tit{grid-column:5;grid-row:1}
-.onde-subjetiva figure{grid-column:5;grid-row:2}
-.onde-subjetiva .onde-local{grid-column:5;grid-row:3}
-.onde-online{display:flex;align-items:baseline;gap:1.25rem;flex-wrap:wrap;margin-top:2.5rem;padding-top:1.75rem;border-top:1px solid var(--oliva-lt);text-align:left}
-.onde-online small{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--oliva-md)}
-.onde-online p{font-size:.95rem;color:var(--texto);margin:0}
+.onde-local a{font-size:.85rem;font-weight:600;color:var(--oliva);text-decoration:none;border-bottom:1px solid var(--dourado);padding-bottom:1px}
+.onde-local a:hover{color:var(--texto)}
 @media(max-width:768px){
 .onde{padding:3.5rem 1.25rem}
 .onde-grade{display:block}
-.onde-grade::before{display:none}
-.onde-grupo{display:block;margin-bottom:2rem}
-.onde-subjetiva{border-top:1px solid var(--oliva-lt);padding-top:1.75rem}
+.onde-grupo{display:block;padding:1.75rem 0;border-top:1px solid var(--oliva-lt)}
+.onde-grupo:first-child{border-top:none;padding-top:0}
 .onde-tit{margin-bottom:.85rem}
-.onde-livance .onde-fotos{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 1.25rem;gap:.75rem;margin:0 -1.25rem;padding:0 1.25rem .25rem;scrollbar-width:none}
-.onde-livance .onde-fotos::-webkit-scrollbar{display:none}
-.onde-livance .onde-fotos figure{flex:0 0 80%;scroll-snap-align:start}
-.onde-subjetiva .onde-fotos{display:block}
-.onde-online{display:block;margin-top:0;padding-top:1.75rem}
-.onde-online p{margin:.45rem 0 .7rem}
+.onde-online .onde-fig{display:none}
+.onde-online .onde-local{margin-top:0}
 }
 .contato{padding:5rem 2rem;background:var(--creme);position:relative}
 .contato-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:1200px;margin:0 auto}
@@ -575,33 +564,31 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
     <div class="onde-grade">
       <div class="onde-grupo onde-livance">
         <div class="onde-tit">Livance Paulista</div>
-        <div class="onde-fotos">
-          <figure><img src="/livance-recepcao.jpg" alt="Recepção da Livance, na Avenida Paulista" loading="lazy" width="900" height="600"/><figcaption>Recepção</figcaption></figure>
-          <figure><img src="/livance-consultorio.jpg" alt="Consultório de atendimento na Livance Paulista" loading="lazy" width="900" height="600"/><figcaption>Consultório</figcaption></figure>
-          <figure><img src="/livance-vista.jpg" alt="Espaço de convivência no 21º andar, com vista da cidade" loading="lazy" width="900" height="600"/><figcaption>21º andar, com vista da cidade</figcaption></figure>
-        </div>
+        <figure class="onde-fig"><img src="/livance-recepcao.jpg" alt="Recepção da Livance, na Avenida Paulista" loading="lazy" width="900" height="600"/><figcaption>Recepção</figcaption></figure>
         <div class="onde-local">
-          <p>Av. Paulista, 2064, 21º andar<br/>Center 3 · Bela Vista · CEP 01310-200</p>
-          <span>A 1 minuto do metrô Consolação</span>
+          <p>Av. Paulista, 2064, 21º andar<br/>Bela Vista · CEP 01310-200</p>
+          <span>No Center 3, a 1 minuto do metrô Consolação</span>
           <a href="https://www.google.com/maps/search/?api=1&amp;query=Livance+Paulista%2C+Av.+Paulista%2C+2064%2C+S%C3%A3o+Paulo" target="_blank" rel="noopener">Como chegar</a>
         </div>
       </div>
       <div class="onde-grupo onde-subjetiva">
         <div class="onde-tit">Clínica SubjetivaMente</div>
-        <div class="onde-fotos">
-          <figure><img src="/subjetivamente-fachada.jpg" alt="Fachada da Clínica SubjetivaMente, no número 86 da Rua Doutor Clemente Jobim" loading="lazy" width="900" height="600"/><figcaption>Entrada, no número 86</figcaption></figure>
-        </div>
+        <figure class="onde-fig"><img src="/subjetivamente-fachada.jpg" alt="Fachada da Clínica SubjetivaMente, no número 86 da Rua Doutor Clemente Jobim" loading="lazy" width="900" height="600"/><figcaption>Entrada, no número 86</figcaption></figure>
         <div class="onde-local">
-          <p>Rua Dr. Clemente Jobim, 86<br/>Jardim da Glória<br/>CEP 01545-040</p>
+          <p>Rua Dr. Clemente Jobim, 86<br/>Jardim da Glória · CEP 01545-040</p>
           <span>Região da Vila Mariana</span>
           <a href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Doutor+Clemente+Jobim%2C+86%2C+Jardim+da+Gl%C3%B3ria%2C+S%C3%A3o+Paulo" target="_blank" rel="noopener">Como chegar</a>
         </div>
       </div>
-    </div>
-    <div class="onde-online">
-      <small>Online</small>
-      <p>Por videochamada, de qualquer lugar do Brasil.</p>
-      <a href="https://wa.me/5513991149157?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+      <div class="onde-grupo onde-online">
+        <div class="onde-tit">Online</div>
+        <figure class="onde-fig"><div class="onde-online-visual" role="img" aria-label="Consulta online por videochamada"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 13 5.2 3.5a.5.5 0 0 0 .8-.4V7.9a.5.5 0 0 0-.8-.4L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg><strong>Consulta online</strong></div><figcaption>Por videochamada</figcaption></figure>
+        <div class="onde-local">
+          <p>De qualquer lugar do Brasil,<br/>pelo computador ou pelo celular</p>
+          <span>O mesmo cuidado, sem deslocamento</span>
+          <a href="https://wa.me/5513991149157?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
