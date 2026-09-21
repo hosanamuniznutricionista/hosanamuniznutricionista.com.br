@@ -30,8 +30,11 @@
 @media (prefers-color-scheme:dark){:root[data-p="petroleo"]{--ground:#0A1413;--papel:#111D1C;--papel2:#182625;--linha:#22302F;--linhaf:#354745;--tinta:#E6F0EE;--tinta2:#9DB2B0;--tinta3:#748A88;--acento:#82C8C0;--sobre:#0A1413;--realce:#F2906F;}}
 :root[data-p="tinta"]{--ground:#FAF9F6;--papel:#FFFFFF;--papel2:#F0EEE8;--linha:#E2DFD7;--linhaf:#C2BEB3;--tinta:#0F0F0F;--tinta2:#4A4A48;--tinta3:#71716D;--acento:#141414;--sobre:#FAF9F6;--realce:#C2371A;}
 @media (prefers-color-scheme:dark){:root[data-p="tinta"]{--ground:#0B0B0B;--papel:#161615;--papel2:#1F1F1D;--linha:#2A2A28;--linhaf:#40403D;--tinta:#F5F3EE;--tinta2:#ACAAA4;--tinta3:#84827C;--acento:#F5F3EE;--sobre:#0B0B0B;--realce:#FF7052;}}
+:root{--vb:rgba(255,255,255,.62);--vl:rgba(255,255,255,.8);--vs:rgba(40,32,24,.26)}
+@media (prefers-color-scheme:dark){:root{--vb:rgba(255,255,255,.10);--vl:rgba(255,255,255,.16);--vs:rgba(0,0,0,.6)}}
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%}
+body::before{content:"";position:fixed;inset:-10vh -10vw;z-index:-1;pointer-events:none;background:radial-gradient(34rem 26rem at 12% 4%,color-mix(in srgb,var(--realce) 26%,transparent),transparent 62%),radial-gradient(30rem 24rem at 92% 34%,color-mix(in srgb,var(--acento) 24%,transparent),transparent 62%),radial-gradient(30rem 24rem at 22% 92%,color-mix(in srgb,var(--realce) 18%,transparent),transparent 62%)}
 body{background:var(--ground);color:var(--tinta);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   line-height:1.5;min-height:100vh;min-height:100dvh;-webkit-font-smoothing:antialiased;
   padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
@@ -42,31 +45,31 @@ h1{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:1.85rem;letter-s
 .bio{margin-top:.45rem;display:flex;flex-direction:column;gap:.1rem}
 .bio p{font-size:.93rem;color:var(--tinta2)}
 .links{margin-top:1.7rem;display:flex;flex-direction:column;gap:.7rem;text-align:left}
-.card{display:flex;align-items:center;gap:.85rem;min-height:3.9rem;padding:.8rem .95rem;background:var(--papel);
-  border:1px solid var(--linha);border-radius:14px;color:var(--tinta);text-decoration:none;
-  transition:border-color .15s,transform .15s}
-.card:hover{border-color:var(--acento)}
+.card{display:flex;align-items:center;gap:.85rem;min-height:3.9rem;padding:.8rem .95rem;background:linear-gradient(180deg,var(--vl),transparent 55%),color-mix(in srgb,var(--papel) 52%,transparent);-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);border:1px solid var(--vb);border-radius:14px;color:var(--tinta);text-decoration:none;box-shadow:inset 0 1px 0 var(--vl),0 1px 2px rgba(0,0,0,.05),0 14px 30px -16px var(--vs);transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-2px);box-shadow:inset 0 1px 0 var(--vl),0 2px 4px rgba(0,0,0,.06),0 20px 36px -16px var(--vs)}
 .card.info{background:transparent;border-style:dashed}
 .card.info:hover{border-color:var(--linha)}
-.card:active{transform:scale(.985)}
+.card:active{transform:translateY(0) scale(.985)}
 .card:focus-visible{outline:2px solid var(--realce);outline-offset:2px}
-.card.destaque{background:var(--acento);border-color:var(--acento);color:var(--sobre)}
-.ic{width:2.3rem;height:2.3rem;border-radius:10px;background:var(--papel2);color:var(--acento);
+.card.destaque{background:linear-gradient(180deg,rgba(255,255,255,.22),transparent 60%),color-mix(in srgb,var(--acento) 88%,transparent);border-color:color-mix(in srgb,var(--acento) 60%,var(--vb));color:var(--sobre);position:relative;box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 2px 4px rgba(0,0,0,.08),0 16px 32px -14px color-mix(in srgb,var(--acento) 70%,transparent)}
+.card.destaque::after{content:"";position:absolute;inset:-2px;border-radius:16px;border:2px solid var(--acento);pointer-events:none;animation:chama 2.2s ease-out infinite}
+@keyframes chama{0%{opacity:.7;transform:scale(1)}70%{opacity:0;transform:scale(1.07,1.22)}100%{opacity:0;transform:scale(1.07,1.22)}}
+.ic{width:2.3rem;height:2.3rem;border-radius:10px;background:color-mix(in srgb,var(--papel2) 70%,transparent);color:var(--acento);box-shadow:inset 0 1px 0 var(--vl);
   display:flex;align-items:center;justify-content:center;flex:none}
 .card.destaque .ic{background:color-mix(in srgb,var(--sobre) 16%,transparent);color:var(--sobre)}
 .ic svg{width:1.15rem;height:1.15rem}
 .tx{flex:1;min-width:0}
 .tx b{display:block;font-weight:600;font-size:.98rem;line-height:1.3}
 .tx small{display:block;font-size:.8rem;color:var(--tinta3);line-height:1.35;margin-top:.1rem}
-.card.destaque .tx small{color:color-mix(in srgb,var(--sobre) 78%,transparent)}
+.card.destaque .tx small{color:color-mix(in srgb,var(--sobre) 88%,transparent)}
 .vai{width:1rem;height:1rem;flex:none;color:var(--tinta3)}
 .card.destaque .vai{color:var(--sobre)}
 .sec{font-size:.66rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--tinta3);margin:1rem 0 -.1rem .2rem}
-.esqueleto{height:3.9rem;border-radius:14px;background:var(--papel2);animation:pulsa 1.2s ease-in-out infinite}
+.esqueleto{height:3.9rem;border-radius:14px;background:color-mix(in srgb,var(--papel2) 70%,transparent);animation:pulsa 1.2s ease-in-out infinite}
 @keyframes pulsa{50%{opacity:.55}}
 footer{margin-top:2.4rem;font-size:.74rem;color:var(--tinta3)}
 footer a{color:var(--tinta2)}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (prefers-reduced-motion:reduce){*,*::after,*::before{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -84,7 +87,7 @@ footer a{color:var(--tinta2)}
   // Link da planilha publicada (Arquivo > Compartilhar > Publicar na Web > CSV).
   // Vazio = usa a lista padrão abaixo. É tudo que precisa mudar aqui.
   var PLANILHA = "";
-  var PADRAO = [{"tipo": "cor", "texto": "oliva"}, {"tipo": "bio", "texto": "Nutricionista · mulheres 40+"}, {"tipo": "bio", "texto": "Presencial em São Paulo e online"}, {"tipo": "link", "texto": "Agende sua consulta", "link": "whatsapp:13991149157", "mensagem": "Olá! Vim pelo seu perfil e gostaria de agendar uma consulta.", "detalhe": "Resposta direto no WhatsApp", "destaque": "sim"}, {"tipo": "link", "texto": "Não sabe por onde começar?", "link": "/sintomas", "detalhe": "Marque os sinais que você reconhece"}, {"tipo": "titulo", "texto": "Onde atendo"}, {"tipo": "link", "texto": "Clínica SubjetivaMente", "link": "whatsapp:11993286468", "mensagem": "Olá, eu vim pelo Instagram da nutricionista Hosana Muniz e quero consulta presencial.", "detalhe": "Presencial · Rua Dr. Clemente Jobim, 86, Jardim da Glória"}, {"tipo": "link", "texto": "Livance Paulista", "link": "whatsapp:13991149157", "mensagem": "Olá, eu vim pelo Instagram e quero consulta presencial na Av. Paulista.", "detalhe": "Presencial · Av. Paulista, 2064, 21º andar, metrô Consolação"}, {"tipo": "link", "texto": "Online", "link": "whatsapp:13991149157", "mensagem": "Olá, eu vim pelo Instagram e quero teleconsulta.", "detalhe": "Teleconsulta por videochamada, de qualquer lugar do Brasil"}, {"tipo": "titulo", "texto": "Para nutricionistas"}, {"tipo": "link", "texto": "Plataforma Nutra", "link": "https://plataformanutra.com.br", "detalhe": "O sistema para o seu consultório"}];
+  var PADRAO = [{"tipo": "cor", "texto": "oliva"}, {"tipo": "bio", "texto": "Nutricionista · mulheres 40+"}, {"tipo": "bio", "texto": "Presencial em São Paulo e online"}, {"tipo": "link", "texto": "Consulta online", "link": "whatsapp:13991149157", "mensagem": "Olá, eu vim pelo Instagram e quero teleconsulta.", "detalhe": "Teleconsulta por videochamada, de qualquer lugar do Brasil", "destaque": "sim"}, {"tipo": "titulo", "texto": "Onde atendo"}, {"tipo": "link", "texto": "Clínica SubjetivaMente", "link": "whatsapp:11993286468", "mensagem": "Olá, eu vim pelo Instagram da nutricionista Hosana Muniz e quero consulta presencial.", "detalhe": "Presencial · Rua Dr. Clemente Jobim, 86, Jardim da Glória"}, {"tipo": "link", "texto": "Livance Paulista", "link": "whatsapp:13991149157", "mensagem": "Olá, eu vim pelo Instagram e quero consulta presencial na Av. Paulista.", "detalhe": "Presencial · Av. Paulista, 2064, 21º andar, metrô Consolação"}, {"tipo": "titulo", "texto": "Autoavaliação"}, {"tipo": "link", "texto": "Não sabe por onde começar?", "link": "/sintomas", "detalhe": "Marque os sinais que você reconhece"}, {"tipo": "titulo", "texto": "Para nutricionistas"}, {"tipo": "link", "texto": "Plataforma Nutra", "link": "https://plataformanutra.com.br", "detalhe": "O sistema para o seu consultório"}];
   var FUNDOS = {"oliva": "#F7F5EF", "clinico": "#F6F7F9", "ameixa": "#F5F0F2", "barro": "#FAF6F1", "petroleo": "#F2F6F6", "tinta": "#FAF9F6"};
   var CACHE = "hm:links-bio";
 
