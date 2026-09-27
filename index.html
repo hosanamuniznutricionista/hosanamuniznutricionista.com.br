@@ -4,9 +4,9 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Hosana Muniz | Nutricionista Clínica · Endocrinologia, Metabologia e Psiquiatria Nutricional</title>
-<meta name="description" content="Hosana Muniz, nutricionista clínica (CRN-3 95279). Atendimento individualizado com foco em endocrinologia, metabologia e psiquiatria nutricional. Atendimento online e presencial em São Paulo, na Av. Paulista e no Jardim da Glória."/>
+<meta name="description" content="Hosana Muniz, nutricionista clínica (CRN-3 95279). Atendimento individualizado com foco em endocrinologia, metabologia e psiquiatria nutricional. Atendimento online e presencial em São Paulo, na Av. Paulista, em Moema e no Jardim da Glória."/>
 <meta name="author" content="Hosana Muniz"/>
-<meta name="keywords" content="nutricionista clínica, endocrinologia nutricional, metabologia, psiquiatria nutricional, PCOS, resistência à insulina, microbiota, eixo intestino-cérebro, São Paulo, Avenida Paulista, Jardim da Glória, online"/>
+<meta name="keywords" content="nutricionista clínica, endocrinologia nutricional, metabologia, psiquiatria nutricional, PCOS, resistência à insulina, microbiota, eixo intestino-cérebro, São Paulo, Avenida Paulista, Moema, Jardim da Glória, online"/>
 <meta name="robots" content="index, follow"/>
 <link rel="canonical" href="https://hosanamuniznutricionista.com.br/"/>
 <meta property="og:type" content="website"/>
@@ -111,6 +111,18 @@
         "addressLocality": "São Paulo",
         "addressRegion": "SP",
         "postalCode": "01310-200",
+        "addressCountry": "BR"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Livance Moema",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Avenida dos Carinás, 185, 2º andar",
+        "addressLocality": "São Paulo",
+        "addressRegion": "SP",
+        "postalCode": "04086-010",
         "addressCountry": "BR"
       }
     },
@@ -309,11 +321,12 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
 .blog-em-breve{font-size:0.78rem;color:var(--oliva-md);font-weight:500}
 .onde{padding:5rem 2rem;background:#fff;border-top:1px solid var(--oliva-lt);scroll-margin-top:72px}
 .onde-container{max-width:1100px;margin:0 auto}
-.onde-grade{display:grid;grid-template-columns:repeat(3,1fr);column-gap:1.75rem;row-gap:.85rem}
+.onde-grade{display:grid;grid-template-columns:repeat(4,1fr);column-gap:1.25rem;row-gap:.85rem}
 .onde-grupo{display:contents}
 .onde-livance>*{grid-column:1}
-.onde-subjetiva>*{grid-column:2}
-.onde-online>*{grid-column:3}
+.onde-moema>*{grid-column:2}
+.onde-subjetiva>*{grid-column:3}
+.onde-online>*{grid-column:4}
 .onde-tit{grid-row:1;align-self:end;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--oliva-md);text-align:left}
 .onde-fig{grid-row:2;margin:0}
 .onde-fig img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:12px;box-shadow:0 8px 22px rgba(74,82,64,.12)}
@@ -323,6 +336,12 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
 .onde-local span{display:block;font-size:.82rem;color:var(--oliva-md);margin-bottom:.7rem}
 .onde-local a{font-size:.85rem;font-weight:600;color:var(--oliva);text-decoration:none;border-bottom:1px solid var(--dourado);padding-bottom:1px}
 .onde-local a:hover{color:var(--texto)}
+@media(max-width:1024px) and (min-width:769px){
+.onde-grade{grid-template-columns:repeat(2,1fr);column-gap:1.75rem;row-gap:2.25rem}
+.onde-grupo{display:block}
+.onde-livance>*,.onde-moema>*,.onde-subjetiva>*,.onde-online>*{grid-column:auto}
+.onde-tit{margin-bottom:.85rem}
+}
 @media(max-width:768px){
 .onde{padding:3.5rem 1.25rem}
 .onde-grade{display:block}
@@ -484,7 +503,7 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
       <div class="card">
         <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
         <h3>Atendimento online e presencial</h3>
-        <p>Online para todo o Brasil e presencial em São Paulo, na Av. Paulista e no Jardim da Glória. <a href="#onde-atendo">Ver endereços</a></p>
+        <p>Online para todo o Brasil e presencial em São Paulo, na Av. Paulista, em Moema e no Jardim da Glória. <a href="#onde-atendo">Ver endereços</a></p>
       </div>
     </div>
   </div>
@@ -566,6 +585,15 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
           <a href="https://www.google.com/maps/search/?api=1&amp;query=Livance+Paulista%2C+Av.+Paulista%2C+2064%2C+S%C3%A3o+Paulo" target="_blank" rel="noopener">Como chegar</a>
         </div>
       </div>
+      <div class="onde-grupo onde-moema">
+        <div class="onde-tit">Livance Moema</div>
+        <figure class="onde-fig"><img src="/livance-moema.jpg" alt="Consultório da Livance Moema, com mesa de atendimento e poltrona" loading="lazy" width="900" height="600"/><figcaption>Consultório</figcaption></figure>
+        <div class="onde-local">
+          <p>Av. dos Carinás, 185, 2º andar<br/>Moema · CEP 04086-010</p>
+          <span>No Moema By Yoo, a 5 minutos do metrô Eucaliptos</span>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Livance+Moema%2C+Avenida+dos+Carin%C3%A1s%2C+185%2C+S%C3%A3o+Paulo" target="_blank" rel="noopener">Como chegar</a>
+        </div>
+      </div>
       <div class="onde-grupo onde-subjetiva">
         <div class="onde-tit">Clínica SubjetivaMente</div>
         <figure class="onde-fig"><img src="/subjetivamente-fachada.jpg" alt="Fachada da Clínica SubjetivaMente, no número 86 da Rua Doutor Clemente Jobim" loading="lazy" width="900" height="600"/><figcaption>Entrada, no número 86</figcaption></figure>
@@ -611,7 +639,7 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
         <div class="contato-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
         <div class="contato-item-text">
           <small>Onde atendo</small>
-          <a href="#onde-atendo">Av. Paulista e Jardim da Glória, São Paulo</a>
+          <a href="#onde-atendo">Av. Paulista, Moema e Jardim da Glória, São Paulo</a>
         </div>
       </div>
     </div>
