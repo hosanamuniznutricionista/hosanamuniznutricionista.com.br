@@ -238,6 +238,26 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
 .atuacao-body p:last-child{margin-bottom:0}
 .atuacao-body strong{color:var(--oliva);font-weight:600}
 .atuacao-rule{width:42px;height:2px;background:var(--dourado);border:0;margin:0 auto 1.5rem;display:block}
+.depo{padding:5rem 0;background:var(--creme-soft);border-top:1px solid var(--oliva-lt);scroll-margin-top:72px;overflow:hidden}
+.depo .section-header{padding:0 2rem}
+.depo-esteira{position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 8%,#000 92%,transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 8%,#000 92%,transparent 100%)}
+.depo-trilho{display:flex;width:max-content;animation:depo-desliza 80s linear infinite}
+.depo-esteira:hover .depo-trilho,.depo-esteira:focus-within .depo-trilho{animation-play-state:paused}
+@keyframes depo-desliza{from{transform:translateX(0)}to{transform:translateX(-33.3333%)}}
+.depo-card{width:330px;flex:0 0 330px;margin-right:1.1rem;background:#fff;border:1px solid #dadce0;border-radius:10px;padding:1.15rem 1.25rem 1.35rem;display:flex;flex-direction:column;font-family:Roboto,Arial,Helvetica,sans-serif;box-shadow:0 1px 2px rgba(60,64,67,0.08)}
+.depo-topo{display:flex;align-items:center;gap:0.7rem;margin-bottom:0.55rem}
+.depo-avatar{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.95rem;font-weight:500;color:#fff;flex-shrink:0}
+.depo-quem{display:flex;flex-direction:column;line-height:1.3;min-width:0}
+.depo-nome{font-size:0.82rem;font-weight:500;color:#202124;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.depo-data{font-size:0.72rem;color:#70757a}
+.depo-g{width:17px;height:17px;margin-left:auto;flex-shrink:0}
+.depo-estrelas{color:#fbbc04;font-size:0.82rem;letter-spacing:0.09em;margin-bottom:0.6rem}
+.depo-card blockquote{margin:0;font-size:0.855rem;line-height:1.62;color:#3c4043;flex:1}
+.depo-link{text-align:center;margin-top:1.9rem;padding:0 2rem}
+.depo-link a{font-size:0.85rem;color:var(--oliva);text-decoration:none;border-bottom:1px solid var(--dourado);padding-bottom:2px}
+.depo-link a:hover{color:var(--dourado)}
+@media(max-width:768px){.depo{padding:3.5rem 0}.depo .section-header{padding:0 1.25rem}.depo-card{width:280px;flex:0 0 280px}.depo-link{padding:0 1.25rem}}
+@media(prefers-reduced-motion:reduce){.depo-trilho{animation:none}.depo-esteira{overflow-x:auto}}
 .receitas{padding:5rem 2rem;background:var(--creme);position:relative}
 .receitas-container{max-width:1200px;margin:0 auto}
 .receitas-subtitle{text-align:center;color:var(--oliva-md);font-size:0.95rem;line-height:1.65;max-width:560px;margin:-1.5rem auto 2.75rem}
@@ -521,6 +541,199 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
       <p>Minha atuação tem foco em <strong>endocrinologia e metabologia</strong>, em quadros como resistência à insulina, alterações de tireoide, PCOS, dislipidemia e equilíbrio hormonal, e também em <strong>psiquiatria nutricional</strong>, trabalhando a alimentação como apoio à saúde mental em pontos como sono, humor, ansiedade, compulsão e clareza mental, especialmente para quem já faz acompanhamento psicológico.</p>
       <p>Acredito que conduta clínica precisa estar viva, e por isso estudo continuamente para que o que entrego acompanhe o que a ciência tem mostrado.</p>
     </div>
+  </div>
+</section>
+<section class="depo" id="depoimentos">
+  <div class="section-container">
+    <div class="section-header">
+      <span class="section-tag">Avaliações no Google</span>
+      <h2>Quem já foi atendida</h2>
+    </div>
+    <div class="depo-esteira">
+      <div class="depo-trilho">
+        <figure class="depo-card">
+          <div class="depo-topo">
+            <span class="depo-avatar" style="background:#7A8C6E" aria-hidden="true">L</span>
+            <div class="depo-quem">
+              <span class="depo-nome">Lucicleide da Silva Leite</span>
+              <span class="depo-data">setembro de 2026</span>
+            </div>
+            <svg class="depo-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-2.8-.4-4H24v7.3h12.1c-.2 1.9-1.6 4.8-4.5 6.7l-.1.3 6.5 5 .5.1c4.1-3.8 6.6-9.4 6.6-15.4"/><path fill="#34A853" d="M24 46c5.9 0 10.9-1.9 14.5-5.3l-6.9-5.3c-1.8 1.3-4.3 2.2-7.6 2.2-5.8 0-10.7-3.8-12.5-9.1l-.3 0-6.7 5.2-.1.3C8 41.6 15.4 46 24 46"/><path fill="#FBBC05" d="M11.5 28.5c-.5-1.4-.7-2.9-.7-4.5s.3-3.1.7-4.5l0-.3-6.8-5.3-.2.1C2.9 17.1 2 20.4 2 24s.9 6.9 2.5 9.9l7-5.4"/><path fill="#EA4335" d="M24 9.9c4.1 0 6.9 1.8 8.5 3.3l6.2-6C34.9 3.7 29.9 1.5 24 1.5 15.4 1.5 8 6 4.5 14.1l7 5.4C13.3 14.2 18.2 9.9 24 9.9"/></svg>
+          </div>
+          <div class="depo-estrelas" aria-label="Cinco de cinco estrelas">★★★★★</div>
+          <blockquote>Atendimento maravilhoso! Minha vida mudou depois do acompanhamento com a Dra! Obrigada</blockquote>
+        </figure>
+        <figure class="depo-card">
+          <div class="depo-topo">
+            <span class="depo-avatar" style="background:#A08C6A" aria-hidden="true">B</span>
+            <div class="depo-quem">
+              <span class="depo-nome">Bianca Tirloni</span>
+              <span class="depo-data">setembro de 2026</span>
+            </div>
+            <svg class="depo-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-2.8-.4-4H24v7.3h12.1c-.2 1.9-1.6 4.8-4.5 6.7l-.1.3 6.5 5 .5.1c4.1-3.8 6.6-9.4 6.6-15.4"/><path fill="#34A853" d="M24 46c5.9 0 10.9-1.9 14.5-5.3l-6.9-5.3c-1.8 1.3-4.3 2.2-7.6 2.2-5.8 0-10.7-3.8-12.5-9.1l-.3 0-6.7 5.2-.1.3C8 41.6 15.4 46 24 46"/><path fill="#FBBC05" d="M11.5 28.5c-.5-1.4-.7-2.9-.7-4.5s.3-3.1.7-4.5l0-.3-6.8-5.3-.2.1C2.9 17.1 2 20.4 2 24s.9 6.9 2.5 9.9l7-5.4"/><path fill="#EA4335" d="M24 9.9c4.1 0 6.9 1.8 8.5 3.3l6.2-6C34.9 3.7 29.9 1.5 24 1.5 15.4 1.5 8 6 4.5 14.1l7 5.4C13.3 14.2 18.2 9.9 24 9.9"/></svg>
+          </div>
+          <div class="depo-estrelas" aria-label="Cinco de cinco estrelas">★★★★★</div>
+          <blockquote>Maravilhosa! Atendimento incrível!</blockquote>
+        </figure>
+        <figure class="depo-card">
+          <div class="depo-topo">
+            <span class="depo-avatar" style="background:#C9A66A" aria-hidden="true">N</span>
+            <div class="depo-quem">
+              <span class="depo-nome">Nathalya Galembeck</span>
+              <span class="depo-data">setembro de 2026</span>
+            </div>
+            <svg class="depo-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-2.8-.4-4H24v7.3h12.1c-.2 1.9-1.6 4.8-4.5 6.7l-.1.3 6.5 5 .5.1c4.1-3.8 6.6-9.4 6.6-15.4"/><path fill="#34A853" d="M24 46c5.9 0 10.9-1.9 14.5-5.3l-6.9-5.3c-1.8 1.3-4.3 2.2-7.6 2.2-5.8 0-10.7-3.8-12.5-9.1l-.3 0-6.7 5.2-.1.3C8 41.6 15.4 46 24 46"/><path fill="#FBBC05" d="M11.5 28.5c-.5-1.4-.7-2.9-.7-4.5s.3-3.1.7-4.5l0-.3-6.8-5.3-.2.1C2.9 17.1 2 20.4 2 24s.9 6.9 2.5 9.9l7-5.4"/><path fill="#EA4335" d="M24 9.9c4.1 0 6.9 1.8 8.5 3.3l6.2-6C34.9 3.7 29.9 1.5 24 1.5 15.4 1.5 8 6 4.5 14.1l7 5.4C13.3 14.2 18.2 9.9 24 9.9"/></svg>
+          </div>
+          <div class="depo-estrelas" aria-label="Cinco de cinco estrelas">★★★★★</div>
+          <blockquote>Atendimento nota 1000, tira todas as dúvidas e acompanha de verdade. Super indico para quem procura uma nutri de confiança.</blockquote>
+        </figure>
+        <figure class="depo-card">
+          <div class="depo-topo">
+            <span class="depo-avatar" style="background:#6F7D63" aria-hidden="true">M</span>
+            <div class="depo-quem">
+              <span class="depo-nome">Maria Eduarda Silva Franco</span>
+              <span class="depo-data">setembro de 2026</span>
+            </div>
+            <svg class="depo-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-2.8-.4-4H24v7.3h12.1c-.2 1.9-1.6 4.8-4.5 6.7l-.1.3 6.5 5 .5.1c4.1-3.8 6.6-9.4 6.6-15.4"/><path fill="#34A853" d="M24 46c5.9 0 10.9-1.9 14.5-5.3l-6.9-5.3c-1.8 1.3-4.3 2.2-7.6 2.2-5.8 0-10.7-3.8-12.5-9.1l-.3 0-6.7 5.2-.1.3C8 41.6 15.4 46 24 46"/><path fill="#FBBC05" d="M11.5 28.5c-.5-1.4-.7-2.9-.7-4.5s.3-3.1.7-4.5l0-.3-6.8-5.3-.2.1C2.9 17.1 2 20.4 2 24s.9 6.9 2.5 9.9l7-5.4"/><path fill="#EA4335" d="M24 9.9c4.1 0 6.9 1.8 8.5 3.3l6.2-6C34.9 3.7 29.9 1.5 24 1.5 15.4 1.5 8 6 4.5 14.1l7 5.4C13.3 14.2 18.2 9.9 24 9.9"/></svg>
+          </div>
+          <div class="depo-estrelas" aria-label="Cinco de cinco estrelas">★★★★★</div>
+          <blockquote>Hosana Muniz, é uma excelente nutricionista. Super recomendo!</blockquote>
+        </figure>
+        <figure class="depo-card">
+          <div class="depo-topo">
+            <span class="depo-avatar" style="background:#4A5240" aria-hidden="true">J</span>
+            <div class="depo-quem">
+              <span class="depo-nome">JuBellas</span>
+              <span class="depo-data">setembro de 2026</span>
+            </div>
+            <svg class="depo-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-2.8-.4-4H24v7.3h12.1c-.2 1.9-1.6 4.8-4.5 6.7l-.1.3 6.5 5 .5.1c4.1-3.8 6.6-9.4 6.6-15.4"/><path fill="#34A853" d="M24 46c5.9 0 10.9-1.9 14.5-5.3l-6.9-5.3c-1.8 1.3-4.3 2.2-7.6 2.2-5.8 0-10.7-3.8-12.5-9.1l-.3 0-6.7 5.2-.1.3C8 41.6 15.4 46 24 46"/><path fill="#FBBC05" d="M11.5 28.5c-.5-1.4-.7-2.9-.7-4.5s.3-3.1.7-4.5l0-.3-6.8-5.3-.2.1C2.9 17.1 2 20.4 2 24s.9 6.9 2.5 9.9l7-5.4"/><path fill="#EA4335" d="M24 9.9c4.1 0 6.9 1.8 8.5 3.3l6.2-6C34.9 3.7 29.9 1.5 24 1.5 15.4 1.5 8 6 4.5 14.1l7 5.4C13.3 14.2 18.2 9.9 24 9.9"/></svg>
+          </div>
+          <div class="depo-estrelas" aria-label="Cinco de cinco estrelas">★★★★★</div>
+          <blockquote>Uma excelente profissional. Atenciosa, procurou saber da minha necessidade, me passou um plano de alimentação top. Super indico.</blockquote>
+        </figure>
+        <figure class="depo-card" aria-hidden="true">
+          <div class="depo-topo">
+            <span class="depo-avatar" style="background:#7A8C6E" aria-hidden="true">L</span>
+            <div class="depo-quem">
+              <span class="depo-nome">Lucicleide da Silva Leite</span>
+              <span class="depo-data">setembro de 2026</span>
+            </div>
+            <svg class="depo-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-2.8-.4-4H24v7.3h12.1c-.2 1.9-1.6 4.8-4.5 6.7l-.1.3 6.5 5 .5.1c4.1-3.8 6.6-9.4 6.6-15.4"/><path fill="#34A853" d="M24 46c5.9 0 10.9-1.9 14.5-5.3l-6.9-5.3c-1.8 1.3-4.3 2.2-7.6 2.2-5.8 0-10.7-3.8-12.5-9.1l-.3 0-6.7 5.2-.1.3C8 41.6 15.4 46 24 46"/><path fill="#FBBC05" d="M11.5 28.5c-.5-1.4-.7-2.9-.7-4.5s.3-3.1.7-4.5l0-.3-6.8-5.3-.2.1C2.9 17.1 2 20.4 2 24s.9 6.9 2.5 9.9l7-5.4"/><path fill="#EA4335" d="M24 9.9c4.1 0 6.9 1.8 8.5 3.3l6.2-6C34.9 3.7 29.9 1.5 24 1.5 15.4 1.5 8 6 4.5 14.1l7 5.4C13.3 14.2 18.2 9.9 24 9.9"/></svg>
+          </div>
+          <div class="depo-estrelas" aria-label="Cinco de cinco estrelas">★★★★★</div>
+          <blockquote>Atendimento maravilhoso! Minha vida mudou depois do acompanhamento com a Dra! Obrigada</blockquote>
+        </figure>
+        <figure class="depo-card" aria-hidden="true">
+          <div class="depo-topo">
+            <span class="depo-avatar" style="background:#A08C6A" aria-hidden="true">B</span>
+            <div class="depo-quem">
+              <span class="depo-nome">Bianca Tirloni</span>
+              <span class="depo-data">setembro de 2026</span>
+            </div>
+            <svg class="depo-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-2.8-.4-4H24v7.3h12.1c-.2 1.9-1.6 4.8-4.5 6.7l-.1.3 6.5 5 .5.1c4.1-3.8 6.6-9.4 6.6-15.4"/><path fill="#34A853" d="M24 46c5.9 0 10.9-1.9 14.5-5.3l-6.9-5.3c-1.8 1.3-4.3 2.2-7.6 2.2-5.8 0-10.7-3.8-12.5-9.1l-.3 0-6.7 5.2-.1.3C8 41.6 15.4 46 24 46"/><path fill="#FBBC05" d="M11.5 28.5c-.5-1.4-.7-2.9-.7-4.5s.3-3.1.7-4.5l0-.3-6.8-5.3-.2.1C2.9 17.1 2 20.4 2 24s.9 6.9 2.5 9.9l7-5.4"/><path fill="#EA4335" d="M24 9.9c4.1 0 6.9 1.8 8.5 3.3l6.2-6C34.9 3.7 29.9 1.5 24 1.5 15.4 1.5 8 6 4.5 14.1l7 5.4C13.3 14.2 18.2 9.9 24 9.9"/></svg>
+          </div>
+          <div class="depo-estrelas" aria-label="Cinco de cinco estrelas">★★★★★</div>
+          <blockquote>Maravilhosa! Atendimento incrível!</blockquote>
+        </figure>
+        <figure class="depo-card" aria-hidden="true">
+          <div class="depo-topo">
+            <span class="depo-avatar" style="background:#C9A66A" aria-hidden="true">N</span>
+            <div class="depo-quem">
+              <span class="depo-nome">Nathalya Galembeck</span>
+              <span class="depo-data">setembro de 2026</span>
+            </div>
+            <svg class="depo-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-2.8-.4-4H24v7.3h12.1c-.2 1.9-1.6 4.8-4.5 6.7l-.1.3 6.5 5 .5.1c4.1-3.8 6.6-9.4 6.6-15.4"/><path fill="#34A853" d="M24 46c5.9 0 10.9-1.9 14.5-5.3l-6.9-5.3c-1.8 1.3-4.3 2.2-7.6 2.2-5.8 0-10.7-3.8-12.5-9.1l-.3 0-6.7 5.2-.1.3C8 41.6 15.4 46 24 46"/><path fill="#FBBC05" d="M11.5 28.5c-.5-1.4-.7-2.9-.7-4.5s.3-3.1.7-4.5l0-.3-6.8-5.3-.2.1C2.9 17.1 2 20.4 2 24s.9 6.9 2.5 9.9l7-5.4"/><path fill="#EA4335" d="M24 9.9c4.1 0 6.9 1.8 8.5 3.3l6.2-6C34.9 3.7 29.9 1.5 24 1.5 15.4 1.5 8 6 4.5 14.1l7 5.4C13.3 14.2 18.2 9.9 24 9.9"/></svg>
+          </div>
+          <div class="depo-estrelas" aria-label="Cinco de cinco estrelas">★★★★★</div>
+          <blockquote>Atendimento nota 1000, tira todas as dúvidas e acompanha de verdade. Super indico para quem procura uma nutri de confiança.</blockquote>
+        </figure>
+        <figure class="depo-card" aria-hidden="true">
+          <div class="depo-topo">
+            <span class="depo-avatar" style="background:#6F7D63" aria-hidden="true">M</span>
+            <div class="depo-quem">
+              <span class="depo-nome">Maria Eduarda Silva Franco</span>
+              <span class="depo-data">setembro de 2026</span>
+            </div>
+            <svg class="depo-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-2.8-.4-4H24v7.3h12.1c-.2 1.9-1.6 4.8-4.5 6.7l-.1.3 6.5 5 .5.1c4.1-3.8 6.6-9.4 6.6-15.4"/><path fill="#34A853" d="M24 46c5.9 0 10.9-1.9 14.5-5.3l-6.9-5.3c-1.8 1.3-4.3 2.2-7.6 2.2-5.8 0-10.7-3.8-12.5-9.1l-.3 0-6.7 5.2-.1.3C8 41.6 15.4 46 24 46"/><path fill="#FBBC05" d="M11.5 28.5c-.5-1.4-.7-2.9-.7-4.5s.3-3.1.7-4.5l0-.3-6.8-5.3-.2.1C2.9 17.1 2 20.4 2 24s.9 6.9 2.5 9.9l7-5.4"/><path fill="#EA4335" d="M24 9.9c4.1 0 6.9 1.8 8.5 3.3l6.2-6C34.9 3.7 29.9 1.5 24 1.5 15.4 1.5 8 6 4.5 14.1l7 5.4C13.3 14.2 18.2 9.9 24 9.9"/></svg>
+          </div>
+          <div class="depo-estrelas" aria-label="Cinco de cinco estrelas">★★★★★</div>
+          <blockquote>Hosana Muniz, é uma excelente nutricionista. Super recomendo!</blockquote>
+        </figure>
+        <figure class="depo-card" aria-hidden="true">
+          <div class="depo-topo">
+            <span class="depo-avatar" style="background:#4A5240" aria-hidden="true">J</span>
+            <div class="depo-quem">
+              <span class="depo-nome">JuBellas</span>
+              <span class="depo-data">setembro de 2026</span>
+            </div>
+            <svg class="depo-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-2.8-.4-4H24v7.3h12.1c-.2 1.9-1.6 4.8-4.5 6.7l-.1.3 6.5 5 .5.1c4.1-3.8 6.6-9.4 6.6-15.4"/><path fill="#34A853" d="M24 46c5.9 0 10.9-1.9 14.5-5.3l-6.9-5.3c-1.8 1.3-4.3 2.2-7.6 2.2-5.8 0-10.7-3.8-12.5-9.1l-.3 0-6.7 5.2-.1.3C8 41.6 15.4 46 24 46"/><path fill="#FBBC05" d="M11.5 28.5c-.5-1.4-.7-2.9-.7-4.5s.3-3.1.7-4.5l0-.3-6.8-5.3-.2.1C2.9 17.1 2 20.4 2 24s.9 6.9 2.5 9.9l7-5.4"/><path fill="#EA4335" d="M24 9.9c4.1 0 6.9 1.8 8.5 3.3l6.2-6C34.9 3.7 29.9 1.5 24 1.5 15.4 1.5 8 6 4.5 14.1l7 5.4C13.3 14.2 18.2 9.9 24 9.9"/></svg>
+          </div>
+          <div class="depo-estrelas" aria-label="Cinco de cinco estrelas">★★★★★</div>
+          <blockquote>Uma excelente profissional. Atenciosa, procurou saber da minha necessidade, me passou um plano de alimentação top. Super indico.</blockquote>
+        </figure>
+        <figure class="depo-card" aria-hidden="true">
+          <div class="depo-topo">
+            <span class="depo-avatar" style="background:#7A8C6E" aria-hidden="true">L</span>
+            <div class="depo-quem">
+              <span class="depo-nome">Lucicleide da Silva Leite</span>
+              <span class="depo-data">setembro de 2026</span>
+            </div>
+            <svg class="depo-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-2.8-.4-4H24v7.3h12.1c-.2 1.9-1.6 4.8-4.5 6.7l-.1.3 6.5 5 .5.1c4.1-3.8 6.6-9.4 6.6-15.4"/><path fill="#34A853" d="M24 46c5.9 0 10.9-1.9 14.5-5.3l-6.9-5.3c-1.8 1.3-4.3 2.2-7.6 2.2-5.8 0-10.7-3.8-12.5-9.1l-.3 0-6.7 5.2-.1.3C8 41.6 15.4 46 24 46"/><path fill="#FBBC05" d="M11.5 28.5c-.5-1.4-.7-2.9-.7-4.5s.3-3.1.7-4.5l0-.3-6.8-5.3-.2.1C2.9 17.1 2 20.4 2 24s.9 6.9 2.5 9.9l7-5.4"/><path fill="#EA4335" d="M24 9.9c4.1 0 6.9 1.8 8.5 3.3l6.2-6C34.9 3.7 29.9 1.5 24 1.5 15.4 1.5 8 6 4.5 14.1l7 5.4C13.3 14.2 18.2 9.9 24 9.9"/></svg>
+          </div>
+          <div class="depo-estrelas" aria-label="Cinco de cinco estrelas">★★★★★</div>
+          <blockquote>Atendimento maravilhoso! Minha vida mudou depois do acompanhamento com a Dra! Obrigada</blockquote>
+        </figure>
+        <figure class="depo-card" aria-hidden="true">
+          <div class="depo-topo">
+            <span class="depo-avatar" style="background:#A08C6A" aria-hidden="true">B</span>
+            <div class="depo-quem">
+              <span class="depo-nome">Bianca Tirloni</span>
+              <span class="depo-data">setembro de 2026</span>
+            </div>
+            <svg class="depo-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-2.8-.4-4H24v7.3h12.1c-.2 1.9-1.6 4.8-4.5 6.7l-.1.3 6.5 5 .5.1c4.1-3.8 6.6-9.4 6.6-15.4"/><path fill="#34A853" d="M24 46c5.9 0 10.9-1.9 14.5-5.3l-6.9-5.3c-1.8 1.3-4.3 2.2-7.6 2.2-5.8 0-10.7-3.8-12.5-9.1l-.3 0-6.7 5.2-.1.3C8 41.6 15.4 46 24 46"/><path fill="#FBBC05" d="M11.5 28.5c-.5-1.4-.7-2.9-.7-4.5s.3-3.1.7-4.5l0-.3-6.8-5.3-.2.1C2.9 17.1 2 20.4 2 24s.9 6.9 2.5 9.9l7-5.4"/><path fill="#EA4335" d="M24 9.9c4.1 0 6.9 1.8 8.5 3.3l6.2-6C34.9 3.7 29.9 1.5 24 1.5 15.4 1.5 8 6 4.5 14.1l7 5.4C13.3 14.2 18.2 9.9 24 9.9"/></svg>
+          </div>
+          <div class="depo-estrelas" aria-label="Cinco de cinco estrelas">★★★★★</div>
+          <blockquote>Maravilhosa! Atendimento incrível!</blockquote>
+        </figure>
+        <figure class="depo-card" aria-hidden="true">
+          <div class="depo-topo">
+            <span class="depo-avatar" style="background:#C9A66A" aria-hidden="true">N</span>
+            <div class="depo-quem">
+              <span class="depo-nome">Nathalya Galembeck</span>
+              <span class="depo-data">setembro de 2026</span>
+            </div>
+            <svg class="depo-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-2.8-.4-4H24v7.3h12.1c-.2 1.9-1.6 4.8-4.5 6.7l-.1.3 6.5 5 .5.1c4.1-3.8 6.6-9.4 6.6-15.4"/><path fill="#34A853" d="M24 46c5.9 0 10.9-1.9 14.5-5.3l-6.9-5.3c-1.8 1.3-4.3 2.2-7.6 2.2-5.8 0-10.7-3.8-12.5-9.1l-.3 0-6.7 5.2-.1.3C8 41.6 15.4 46 24 46"/><path fill="#FBBC05" d="M11.5 28.5c-.5-1.4-.7-2.9-.7-4.5s.3-3.1.7-4.5l0-.3-6.8-5.3-.2.1C2.9 17.1 2 20.4 2 24s.9 6.9 2.5 9.9l7-5.4"/><path fill="#EA4335" d="M24 9.9c4.1 0 6.9 1.8 8.5 3.3l6.2-6C34.9 3.7 29.9 1.5 24 1.5 15.4 1.5 8 6 4.5 14.1l7 5.4C13.3 14.2 18.2 9.9 24 9.9"/></svg>
+          </div>
+          <div class="depo-estrelas" aria-label="Cinco de cinco estrelas">★★★★★</div>
+          <blockquote>Atendimento nota 1000, tira todas as dúvidas e acompanha de verdade. Super indico para quem procura uma nutri de confiança.</blockquote>
+        </figure>
+        <figure class="depo-card" aria-hidden="true">
+          <div class="depo-topo">
+            <span class="depo-avatar" style="background:#6F7D63" aria-hidden="true">M</span>
+            <div class="depo-quem">
+              <span class="depo-nome">Maria Eduarda Silva Franco</span>
+              <span class="depo-data">setembro de 2026</span>
+            </div>
+            <svg class="depo-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-2.8-.4-4H24v7.3h12.1c-.2 1.9-1.6 4.8-4.5 6.7l-.1.3 6.5 5 .5.1c4.1-3.8 6.6-9.4 6.6-15.4"/><path fill="#34A853" d="M24 46c5.9 0 10.9-1.9 14.5-5.3l-6.9-5.3c-1.8 1.3-4.3 2.2-7.6 2.2-5.8 0-10.7-3.8-12.5-9.1l-.3 0-6.7 5.2-.1.3C8 41.6 15.4 46 24 46"/><path fill="#FBBC05" d="M11.5 28.5c-.5-1.4-.7-2.9-.7-4.5s.3-3.1.7-4.5l0-.3-6.8-5.3-.2.1C2.9 17.1 2 20.4 2 24s.9 6.9 2.5 9.9l7-5.4"/><path fill="#EA4335" d="M24 9.9c4.1 0 6.9 1.8 8.5 3.3l6.2-6C34.9 3.7 29.9 1.5 24 1.5 15.4 1.5 8 6 4.5 14.1l7 5.4C13.3 14.2 18.2 9.9 24 9.9"/></svg>
+          </div>
+          <div class="depo-estrelas" aria-label="Cinco de cinco estrelas">★★★★★</div>
+          <blockquote>Hosana Muniz, é uma excelente nutricionista. Super recomendo!</blockquote>
+        </figure>
+        <figure class="depo-card" aria-hidden="true">
+          <div class="depo-topo">
+            <span class="depo-avatar" style="background:#4A5240" aria-hidden="true">J</span>
+            <div class="depo-quem">
+              <span class="depo-nome">JuBellas</span>
+              <span class="depo-data">setembro de 2026</span>
+            </div>
+            <svg class="depo-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-2.8-.4-4H24v7.3h12.1c-.2 1.9-1.6 4.8-4.5 6.7l-.1.3 6.5 5 .5.1c4.1-3.8 6.6-9.4 6.6-15.4"/><path fill="#34A853" d="M24 46c5.9 0 10.9-1.9 14.5-5.3l-6.9-5.3c-1.8 1.3-4.3 2.2-7.6 2.2-5.8 0-10.7-3.8-12.5-9.1l-.3 0-6.7 5.2-.1.3C8 41.6 15.4 46 24 46"/><path fill="#FBBC05" d="M11.5 28.5c-.5-1.4-.7-2.9-.7-4.5s.3-3.1.7-4.5l0-.3-6.8-5.3-.2.1C2.9 17.1 2 20.4 2 24s.9 6.9 2.5 9.9l7-5.4"/><path fill="#EA4335" d="M24 9.9c4.1 0 6.9 1.8 8.5 3.3l6.2-6C34.9 3.7 29.9 1.5 24 1.5 15.4 1.5 8 6 4.5 14.1l7 5.4C13.3 14.2 18.2 9.9 24 9.9"/></svg>
+          </div>
+          <div class="depo-estrelas" aria-label="Cinco de cinco estrelas">★★★★★</div>
+          <blockquote>Uma excelente profissional. Atenciosa, procurou saber da minha necessidade, me passou um plano de alimentação top. Super indico.</blockquote>
+        </figure>
+      </div>
+    </div>
+    <p class="depo-link"><a href="https://maps.google.com/?cid=11783292883896235108" target="_blank" rel="noopener">Ver as avaliações no Google</a></p>
   </div>
 </section>
 <section class="lista-espera" id="lista-espera">
