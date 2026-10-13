@@ -1,0 +1,109 @@
+/* Identidade visual de outubro/2026: grafite, bone, vinho, oliva, azul noite e tabaco.
+   Entra por cima do estilo de cada pagina; para voltar ao visual antigo basta tirar o link deste arquivo. */
+:root{
+  --bone:#E6E0D6;--merlot:#4B1E23;--olive:#6B6F4E;--azul:#1C2430;--tabaco:#8A5A2B;--tabaco-cl:#C99A66;--grafite:#121212;
+  --oliva:#121212;--oliva-md:#6B6F4E;--oliva-lt:#DDD6CA;--oliva-bg:#ECE7DE;--oliva-cl:#DDD6CA;
+  --creme:#F3EFE8;--creme-soft:#E6E0D6;--dourado:#A06A35;--dourado-lt:#E9DCCB;--texto:#121212;
+  --linha:#DDD6CA;--cinza:#6F6A62;--rose:#4B1E23;--rose-cl:#EADCD9;
+  --terracota:#8A5A2B;--terracota-lt:#EFE3D5;--rosa:#4B1E23;--rosa-lt:#EADCD9;--salvia:#6B6F4E;--salvia-lt:#E4E3D6;--areia:#ECE7DE;
+}
+/* Nome */
+.mono{display:none!important}
+.nav-logo .nome,.logo .nome,.brand .brand-nome,.brand-nome{font-family:'Comfortaa',sans-serif!important;font-weight:300!important;font-size:1.22rem!important;letter-spacing:.12em!important;text-transform:none!important;color:var(--grafite)}
+.nav-logo .sub,.logo .sub{font-family:'Jost','Raleway',sans-serif!important;font-weight:300;color:var(--tabaco)!important;letter-spacing:.3em!important;margin-top:5px!important}
+.pi{position:relative;display:inline-block}
+.pi b{position:absolute;left:50%;top:-.02em;width:.15em;height:.15em;border-radius:50%;transform:translateX(-90%);background:var(--tabaco)}
+@media(max-width:768px){.nav-logo .nome,.logo .nome,.brand-nome{font-size:1.02rem!important}.nav-logo .sub,.logo .sub{font-size:.46rem!important;letter-spacing:.24em!important}}
+/* Menu escuro (inicio, moema, online, receitas) */
+.navbar{background:var(--grafite);border-bottom:0}
+.navbar .nav-logo .nome{color:var(--bone)}
+.navbar .nav-logo .sub{color:var(--tabaco-cl)!important}
+.navbar .pi b{background:var(--tabaco-cl)}
+.navbar .nav-links a{color:var(--bone)}.navbar .nav-links a:hover{color:var(--tabaco-cl)}
+.navbar .nav-cta{background:var(--tabaco);box-shadow:none}.navbar .nav-cta:hover{background:#A06A35}
+.navbar .hamburger span{background:var(--bone)}
+.footer{background:var(--grafite)}
+.section-tag{color:var(--tabaco);letter-spacing:.2em}
+/* Inicio */
+.hero{background:var(--merlot);box-shadow:0 0 0 100vmax var(--merlot);clip-path:inset(0 -100vmax)}
+.hero .hero-decor{display:none}
+.hero .hero-badge{background:transparent;border:1px solid rgba(230,224,214,.4);color:var(--bone)}
+.hero .hero-badge::before{display:none}
+.hero h1{color:var(--bone)}.hero .hero-subtitle{color:rgba(230,224,214,.8)}
+.hero .btn-primary{background:var(--bone);color:var(--merlot);box-shadow:none}.hero .btn-primary:hover{background:#fff}
+.hero .btn-outline{color:var(--bone);border-color:var(--bone)}.hero .btn-outline:hover{background:var(--bone);color:var(--merlot)}
+.sobre-card{background:var(--bone);border:0;border-radius:6px 44px 6px 44px;box-shadow:16px 16px 0 var(--tabaco)}
+.sobre-foto-grande{border-color:var(--bone);outline:0;border-radius:6px 36px 6px 36px}
+.sobre-titulo{color:var(--tabaco)}
+.servicos{background:var(--creme)}.servicos::before,.servicos::after,.atuacao::before{display:none}
+.servicos .card{border:0;border-radius:4px 30px 4px 30px;box-shadow:none}
+.servicos .card:nth-child(1){background:var(--merlot)}.servicos .card:nth-child(2){background:var(--olive)}.servicos .card:nth-child(3){background:var(--azul)}.servicos .card:nth-child(4){background:var(--tabaco)}
+.servicos .card h3{color:var(--bone)}.servicos .card p{color:rgba(230,224,214,.85)}.servicos .card a{color:var(--bone);text-decoration:underline}
+.servicos .card-icon{background:transparent;border:1px solid rgba(230,224,214,.5);color:var(--bone);border-radius:4px 14px 4px 14px}
+.servicos .card:hover{box-shadow:0 18px 34px rgba(18,18,18,.25)}
+.atuacao{background:var(--olive)}
+.atuacao .section-tag,.atuacao h2{color:var(--bone)}.atuacao-rule{background:var(--bone)}
+.atuacao-body p{color:rgba(243,239,232,.93)}.atuacao-body strong{color:#fff}
+.depo{background:var(--creme);border-top:0}
+.onde{background:var(--bone);border-top:0}
+.onde-tit{color:var(--merlot)}
+.onde-fig img{border-radius:4px 28px 4px 28px}
+.contato{background:var(--azul)}
+.contato-info h2,.contato-item-text a,.contato-item-text span{color:var(--bone)}
+.contato-info>p{color:rgba(230,224,214,.78)}
+.contato .section-tag,.contato-item-text small{color:var(--tabaco-cl)}
+.contato-icon{background:transparent;border:1px solid rgba(230,224,214,.4);color:var(--bone);border-radius:4px 12px 4px 12px}
+.contato-form input,.contato-form textarea{background:var(--bone);border:0}
+.contato .btn-primary{background:var(--tabaco);box-shadow:none}
+.guia-card{background:var(--merlot)}
+/* Online e Moema */
+.mo-hero{background:var(--merlot);box-shadow:0 0 0 100vmax var(--merlot);clip-path:inset(0 -100vmax)}
+.mo-hero h1{color:var(--bone)}.mo-hero .hero-subtitle{color:rgba(230,224,214,.8)}
+.mo-hero .hero-badge{background:transparent;border:1px solid rgba(230,224,214,.4);color:var(--bone)}
+.mo-hero .hero-badge::before{display:none}
+.mo-hero .btn-primary{background:var(--bone);color:var(--merlot);box-shadow:none}.mo-hero .btn-primary:hover{background:#fff}
+.mo-hero .btn-outline{color:var(--bone);border-color:var(--bone)}.mo-hero .btn-outline:hover{background:var(--bone);color:var(--merlot)}
+.mo-foto{border-radius:6px 44px 6px 44px;box-shadow:16px 16px 0 var(--tabaco)}
+.mo-onde,.mo-foco,.mo-quem{background:var(--creme);border-top:0}
+.mo-onde .mo-foto{box-shadow:16px 16px 0 var(--olive)}
+.mo-foco .mo-passo{border:0;border-radius:4px 30px 4px 30px}
+.mo-foco .mo-passo:nth-child(1){background:var(--olive)}.mo-foco .mo-passo:nth-child(2){background:var(--azul)}.mo-foco .mo-passo:nth-child(3){background:var(--tabaco)}
+.mo-foco .mo-passo h3{color:var(--bone)}.mo-foco .mo-passo p{color:rgba(230,224,214,.88)}
+.mo-como{background:var(--bone)}
+.mo-como .mo-passo{background:var(--creme);border:0;border-radius:4px 30px 4px 30px}
+.mo-passo span{color:var(--merlot)}
+.mo-quem img{border-radius:6px 44px 6px 44px;border:0;box-shadow:12px 12px 0 var(--merlot)}
+.mo-quem .crn{color:var(--tabaco)}
+.mo-final{background:var(--azul)}
+.mo-final .btn-claro{background:var(--tabaco);color:#fff;box-shadow:none}
+/* Paginas de entrada (sintomas, programa, psicologas): topo vinho com texto claro */
+.hero h1{color:var(--bone)}
+.hero p,.hero .hero-sub,.hero .cta-nota{color:rgba(230,224,214,.82)}
+.hero h1 em,.hero h1 span,.hero h1 mark,.hero h1 b{color:var(--tabaco-cl)}
+.hero .hero-tag{background:transparent;border:1px solid rgba(230,224,214,.4);color:var(--bone)}
+.hero .hero-tag::before{display:none}
+.hero .hero-rule{background:var(--tabaco-cl)}
+.hero::after{display:none}
+.hero-foto{border:0;border-radius:6px 44px 6px 44px;box-shadow:16px 16px 0 var(--tabaco)}
+.topo,.topbar{background:var(--grafite);border-bottom:0}
+.topo .logo .nome,.topbar .brand-nome{color:var(--bone)}
+.topo .logo .sub{color:var(--tabaco-cl)!important}
+.topo .pi b,.topbar .pi b{background:var(--tabaco-cl)}
+.topo-crn{color:var(--tabaco-cl)}
+.topbar a,.topbar span{color:var(--bone)}
+.fechar{background:var(--azul)}
+.rodape{background:var(--grafite)}
+.destaque{background:var(--olive);border:0}.destaque p{color:var(--bone)}
+/* contato da pagina das psicologas fica claro (o azul e so o da pagina inicial, que tem .contato-grid) */
+.contato:not(:has(.contato-grid)){background:var(--creme)}
+/* o cartao claro dentro do topo vinho mantem texto escuro */
+.hero .sobre-card p,.hero .sobre-card h3{color:var(--texto)}
+.nav-logo .nome,.logo .nome,.brand-nome{line-height:1.1!important}
+@media(max-width:768px){
+  .sobre-card,.mo-foto,.hero-foto{box-shadow:10px 10px 0 var(--tabaco)}
+  .mo-onde .mo-foto{box-shadow:10px 10px 0 var(--olive)}
+  .hero-sobre,.mo-hero figure,.hero-foto{margin-right:10px}
+}
+/* palavra em destaque no titulo: so a cor, sem a faixa clara por tras (no fundo vinho ela cortava a letra) */
+.hero .grifo{color:var(--tabaco-cl)}
+.hero .grifo::after{display:none}
