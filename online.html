@@ -484,6 +484,24 @@ body{font-family:'Raleway',sans-serif;color:var(--texto);background:var(--creme)
 </style>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Jost:wght@300;400&display=swap"/>
 <link rel="stylesheet" href="/identidade.css?v=1"/>
+<style>
+.cap-modal{display:none;position:fixed;inset:0;background:rgba(44,44,40,0.55);z-index:3000;align-items:center;justify-content:center;padding:1rem}
+.cap-modal.open{display:flex}
+.cap-card{background:var(--creme);border-radius:16px;width:100%;max-width:400px;padding:1.6rem 1.5rem 1.4rem;position:relative;box-shadow:0 24px 48px rgba(0,0,0,0.25)}
+.cap-fechar{position:absolute;top:0.8rem;right:0.8rem;width:34px;height:34px;border-radius:50%;border:1px solid var(--oliva-lt);background:#fff;color:var(--oliva);font-size:1.2rem;line-height:1;cursor:pointer}
+.cap-card h3{font-family:'Fraunces',serif;font-weight:400;font-size:1.45rem;color:var(--texto);margin:0 2rem 0.35rem 0;line-height:1.2}
+.cap-card p{font-size:0.9rem;color:var(--oliva-md);line-height:1.5;margin:0 0 1.1rem}
+.cap-card label{display:block;font-size:0.78rem;font-weight:600;color:var(--oliva);margin-bottom:0.8rem}
+.cap-card input{display:block;width:100%;margin-top:0.3rem;padding:0.8rem 0.9rem;font:inherit;font-size:1rem;border:1px solid var(--oliva-lt);border-radius:10px;background:#fff;color:var(--texto)}
+.cap-card input:focus{outline:none;border-color:var(--oliva);box-shadow:0 0 0 3px var(--oliva-lt)}
+.cap-erro{display:none;font-size:0.82rem;color:#9b3b2e;margin:-0.2rem 0 0.7rem}
+.cap-erro.on{display:block}
+.cap-btn{width:100%;text-align:center;font-size:0.95rem;padding:0.9rem 1rem}
+.cap-card small{display:block;text-align:center;font-size:0.74rem;color:var(--oliva-md);margin-top:0.8rem;line-height:1.4}
+.cap-pronto{display:none;text-align:center;font-size:0.9rem;color:var(--oliva);margin-top:0.9rem}
+.cap-pronto.on{display:block}
+.cap-pronto a{color:var(--oliva);font-weight:600}
+</style>
 </head>
 <body>
 <nav class="navbar" id="navbar">
@@ -801,6 +819,68 @@ const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
 function closeMobile() { mobileMenu.classList.remove('open'); }
+</script>
+<div class="cap-modal" id="capModal" role="dialog" aria-modal="true" aria-labelledby="capTit">
+  <div class="cap-card">
+    <button class="cap-fechar" type="button" id="capFechar" aria-label="Fechar">&times;</button>
+    <h3 id="capTit">Antes de abrir o WhatsApp</h3>
+    <p>Me diz seu nome e seu número. Se a conversa não começar, eu mesma te chamo.</p>
+    <form id="capForm" novalidate>
+      <label>Seu nome<input id="capNome" type="text" autocomplete="name" maxlength="80"/></label>
+      <label>Seu WhatsApp com DDD<input id="capTel" type="tel" inputmode="numeric" autocomplete="tel" placeholder="(11) 99999-9999" maxlength="16"/></label>
+      <div class="cap-erro" id="capErro"></div>
+      <button type="submit" class="btn-primary cap-btn">Continuar para o WhatsApp</button>
+      <small>Seus dados ficam só comigo, para esse contato.</small>
+      <div class="cap-pronto" id="capPronto">Se o WhatsApp não abriu, <a id="capLink" href="#" target="_blank" rel="noopener">toque aqui</a>.</div>
+    </form>
+  </div>
+</div>
+<script>
+/* Antes de abrir o WhatsApp, pede nome e numero (pra ela ter o contato mesmo se a pessoa nao escrever).
+   Guarda no mesmo lugar dos outros contatos do site; a conversao do Google so conta depois do envio. */
+(function(){
+  var API='https://app.plataformanutra.com.br/api/guia-lead';
+  var ZAP='5513991149157';
+  var modal=document.getElementById('capModal'), form=document.getElementById('capForm');
+  var nome=document.getElementById('capNome'), tel=document.getElementById('capTel'), erro=document.getElementById('capErro');
+  var pronto=document.getElementById('capPronto'), link=document.getElementById('capLink');
+  function jaDeu(){ try{ return sessionStorage.getItem('capOk')==='1'; }catch(e){ return false; } }
+  function abrir(){ modal.classList.add('open'); setTimeout(function(){ nome.focus(); },50); }
+  function fechar(){ modal.classList.remove('open'); }
+  document.getElementById('capFechar').addEventListener('click', fechar);
+  modal.addEventListener('click', function(e){ if(e.target===modal) fechar(); });
+  window.addEventListener('click', function(e){
+    var a=e.target.closest&&e.target.closest('a[href*="wa.me"]');
+    if(!a||jaDeu()) return;
+    e.preventDefault(); e.stopImmediatePropagation(); abrir();
+  }, true);
+  tel.addEventListener('input', function(){
+    var b=tel.value.replace(/\D/g,'');
+    if(b.length>=12&&b.slice(0,2)==='55') b=b.slice(2);
+    var d=b.slice(0,11), f='';
+    if(d.length>0) f='('+d.slice(0,2);
+    if(d.length>=2) f+=') ';
+    if(d.length>2) f+=d.length>10?d.slice(2,7)+'-'+d.slice(7):d.slice(2,6)+(d.length>6?'-'+d.slice(6):'');
+    tel.value=f;
+  });
+  function mostrarErro(m){ erro.textContent=m; erro.classList.add('on'); }
+  form.addEventListener('submit', function(e){
+    e.preventDefault(); erro.classList.remove('on');
+    var n=nome.value.trim(), d=tel.value.replace(/\D/g,'');
+    if(n.length<2) return mostrarErro('Me diz seu nome, por favor.');
+    if(d.length<10||d.length>11) return mostrarErro('Confere o número: precisa do DDD e do celular.');
+    var msg='Olá! Sou '+n.split(' ')[0]+', vim pelo site e gostaria de agendar uma consulta online.';
+    var url='https://wa.me/'+ZAP+'?text='+encodeURIComponent(msg);
+    try{ sessionStorage.setItem('capOk','1'); }catch(x){}
+    try{ marcarWhats(); }catch(x){}
+    var corpo={token:'guia-hm-2026', nome:n, telefone:tel.value, produto:'Anúncio Consulta Online'};
+    try{ if(window.HMOrigem) corpo.rastreio=window.HMOrigem.campos(); }catch(x){}
+    try{ fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(corpo),keepalive:true}).catch(function(){}); }catch(x){}
+    link.href=url; pronto.classList.add('on');
+    var w=window.open(url,'_blank');
+    if(w) setTimeout(fechar,800);
+  });
+})();
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>
